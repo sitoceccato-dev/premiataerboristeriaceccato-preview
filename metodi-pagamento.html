@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodi di Pagamento - Premiata Erboristeria Ceccato</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f0; line-height: 1.8; }
+        h1 { color: #2d5016; font-size: 42px; }
+        .legal-container { max-width: 900px; margin: 40px auto; background: white; padding: 50px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .legal-container h1 { font-size: 32px; margin-bottom: 10px; color: #2d5016; }
+        .last-update { color: #666; font-size: 14px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #f4d03f; }
+        .legal-container h2 { color: #2d5016; font-size: 22px; margin: 35px 0 15px 0; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+        .legal-container h3 { color: #4a7c23; font-size: 18px; margin: 25px 0 10px 0; }
+        .legal-container p { color: #444; margin-bottom: 15px; text-align: justify; }
+        .legal-container ul { margin: 15px 0 15px 30px; color: #444; }
+        .legal-container li { margin-bottom: 10px; }
+        .highlight-box { background: rgba(244,208,63,0.2); border-left: 4px solid #f4d03f; padding: 20px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .info-box { background: rgba(74,124,35,0.1); border: 2px solid #4a7c23; padding: 20px; margin: 20px 0; border-radius: 10px; }
+        .contact-box { background: #f9f9f9; border: 2px solid #ddd; padding: 25px; margin: 30px 0; border-radius: 10px; }
+        .back-link { display: inline-block; margin-top: 30px; color: #4a7c23; text-decoration: none; font-weight: 600; }
+        footer { background: #2d5016; color: white; padding: 30px; text-align: center; margin-top: 40px; }
+        footer a { color: #f4d03f; text-decoration: none; }
+        .payment-card { background: white; border: 2px solid #f4d03f; border-radius: 15px; padding: 25px; margin: 20px 0; display: flex; align-items: flex-start; gap: 20px; }
+        .payment-icon { font-size: 50px; flex-shrink: 0; }
+        .payment-content h3 { color: #2d5016; margin-bottom: 10px; margin-top: 0; }
+        .payment-content p { margin-bottom: 10px; }
+        .payment-badge { display: inline-block; background: #27ae60; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+        .payment-badge.fee { background: #e74c3c; }
+        .security-badges { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 30px 0; }
+        .security-badge { background: #f9f9f9; border: 2px solid #ddd; border-radius: 10px; padding: 15px 25px; text-align: center; }
+        .security-badge span { display: block; font-size: 30px; margin-bottom: 5px; }
+            /* Navigation */
+        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
+        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
+        header h1 { color: #2d5016; font-size: 42px; }
+        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
+        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
+        .nav-button:hover { background: rgba(255,255,255,0.2); }
+        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
+        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div>📦 Spedizione gratuita dai 49€</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
+            <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+        </div>
+    </div>
+
+    <header>
+        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
+            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
+        </a>
+    </header>
+
+        <nav>
+        <div class="nav-container">
+            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Chi Siamo</button>
+                <div class="dropdown">
+                    <a href="la-nostra-storia.html">La nostra storia</a>
+                    <a href="il-nostro-team.html">Il nostro team</a>
+                    <a href="i-nostri-negozi.html">I nostri negozi</a>
+                    <a href="contattaci.html">Contattaci</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Prodotti</button>
+                <div class="dropdown">
+                    <a href="categorie.html">Categorie</a>
+                    <a href="erbe-spezie.html">Erbe e spezie</a>
+                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <div class="has-submenu">
+                        <a href="integratori.html">Integratori ▸</a>
+                        <div class="submenu">
+                            <a href="integratori-cistite.html">Cistite</a>
+                            <a href="integratori-fermenti.html">Fermenti</a>
+                            <a href="integratori-prostata.html">Prostata</a>
+                        </div>
+                    </div>
+                    <a href="oli-essenziali.html">Oli essenziali</a>
+                    <a href="ayurveda.html">Ayurveda</a>
+                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
+                    <a href="alimentazione-naturale.html">Alimentazione</a>
+                    <a href="benessere.html">Benessere</a>
+                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
+                    <a href="oggettistica.html">Oggettistica</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Cristalloterapia</button>
+                <div class="dropdown">
+                    <a href="articoli-cristalli.html">Articoli</a>
+                    <a href="cristalli-pietre.html">Cristalli</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Novità</button>
+                <div class="dropdown">
+                    <a href="#">Nuovi arrivi</a>
+                    <a href="#">Ultimi prodotti</a>
+                    <a href="#">Tendenze</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Contattaci</button>
+                <div class="dropdown">
+                    <a href="contattaci.html">📧 Scrivici</a>
+                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <button class="nav-button">Account</button>
+                <div class="dropdown">
+                    <a href="#">I miei ordini</a>
+                    <a href="#">Lista desideri</a>
+                    <a href="#">Le mie info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="legal-container">
+        <h1>💳 Metodi di Pagamento</h1>
+        <p class="last-update">Ultimo aggiornamento: 13 gennaio 2026</p>
+
+        <div class="info-box">
+            <p><strong>🔒 Pagamenti sicuri:</strong> Tutti i pagamenti sul nostro sito sono protetti da sistemi di crittografia SSL e gestiti da gateway certificati PCI-DSS. I tuoi dati finanziari sono al sicuro.</p>
+        </div>
+
+        <h2>1. Metodi di Pagamento Accettati</h2>
+
+        <div class="payment-card">
+            <div class="payment-icon">💳</div>
+            <div class="payment-content">
+                <h3>Carte di Credito e Debito</h3>
+                <p>Accettiamo le principali carte di credito e debito dei circuiti internazionali:</p>
+                <ul>
+                    <li>Visa</li>
+                    <li>Mastercard</li>
+                    <li>Maestro</li>
+                    <li>American Express</li>
+                    <li>Postepay</li>
+                </ul>
+                <p><span class="payment-badge">Nessun costo aggiuntivo</span></p>
+                <p><strong>Addebito:</strong> immediato al momento dell'ordine</p>
+            </div>
+        </div>
+
+        <div class="payment-card">
+            <div class="payment-icon">📱</div>
+            <div class="payment-content">
+                <h3>PayPal</h3>
+                <p>Paga comodamente con il tuo conto PayPal o con una carta collegata, senza condividere i dati della carta con noi.</p>
+                <ul>
+                    <li>Pagamento rapido e sicuro</li>
+                    <li>Protezione acquisti PayPal</li>
+                    <li>Nessuna registrazione al sito obbligatoria</li>
+                </ul>
+                <p><span class="payment-badge">Nessun costo aggiuntivo</span></p>
+                <p><strong>Addebito:</strong> immediato al momento dell'ordine</p>
+            </div>
+        </div>
+
+        <div class="payment-card">
+            <div class="payment-icon">📲</div>
+            <div class="payment-content">
+                <h3>Satispay</h3>
+                <p>Paga direttamente dall'app Satispay, veloce e senza commissioni.</p>
+                <p><span class="payment-badge">Nessun costo aggiuntivo</span></p>
+                <p><strong>Addebito:</strong> immediato al momento dell'ordine</p>
+            </div>
+        </div>
+
+        <div class="payment-card">
+            <div class="payment-icon">🍎</div>
+            <div class="payment-content">
+                <h3>Apple Pay / Google Pay</h3>
+                <p>Paga con un tocco utilizzando il tuo dispositivo Apple o Android.</p>
+                <p><span class="payment-badge">Nessun costo aggiuntivo</span></p>
+                <p><strong>Addebito:</strong> immediato al momento dell'ordine</p>
+            </div>
+        </div>
+
+        <div class="payment-card">
+            <div class="payment-icon">🏦</div>
+            <div class="payment-content">
+                <h3>Bonifico Bancario Anticipato</h3>
+                <p>Puoi effettuare un bonifico bancario anticipato alle seguenti coordinate:</p>
+                <div class="highlight-box" style="margin: 15px 0;">
+                    <p><strong>Intestatario:</strong> Premiata Erboristeria Ceccato</p>
+                    <p><strong>IBAN:</strong> IT00 X000 0000 0000 0000 0000 000</p>
+                    <p><strong>BIC/SWIFT:</strong> XXXXXXXX</p>
+                    <p><strong>Banca:</strong> [Nome Banca]</p>
+                    <p><strong>Causale:</strong> Ordine n. [numero ordine] - [Nome Cognome]</p>
+                </div>
+                <p><span class="payment-badge">Nessun costo aggiuntivo</span></p>
+                <p><strong>Nota:</strong> La spedizione avviene solo dopo l'effettivo accredito sul nostro conto (2-3 giorni lavorativi).</p>
+            </div>
+        </div>
+
+        <div class="payment-card">
+            <div class="payment-icon">💶</div>
+            <div class="payment-content">
+                <h3>Contrassegno</h3>
+                <p>Pagamento in contanti alla consegna direttamente al corriere.</p>
+                <p><span class="payment-badge fee">Supplemento: €3,90</span></p>
+                <ul>
+                    <li>Importo massimo: €300,00 (limite contanti D.L. 124/2019)</li>
+                    <li>Preparare l'importo esatto (il corriere potrebbe non avere resto)</li>
+                    <li>Non disponibile per le isole e alcune zone</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>2. Sicurezza dei Pagamenti</h2>
+        <p>La sicurezza delle tue transazioni è la nostra priorità. Utilizziamo i più avanzati sistemi di protezione:</p>
+
+        <div class="security-badges">
+            <div class="security-badge">
+                <span>🔒</span>
+                <strong>SSL 256-bit</strong>
+                <p>Crittografia dati</p>
+            </div>
+            <div class="security-badge">
+                <span>✅</span>
+                <strong>PCI-DSS</strong>
+                <p>Standard sicurezza</p>
+            </div>
+            <div class="security-badge">
+                <span>🛡️</span>
+                <strong>3D Secure</strong>
+                <p>Autenticazione forte</p>
+            </div>
+            <div class="security-badge">
+                <span>🔐</span>
+                <strong>SCA</strong>
+                <p>PSD2 Compliant</p>
+            </div>
+        </div>
+
+        <h3>2.1 Protezione dei dati</h3>
+        <ul>
+            <li>I dati della carta di credito <strong>non vengono memorizzati</strong> sui nostri server;</li>
+            <li>Le transazioni sono gestite da gateway certificati (Stripe, PayPal);</li>
+            <li>Autenticazione a due fattori (3D Secure 2.0) per carte Visa e Mastercard;</li>
+            <li>Conforme alla Direttiva PSD2 sull'autenticazione forte del cliente (SCA).</li>
+        </ul>
+
+        <h2>3. Fatturazione</h2>
+        <h3>3.1 Fattura elettronica</h3>
+        <p>Per ogni ordine viene emessa fattura elettronica ai sensi della normativa vigente. La fattura viene:</p>
+        <ul>
+            <li>Inviata via email all'indirizzo indicato in fase di ordine;</li>
+            <li>Trasmessa al Sistema di Interscambio (SDI) se richiesto il codice destinatario;</li>
+            <li>Resa disponibile nell'area personale del cliente.</li>
+        </ul>
+
+        <h3>3.2 Dati per la fatturazione</h3>
+        <p>Per ricevere fattura con partita IVA, inserisci i seguenti dati in fase di ordine:</p>
+        <ul>
+            <li>Ragione sociale</li>
+            <li>Partita IVA</li>
+            <li>Codice Fiscale</li>
+            <li>Codice Destinatario SDI (7 caratteri) o PEC</li>
+            <li>Indirizzo sede legale</li>
+        </ul>
+
+        <h2>4. Problemi con il Pagamento</h2>
+        <h3>4.1 Pagamento rifiutato</h3>
+        <p>Se il pagamento viene rifiutato:</p>
+        <ul>
+            <li>Verifica i dati inseriti (numero carta, scadenza, CVV);</li>
+            <li>Controlla il plafond disponibile sulla carta;</li>
+            <li>Verifica che la carta sia abilitata per acquisti online;</li>
+            <li>Prova con un altro metodo di pagamento;</li>
+            <li>Contatta la tua banca per maggiori informazioni.</li>
+        </ul>
+
+        <h3>4.2 Addebiti non autorizzati</h3>
+        <p>In caso di addebiti non riconosciuti o duplicati, contattaci immediatamente. Verificheremo la situazione e procederemo al rimborso se dovuto.</p>
+
+        <h2>5. Valuta</h2>
+        <p>Tutti i prezzi sul sito sono espressi in <strong>Euro (€)</strong> e includono l'IVA secondo l'aliquota vigente. Non sono previsti costi nascosti o commissioni aggiuntive, ad eccezione del supplemento per il contrassegno (€3,90) espressamente indicato.</p>
+
+        <div class="contact-box">
+            <h3>📞 Assistenza Pagamenti</h3>
+            <p>Per domande o problemi relativi ai pagamenti:</p>
+            <p>📧 Email: <a href="/cdn-cgi/l/email-protection#641405030509010a100d240116060b160d171001160d05490701070705100b4a0d10"><span class="__cf_email__" data-cfemail="f1819096909c949f8598b19483939e8398828594839890dc9294929290859edf9885">[email&#160;protected]</span></a></p>
+            <p>📞 Telefono: +39 0461 123456</p>
+            <p>🕐 Orari: Lunedì - Venerdì, 9:00 - 18:00</p>
+        </div>
+
+        <a href="Premiata Erboristeria Ceccato.html" class="back-link">← Torna alla Home</a>
+    </div>
+
+    <footer>
+        <p>© 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
+        <p style="margin-top: 10px;">
+            <a href="termini-condizioni.html">Termini e Condizioni</a> |
+  

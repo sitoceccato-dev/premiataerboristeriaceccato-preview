@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diritto di Recesso - Premiata Erboristeria Ceccato</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f0;
+            line-height: 1.8;
+        }
+
+        h1 {
+            color: #2d5016;
+            font-size: 42px;
+        }
+
+        .legal-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .legal-container h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #2d5016;
+        }
+
+        .last-update {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f4d03f;
+        }
+
+        .legal-container h2 {
+            color: #2d5016;
+            font-size: 22px;
+            margin: 35px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .legal-container h3 {
+            color: #4a7c23;
+            font-size: 18px;
+            margin: 25px 0 10px 0;
+        }
+
+        .legal-container p {
+            color: #444;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .legal-container ul, .legal-container ol {
+            margin: 15px 0 15px 30px;
+            color: #444;
+        }
+
+        .legal-container li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: rgba(244,208,63,0.2);
+            border-left: 4px solid #f4d03f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .info-box {
+            background: rgba(74,124,35,0.1);
+            border: 2px solid #4a7c23;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .warning-box {
+            background: rgba(231,76,60,0.1);
+            border: 2px solid #e74c3c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .success-box {
+            background: rgba(39,174,96,0.1);
+            border: 2px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .contact-box {
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #4a7c23;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #2d5016;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #f4d03f;
+            text-decoration: none;
+        }
+
+        .step-box {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            background: #4a7c23;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: #2d5016;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+            background: #f9f9f9;
+            border: 2px solid #4a7c23;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .form-container h3 {
+            color: #2d5016;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .form-section label {
+            display: block;
+            color: #2d5016;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-section input,
+        .form-section textarea,
+        .form-section select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .form-section textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(74,124,35,0.4);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #f4d03f;
+            color: #2d5016;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+        }
+
+        .download-btn:hover {
+            background: #c5b358;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 3px solid #4a7c23;
+            margin: 30px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: #4a7c23;
+            border-radius: 50%;
+        }
+
+        .timeline-item h4 {
+            color: #2d5016;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            color: #666;
+        }
+            /* Navigation */
+        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
+        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
+        header h1 { color: #2d5016; font-size: 42px; }
+        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
+        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
+        .nav-button:hover { background: rgba(255,255,255,0.2); }
+        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
+        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div>📦 Spedizione gratuita dai 49€</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
+            <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+        </div>
+    </div>
+
+    <header>
+        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
+            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
+        </a>
+    </header>
+
+        <nav>
+        <div class="nav-container">
+            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Chi Siamo</button>
+                <div class="dropdown">
+                    <a href="la-nostra-storia.html">La nostra storia</a>
+                    <a href="il-nostro-team.html">Il nostro team</a>
+                    <a href="i-nostri-negozi.html">I nostri negozi</a>
+                    <a href="contattaci.html">Contattaci</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Prodotti</button>
+                <div class="dropdown">
+                    <a href="categorie.html">Categorie</a>
+                    <a href="erbe-spezie.html">Erbe e spezie</a>
+                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <div class="has-submenu">
+                        <a href="integratori.html">Integratori ▸</a>
+                        <div class="submenu">
+                            <a href="integratori-cistite.html">Cistite</a>
+                            <a href="integratori-fermenti.html">Fermenti</a>
+                            <a href="integratori-prostata.html">Prostata</a>
+                        </div>
+                    </div>
+                    <a href="oli-essenziali.html">Oli essenziali</a>
+                    <a href="ayurveda.html">Ayurveda</a>
+                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
+                    <a href="alimentazione-naturale.html">Alimentazione</a>
+                    <a href="benessere.html">Benessere</a>
+                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
+                    <a href="oggettistica.html">Oggettistica</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Cristalloterapia</button>
+                <div class="dropdown">
+                    <a href="articoli-cristalli.html">Articoli</a>
+                    <a href="cristalli-pietre.html">Cristalli</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Novità</button>
+                <div class="dropdown">
+                    <a href="#">Nuovi arrivi</a>
+                    <a href="#">Ultimi prodotti</a>
+                    <a href="#">Tendenze</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Contattaci</button>
+                <div class="dropdown">
+                    <a href="contattaci.html">📧 Scrivici</a>
+                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <button class="nav-button">Account</button>
+                <div class="dropdown">
+                    <a href="#">I miei ordini</a>
+                    <a href="#">Lista desideri</a>
+                    <a href="#">Le mie info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="legal-container">
+        <h1>↩️ Diritto di Recesso (14 giorni)</h1>
+        <p class="last-update">Ultimo aggiornamento: 13 gennaio 2026</p>
+
+        <div class="highlight-box">
+            <p><strong>📌 Riferimenti normativi:</strong> Il diritto di recesso è disciplinato dagli artt. 52-59 del D.Lgs. 206/2005 (Codice del Consumo), in attuazione della Direttiva 2011/83/UE sui diritti dei consumatori.</p>
+        </div>
+
+        <div class="success-box">
+            <h3 style="margin-top: 0; color: #27ae60;">✅ Il tuo diritto di ripensamento</h3>
+            <p>Come Consumatore, hai il diritto di recedere dal contratto di acquisto entro <strong>14 giorni</strong> senza dover fornire alcuna motivazione e senza dover sostenere costi diversi da quelli di restituzione del bene.</p>
+        </div>
+
+        <h2>1. Chi può esercitare il diritto di recesso</h2>
+        <p>Il diritto di recesso spetta esclusivamente al <strong>Consumatore</strong>, ossia la persona fisica che agisce per scopi estranei all'attività imprenditoriale, commerciale, artigianale o professionale eventualmente svolta (art. 3, comma 1, lett. a, Codice del Consumo).</p>
+
+        <div class="warning-box">
+            <p><strong>⚠️ Attenzione:</strong> Il diritto di recesso <strong>NON</strong> si applica agli acquisti effettuati da Professionisti (con partita IVA per uso professionale). In tal caso si applicano le norme del Codice Civile.</p>
+        </div>
+
+        <h2>2. Termini per l'esercizio del recesso</h2>
+        
+        <h3>2.1 Termine ordinario: 14 giorni</h3>
+        <p>Il periodo di recesso termina dopo <strong>14 giorni di calendario</strong> a partire da:</p>
+        <ul>
+            <li><strong>Per i beni:</strong> dal giorno in cui il Consumatore o un terzo (diverso dal vettore) acquisisce il possesso fisico dei beni;</li>
+            <li><strong>Per ordini multipli con consegne separate:</strong> dal giorno in cui il Consumatore acquisisce il possesso fisico dell'ultimo bene;</li>
+            <li><strong>Per beni con consegne multiple (lotti o pezzi):</strong> dal giorno in cui il Consumatore acquisisce il possesso fisico dell'ultimo lotto o pezzo;</li>
+            <li><strong>Per i servizi:</strong> dal giorno della conclusione del contratto.</li>
+        </ul>
+
+        <h3>2.2 Termine esteso: 12 mesi + 14 giorni</h3>
+        <p>Se il Venditore non ha correttamente informato il Consumatore sul diritto di recesso prima della conclusione del contratto, il termine è esteso a <strong>12 mesi e 14 giorni</strong> dalla consegna.</p>
+
+        <h2>3. Come esercitare il recesso</h2>
+        <p>Per esercitare il diritto di recesso, è necessario comunicare la decisione di recedere dal contratto tramite una dichiarazione esplicita.</p>
+
+        <div class="step-box">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h4>Comunica la tua decisione</h4>
+                <p>Invia una comunicazione esplicita della tua volontà di recedere entro 14 giorni dalla ricezione del prodotto. Puoi utilizzare il modulo sottostante, inviare un'email o una raccomandata.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h4>Ricevi la conferma</h4>
+                <p>Ti invieremo una conferma di ricezione della tua richiesta di recesso via email.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h4>Restituisci il prodotto</h4>
+                <p>Spedisci il prodotto entro 14 giorni dalla comunicazione di recesso. Il prodotto deve essere integro, nella confezione originale se possibile.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h4>Ricevi il rimborso</h4>
+                <p>Effettueremo il rimborso entro 14 giorni dalla ricezione del reso o dalla prova di spedizione.</p>
+            </div>
+        </div>
+
+        <h2>4. Modulo di Recesso</h2>
+        <p>Puoi utilizzare il seguente modulo tipo conforme all'Allegato I, parte B del Codice del Consumo:</p>
+
+        <div class="form-container">
+            <h3>📝 MODULO DI RECESSO TIPO</h3>
+            <p style="text-align: center; margin-bottom: 20px;">(Compilare e restituire il presente modulo solo se si desidera recedere dal contratto)</p>
+
+            <form id="recessoForm" onsubmit="event.preventDefault(); alert('Modulo inviato! Riceverai una conferma via email.');">
+                <p><strong>Destinatario:</strong></p>
+                <div class="info-box" style="margin-bottom: 20px;">
+                    <p style="margin: 0;">Premiata Erboristeria Ceccato<br>
+                    Via Example 123, 38050 Levico Terme (TN), Italia<br>
+                    Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a786f79634a6f7868657863797e6f78636b27696f69696b7e6524637e">[email&#160;protected]</a><br>
+                    PEC: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfdacdddd0cdd6cccbdacdd6dedcdadcdcdecbd0ffcfdadc91d6cb">[email&#160;protected]</a></p>
+                </div>
+
+                <div class="form-section">
+                    <label>Con la presente io/noi (*) notifichiamo il recesso dal contratto di vendita dei seguenti beni/servizi (*):</label>
+                    <textarea name="prodotti" placeholder="Indicare il/i prodotto/i oggetto del recesso" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-section">
+                        <label>Numero ordine:</label>
+                        <input type="text" name="numero_ordine" placeholder="Es: ORD-2026-12345" required>
+                    </div>
+                    <div class="form-section">
+                        <label>Data ordine:</label>
+                        <input type="date" name="data_ordine" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-section">
+                        <label>Data ricezione merce:</label>
+                        <input type="date" name="data_ricezione" required>
+                    </div>
+                    <div class="form-section">
+                        <label>Importo da rimborsare (€):</label>
+                        <input type="number" name="importo" step="0.01" placeholder="Es: 29.90" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label>Nome e cognome del/dei consumatore/i:</label>
+                    <input type="text" name="nome_cognome" placeholder="Nome e Cognome" required>
+                </div>
+
+                <div class="form-section">
+                    <label>Indirizzo del/dei consumatore/i:</label>
+                    <input type="text" name="indirizzo" placeholder="Via, numero civico, CAP, Città, Provincia" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-section">
+                        <label>Email:</label>
+                        <input type="email" name="email" placeholder="email@esempio.it" required>
+                    </div>
+                    <div class="form-section">
+                        <label>Telefono:</label>
+                        <input type="tel" name="telefono" placeholder="+39 xxx xxx xxxx">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label>IBAN per il rimborso (opzionale se diverso dal metodo di pagamento originale):</label>
+                    <input type="text" name="iban" placeholder="IT00 X000 0000 0000 0000 0000 000">
+                </div>
+
+                <div class="form-section">
+                    <label>Motivo del recesso (facoltativo):</label>
+                    <select name="motivo">
+                        <option value="">-- Seleziona (opzionale) --</option>
+                        <option value="ripensamento">Semplice ripensamento</option>
+                        <option value="non_conforme">Prodotto non conforme alla descrizione</option>
+                        <option value="non_soddisfa">Prodotto non soddisfa le aspettative</option>
+                        <option value="errore">Ordine errato</option>
+                        <option value="altro">Altro</option>
+                    </select>
+                </div>
+
+                <div class="form-section">
+                    <label>Note aggiuntive (facoltativo):</label>
+                    <textarea name="note" placeholder="Eventuali comunicazioni aggiuntive..."></textarea>
+                </div>
+
+                <div class="form-section">
+                    <label>Data:</label>
+                    <input type="date" name="data_recesso" required>
+                </div>
+
+                <p style="font-size: 12px; color: #666; margin-top: 20px;">(*) Cancellare la dicitura non pertinente.</p>
+
+                <button type="submit" class="submit-btn">📤 Invia Richiesta di Recesso</button>
+            </form>
+        </div>
+
+        <p style="text-align: center;">
+            <a href="#" class="download-btn" onclick="alert('Download PDF modulo recesso')">📄 Scarica Modulo PDF</a>
+            <a href="#" class="download-btn" onclick="window.print()">🖨️ Stampa questa pagina</a>
+        </p>
+
+        <h2>5. Modalità di invio della comunicazione</h2>
+        <p>La comunicazione di recesso può essere inviata tramite:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#d4a6b1a7bd94b1a6b6bba6bda7a0b1a6bdb5f9b7b1b7b7b5a0bbfabda0"><span class="__cf_email__" data-cfemail="f98b9c8a90b99c8b9b968b908a8d9c8b9098d49a9c9a9a988d96d7908d">[email&#160;protected]</span></a></li>
+            <li><strong>PEC:</strong> <a href="/cdn-cgi/l/email-protection#4f2a3d2d203d263c3b2a3d262e2c2a2c2c2e3b200f3f2a2c61263b"><span class="__cf_email__" data-cfemail="0e6b7c6c617c677d7a6b7c676f6d6b6d6d6f7a614e7e6b6d20677a">[email&#160;protected]</span></a></li>
+            <li><strong>Raccomandata A/R:</strong> Premiata Erboristeria Ceccato, Via Example 123, 38050 Levico Terme (TN)</li>
+            <li><strong>Modulo online:</strong> compilando il form presente in questa pagina</li>
+        </ul>
+
+        <div class="info-box">
+            <p><strong>📌 Importante:</strong> L'onere della prova relativa all'esercizio del diritto di recesso incombe sul Consumatore. Si consiglia di conservare copia della comunicazione e, in caso di raccomandata, la ricevuta di ritorno.</p>
+        </div>
+
+        <h2>6. Restituzione dei prodotti</h2>
+
+        <h3>6.1 Termine per la restituzione</h3>
+        <p>Il Consumatore deve restituire i beni entro <strong>14 giorni</strong> dalla data in cui ha comunicato la decisione di recedere.</p>
+
+        <h3>6.2 Indirizzo per la restituzione</h3>
+        <div class="contact-box">
+            <p><strong>Premiata Erboristeria Ceccato - RESI</strong><br>
+            Via Example 123<br>
+            38050 Levico Terme (TN), Italia</p>
+        </div>
+
+        <h3>6.3 Condizioni del prodotto</h3>
+        <p>Il prodotto deve essere restituito:</p>
+        <ul>
+            <li>Integro e non utilizzato (salvo quanto necessario per verificarne natura e caratteristiche);</li>
+            <li>Nella confezione originale, se possibile;</li>
+            <li>Completo di tutti gli accessori, manuali e omaggi eventualmente ricevuti;</li>
+            <li>Con copia della conferma d'ordine o documento di trasporto.</li>
+        </ul>
+
+        <h3>6.4 Spese di restituzione</h3>
+        <div class="highlight-box">
+            <p><strong>💰 Costi:</strong> Le spese di restituzione sono a carico del Consumatore, salvo che il Venditore abbia concordato di sostenerle o abbia omesso di informare il Consumatore che tali costi sono a suo carico.</p>
+        </div>
+
+        <h3>6.5 Diminuzione del valore</h3>
+        <p>Il Consumatore è responsabile della diminuzione del valore dei beni risultante da una manipolazione diversa da quella necessaria per stabilire la natura, le caratteristiche e il funzionamento dei beni (art. 57 Codice del Consumo).</p>
+
+        <h2>7. Rimborso</h2>
+
+        <h3>7.1 Tempistiche</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>Ricezione comunicazione</h4>
+                <p>Confermiamo via email la ricezione della richiesta di recesso</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Ricezione del reso</h4>
+                <p>Verifichiamo l'integrità del prodotto restituito</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Rimborso entro 14 giorni</h4>
+                <p>Effettuiamo il rimborso entro 14 giorni dalla ricezione del reso o dalla prova di spedizione</p>
+            </div>
+        </div>
+
+        <h3>7.2 Importo del rimborso</h3>
+        <p>Rimborseremo tutti i pagamenti ricevuti, compresi i costi di consegna standard (se applicabili), fatta eccezione per:</p>
+        <ul>
+            <li>Costi supplementari derivanti dalla scelta di un tipo di consegna diverso dal tipo meno costoso offerto;</li>
+            <li>Diminuzione del valore dei beni per manipolazione non necessaria.</li>
+        </ul>
+
+        <h3>7.3 Modalità di rimborso</h3>
+        <p>Il rimborso sarà effettuato utilizzando lo stesso mezzo di pagamento usato per la transazione iniziale, salvo diverso accordo. Non saranno addebitati costi in conseguenza del rimborso.</p>
+
+        <h2>8. Esclusioni dal diritto di recesso</h2>
+        <p>Ai sensi dell'art. 59 del Codice del Consumo, il diritto di recesso è <strong>escluso</strong> per:</p>
+
+        <div class="warning-box">
+            <ul style="margin: 0;">
+                <li>Beni confezionati su misura o chiaramente personalizzati;</li>
+                <li>Beni che rischiano di deteriorarsi o scadere rapidamente;</li>
+                <li>Beni sigillati che non si prestano ad essere restituiti per motivi igienici o connessi alla protezione della salute e che sono stati aperti dopo la consegna;</li>
+                <li>Beni che, dopo la consegna, risultano, per loro natura, inscindibilmente mescolati con altri beni;</li>
+                <li>Contenuti digitali forniti su supporto non materiale, se l'esecuzione è iniziata con l'accordo espresso del Consumatore e con la sua accettazione della perdita del diritto di recesso;</li>
+                <li>Servizi completamente eseguiti, se l'esecuzione è iniziata con l'accordo espresso del Consumatore.</li>
+            </ul>
+        </div>
+
+        <h3>8.1 Prodotti esclusi nel nostro negozio</h3>
+        <p>In particolare, per la natura dei prodotti venduti dalla Premiata Erboristeria Ceccato, <strong>non è possibile esercitare il recesso</strong> per:</p>
+        <ul>
+            <li>Integratori alimentari e prodotti erboristici con sigillo di garanzia rimosso;</li>
+            <li>Cosmetici e prodotti per l'igiene personale aperti o utilizzati;</li>
+            <li>Tisane, infusi e prodotti sfusi dopo l'apertura della confezione;</li>
+            <li>Prodotti preparati su richiesta specifica del cliente (miscele personalizzate);</li>
+            <li>Prodotti con data di scadenza ravvicinata espressamente accettata al momento dell'acquisto.</li>
+        </ul>
+
+        <h2>9. Contatti per il recesso</h2>
+        <div class="contact-box">
+            <h3>📞 Servizio Resi e Recessi</h3>
+            <p><strong>Premiata Erboristeria Ceccato</strong></p>
+            <p>📍 Via Example 123, 38050 Levico Terme (TN), Italia</p>
+            <p>📧 Email: <a href="/cdn-cgi/l/email-protection#196b7c6a70597c6b7b766b706a6d7c6b7078347a7c7a7a786d7637706d"><span class="__cf_email__" data-cfemail="750710061c351007171a071c060110071c14581610161614011a5b1c01">[email&#160;protected]</span></a></p>
+            <p>

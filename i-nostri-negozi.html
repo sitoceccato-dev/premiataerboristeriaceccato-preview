@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Nostri Negozi - Premiata Erboristeria Ceccato</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f0; line-height: 1.8; }
+        h1 { color: #2d5016; font-size: 42px; }
+        .hero-banner { background: linear-gradient(135deg, rgba(45,80,22,0.9), rgba(74,124,35,0.9)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400') center/cover; color: white; padding: 80px 40px; text-align: center; }
+        .hero-banner h1 { color: white; font-size: 48px; margin-bottom: 20px; }
+        .hero-banner p { font-size: 20px; max-width: 700px; margin: 0 auto; }
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 40px; }
+        .intro-section { background: white; border-radius: 15px; padding: 50px; margin: -60px auto 40px; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
+        .intro-section h2 { color: #2d5016; font-size: 32px; margin-bottom: 20px; }
+        .intro-section p { color: #555; font-size: 18px; max-width: 800px; margin: 0 auto; }
+        .stores-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin: 40px 0; }
+        .store-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .store-card.main { border: 3px solid #f4d03f; }
+        .store-badge { background: #f4d03f; color: #2d5016; padding: 5px 15px; font-size: 12px; font-weight: bold; text-transform: uppercase; display: inline-block; }
+        .store-image { height: 200px; background: linear-gradient(135deg, rgba(244,208,63,0.3), rgba(74,124,35,0.3)); display: flex; align-items: center; justify-content: center; font-size: 80px; position: relative; }
+        .store-info { padding: 30px; }
+        .store-info h3 { color: #2d5016; font-size: 24px; margin-bottom: 15px; }
+        .store-detail { display: flex; align-items: flex-start; margin-bottom: 12px; color: #555; }
+        .store-detail-icon { width: 25px; margin-right: 10px; flex-shrink: 0; }
+        .store-hours { background: rgba(74,124,35,0.1); border-radius: 10px; padding: 15px; margin-top: 15px; }
+        .store-hours h4 { color: #4a7c23; font-size: 14px; margin-bottom: 10px; text-transform: uppercase; }
+        .hours-row { display: flex; justify-content: space-between; font-size: 14px; color: #555; padding: 3px 0; }
+        .hours-row.closed { color: #e74c3c; }
+        .store-actions { display: flex; gap: 10px; margin-top: 20px; }
+        .store-btn { flex: 1; padding: 12px; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+        .store-btn.primary { background: #4a7c23; color: white; }
+        .store-btn.primary:hover { background: #5a9129; }
+        .store-btn.secondary { background: white; color: #4a7c23; border: 2px solid #4a7c23; }
+        .store-btn.secondary:hover { background: rgba(74,124,35,0.1); }
+        .map-section { background: white; border-radius: 15px; padding: 30px; margin: 40px 0; }
+        .map-section h2 { color: #2d5016; text-align: center; margin-bottom: 20px; }
+        .map-placeholder { height: 400px; background: linear-gradient(135deg, rgba(244,208,63,0.2), rgba(74,124,35,0.2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-direction: column; border: 2px dashed #4a7c23; }
+        .map-placeholder span { font-size: 60px; margin-bottom: 15px; }
+        .map-placeholder p { color: #666; }
+        .services-section { background: linear-gradient(135deg, #4a7c23, #5a9129); border-radius: 15px; padding: 50px; margin: 40px 0; color: white; }
+        .services-section h2 { text-align: center; margin-bottom: 40px; font-size: 28px; }
+        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .service-item { text-align: center; }
+        .service-icon { font-size: 40px; margin-bottom: 10px; }
+        .service-item h4 { font-size: 16px; margin-bottom: 5px; }
+        .service-item p { font-size: 13px; opacity: 0.9; }
+        .online-section { background: white; border-radius: 15px; padding: 50px; margin: 40px 0; text-align: center; }
+        .online-section h2 { color: #2d5016; margin-bottom: 20px; }
+        .online-section p { color: #666; max-width: 600px; margin: 0 auto 30px; }
+        .online-btn { display: inline-block; background: #f4d03f; color: #2d5016; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 16px; }
+        .online-btn:hover { background: #c5b358; }
+        .back-link { display: inline-block; margin-top: 30px; color: #4a7c23; text-decoration: none; font-weight: 600; }
+        footer { background: #2d5016; color: white; padding: 30px; text-align: center; margin-top: 40px; }
+        footer a { color: #f4d03f; text-decoration: none; }
+        @media (max-width: 900px) {
+            .stores-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .store-actions { flex-direction: column; }
+        }
+            /* Navigation */
+        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
+        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
+        header h1 { color: #2d5016; font-size: 42px; }
+        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
+        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
+        .nav-button:hover { background: rgba(255,255,255,0.2); }
+        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
+        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div>📦 Spedizione gratuita dai 49€</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
+            <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+        </div>
+    </div>
+
+    <header>
+        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
+            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
+        </a>
+    </header>
+
+        <nav>
+        <div class="nav-container">
+            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Chi Siamo</button>
+                <div class="dropdown">
+                    <a href="la-nostra-storia.html">La nostra storia</a>
+                    <a href="il-nostro-team.html">Il nostro team</a>
+                    <a href="i-nostri-negozi.html">I nostri negozi</a>
+                    <a href="contattaci.html">Contattaci</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Prodotti</button>
+                <div class="dropdown">
+                    <a href="categorie.html">Categorie</a>
+                    <a href="erbe-spezie.html">Erbe e spezie</a>
+                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <div class="has-submenu">
+                        <a href="integratori.html">Integratori ▸</a>
+                        <div class="submenu">
+                            <a href="integratori-cistite.html">Cistite</a>
+                            <a href="integratori-fermenti.html">Fermenti</a>
+                            <a href="integratori-prostata.html">Prostata</a>
+                        </div>
+                    </div>
+                    <a href="oli-essenziali.html">Oli essenziali</a>
+                    <a href="ayurveda.html">Ayurveda</a>
+                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
+                    <a href="alimentazione-naturale.html">Alimentazione</a>
+                    <a href="benessere.html">Benessere</a>
+                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
+                    <a href="oggettistica.html">Oggettistica</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Cristalloterapia</button>
+                <div class="dropdown">
+                    <a href="articoli-cristalli.html">Articoli</a>
+                    <a href="cristalli-pietre.html">Cristalli</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Novità</button>
+                <div class="dropdown">
+                    <a href="#">Nuovi arrivi</a>
+                    <a href="#">Ultimi prodotti</a>
+                    <a href="#">Tendenze</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Contattaci</button>
+                <div class="dropdown">
+                    <a href="contattaci.html">📧 Scrivici</a>
+                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <button class="nav-button">Account</button>
+                <div class="dropdown">
+                    <a href="#">I miei ordini</a>
+                    <a href="#">Lista desideri</a>
+                    <a href="#">Le mie info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <h1>🏪 I Nostri Negozi</h1>
+        <p>Vieni a trovarci! Ti aspettiamo per una consulenza personalizzata e per scoprire il mondo del benessere naturale</p>
+    </div>
+
+    <div class="content-container">
+        <div class="intro-section">
+            <h2>📍 Dove Trovarci</h2>
+            <p>I nostri punti vendita sono luoghi accoglienti dove tradizione e competenza si incontrano. Il nostro staff è sempre pronto ad accoglierti con un sorriso e a guidarti nella scelta dei prodotti più adatti alle tue esigenze.</p>
+        </div>
+
+        <div class="stores-grid">
+            <!-- Negozio Principale -->
+            <div class="store-card main">
+                <div class="store-image">
+                    🏪
+                    <div style="position: absolute; top: 15px; left: 15px;">
+                        <span class="store-badge">⭐ Sede Storica</span>
+                    </div>
+                </div>
+                <div class="store-info">
+                    <h3>Levico Terme - Sede Principale</h3>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📍</span>
+                        <div>
+                            <strong>Via Example 123</strong><br>
+                            38056 Levico Terme (TN)
+                        </div>
+                    </div>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📞</span>
+                        <div>+39 0461 123456</div>
+                    </div>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📧</span>
+                        <div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2ded7c4dbd1ddf2d7c0d0ddc0dbc1c6d7c0dbd39fd1d7d1d1d3c6dd9cdbc6">[email&#160;protected]</a></div>
+                    </div>
+                    
+                    <div class="store-hours">
+                        <h4>🕐 Orari di Apertura</h4>
+                        <div class="hours-row"><span>Lunedì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Martedì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Mercoledì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Giovedì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Venerdì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Sabato</span><span>9:00 - 12:30</span></div>
+                        <div class="hours-row closed"><span>Domenica</span><span>Chiuso</span></div>
+                    </div>
+                    
+                    <div class="store-actions">
+                        <a href="https://maps.google.com" target="_blank" class="store-btn primary">📍 Indicazioni</a>
+                        <a href="tel:+390461123456" class="store-btn secondary">📞 Chiama</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondo Negozio -->
+            <div class="store-card">
+                <div class="store-image">🏬</div>
+                <div class="store-info">
+                    <h3>Trento - Centro Storico</h3>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📍</span>
+                        <div>
+                            <strong>Via Roma 45</strong><br>
+                            38122 Trento (TN)
+                        </div>
+                    </div>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📞</span>
+                        <div>+39 0461 987654</div>
+                    </div>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📧</span>
+                        <div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ec989e89829883ac899e8e839e859f98899e858dc18f898f8f8d9883c28598">[email&#160;protected]</a></div>
+                    </div>
+                    
+                    <div class="store-hours">
+                        <h4>🕐 Orari di Apertura</h4>
+                        <div class="hours-row"><span>Lunedì</span><span>9:30 - 19:30 (continuato)</span></div>
+                        <div class="hours-row"><span>Martedì</span><span>9:30 - 19:30 (continuato)</span></div>
+                        <div class="hours-row"><span>Mercoledì</span><span>9:30 - 19:30 (continuato)</span></div>
+                        <div class="hours-row"><span>Giovedì</span><span>9:30 - 19:30 (continuato)</span></div>
+                        <div class="hours-row"><span>Venerdì</span><span>9:30 - 19:30 (continuato)</span></div>
+                        <div class="hours-row"><span>Sabato</span><span>9:30 - 19:30 (continuato)</span></div>
+                        <div class="hours-row closed"><span>Domenica</span><span>Chiuso</span></div>
+                    </div>
+                    
+                    <div class="store-actions">
+                        <a href="https://maps.google.com" target="_blank" class="store-btn primary">📍 Indicazioni</a>
+                        <a href="tel:+390461987654" class="store-btn secondary">📞 Chiama</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terzo Negozio -->
+            <div class="store-card">
+                <div class="store-image">🏠</div>
+                <div class="store-info">
+                    <h3>Rovereto</h3>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📍</span>
+                        <div>
+                            <strong>Corso Bettini 78</strong><br>
+                            38068 Rovereto (TN)
+                        </div>
+                    </div>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📞</span>
+                        <div>+39 0464 123456</div>
+                    </div>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📧</span>
+                        <div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3f4d50495a4d5a4b507f5a4d5d504d564c4b5a4d565e125c5a5c5c5e4b5011564b">[email&#160;protected]</a></div>
+                    </div>
+                    
+                    <div class="store-hours">
+                        <h4>🕐 Orari di Apertura</h4>
+                        <div class="hours-row"><span>Lunedì</span><span>9:00 - 12:30 / 15:30 - 19:00</span></div>
+                        <div class="hours-row"><span>Martedì</span><span>9:00 - 12:30 / 15:30 - 19:00</span></div>
+                        <div class="hours-row"><span>Mercoledì</span><span>9:00 - 12:30 / 15:30 - 19:00</span></div>
+                        <div class="hours-row"><span>Giovedì</span><span>9:00 - 12:30 / 15:30 - 19:00</span></div>
+                        <div class="hours-row"><span>Venerdì</span><span>9:00 - 12:30 / 15:30 - 19:00</span></div>
+                        <div class="hours-row"><span>Sabato</span><span>9:00 - 12:30</span></div>
+                        <div class="hours-row closed"><span>Domenica</span><span>Chiuso</span></div>
+                    </div>
+                    
+                    <div class="store-actions">
+                        <a href="https://maps.google.com" target="_blank" class="store-btn primary">📍 Indicazioni</a>
+                        <a href="tel:+390464123456" class="store-btn secondary">📞 Chiama</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quarto Negozio -->
+            <div class="store-card">
+                <div class="store-image">🛍️</div>
+                <div class="store-info">
+                    <h3>Pergine Valsugana</h3>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📍</span>
+                        <div>
+                            <strong>Via Cesare Battisti 12</strong><br>
+                            38057 Pergine Valsugana (TN)
+                        </div>
+                    </div>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📞</span>
+                        <div>+39 0461 555666</div>
+                    </div>
+                    
+                    <div class="store-detail">
+                        <span class="store-detail-icon">📧</span>
+                        <div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="77071205101e19123712051518051e040312051e165a14121414160318591e03">[email&#160;protected]</a></div>
+                    </div>
+                    
+                    <div class="store-hours">
+                        <h4>🕐 Orari di Apertura</h4>
+                        <div class="hours-row"><span>Lunedì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Martedì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Mercoledì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Giovedì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Venerdì</span><span>9:00 - 12:30 / 15:00 - 19:00</span></div>
+                        <div class="hours-row"><span>Sabato</span><span>9:00 - 12:30</span></div>
+                        <div class="hours-row closed"><span>Domenica</span><span>Chiuso</span></div>
+                    </div>
+                    
+                    <div class="store-actions">
+                        <a href="https://maps.google.com" target="_blank" class="store-btn primary">📍 Indicazioni</a>
+                        <a href="tel:+390461555666" class="store-btn secondary">📞 Chiama</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <h2>🗺️ Mappa dei Negozi</h2>
+            <div class="map-placeholder">
+                <span>🗺️</span>
+                <p>Mappa interattiva Google Maps</p>
+                <p style="font-size: 12px; margin-top: 10px;">[Qui verrà integrata la mappa con tutti i punti vendita]</p>
+            </div>
+        </div>
+
+        <div class="services-section">
+            <h2>✨ Servizi Disponibili nei Nostri Negozi</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">💬</div>
+                    <h4>Consulenza Gratuita</h4>
+                    <p>I nostri esperti sono a tua disposizione per consigliarti</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🌿</div>
+                    <h4>Preparazioni Galeniche</h4>
+                    <p>Tisane e miscele personalizzate su richiesta</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📦</div>
+                    <h4>Ordini Speciali</h4>
+                    <p>Prodotti non disponibili? Li ordiniamo per te</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🎁</div>
+                    <h4>Confezioni Regalo</h4>
+                    <p>Pacchetti regalo personalizzati per ogni occasione</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📅</div>
+                    <h4>Eventi e Workshop</h4>
+                    <p>Corsi e incontri sul benessere naturale</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">💳</div>
+                    <h4>Carte Fedeltà</h4>
+                    <p>Accumula punti e ottieni sconti esclusivi</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🚗</div>
+                    <h4>Parcheggio</h4>
+                    <p>Parcheggio gratuito disponibile (dove indicato)</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">♿</div>
+                    <h4>Accessibilità</h4>
+                    <p>Negozi accessibili a persone con disabilità</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="online-section">
+            <h2>🌐 Non Puoi Venire in Negozio?</h2>
+            <p>Il nostro shop online è sempre aperto! Acquista comodamente da casa con spedizione gratuita per ordini superiori a €49 e ricevi i tuoi prodotti direttamente a domicilio.</p>
+            <a href="Premiata Erboristeria Ceccato.html" class="on

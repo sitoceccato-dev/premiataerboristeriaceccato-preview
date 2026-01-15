@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Nostro Team - Premiata Erboristeria Ceccato</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f0; line-height: 1.8; }
+        h1 { color: #2d5016; font-size: 42px; }
+        .hero-banner { background: linear-gradient(135deg, rgba(45,80,22,0.9), rgba(74,124,35,0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400') center/cover; color: white; padding: 80px 40px; text-align: center; }
+        .hero-banner h1 { color: white; font-size: 48px; margin-bottom: 20px; }
+        .hero-banner p { font-size: 20px; max-width: 700px; margin: 0 auto; }
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 40px; }
+        .intro-section { background: white; border-radius: 15px; padding: 50px; margin: -60px auto 40px; position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
+        .intro-section h2 { color: #2d5016; font-size: 32px; margin-bottom: 20px; }
+        .intro-section p { color: #555; font-size: 18px; max-width: 800px; margin: 0 auto; }
+        .team-section { margin: 40px 0; }
+        .team-section h2 { color: #2d5016; text-align: center; font-size: 28px; margin-bottom: 40px; padding-bottom: 15px; border-bottom: 3px solid #f4d03f; display: inline-block; width: 100%; }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .team-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .team-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .team-photo { height: 250px; background: linear-gradient(135deg, rgba(244,208,63,0.3), rgba(74,124,35,0.3)); display: flex; align-items: center; justify-content: center; font-size: 100px; }
+        .team-info { padding: 25px; text-align: center; }
+        .team-info h3 { color: #2d5016; font-size: 22px; margin-bottom: 5px; }
+        .team-role { color: #4a7c23; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .team-info p { color: #666; font-size: 14px; margin-bottom: 15px; }
+        .team-specialties { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+        .specialty-tag { background: rgba(244,208,63,0.3); color: #2d5016; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .team-social { display: flex; justify-content: center; gap: 10px; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; }
+        .social-link { width: 35px; height: 35px; background: #f5f5f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 16px; transition: background 0.3s; }
+        .social-link:hover { background: #f4d03f; }
+        .founder-section { background: linear-gradient(135deg, #4a7c23, #5a9129); border-radius: 15px; padding: 50px; margin: 40px 0; display: flex; align-items: center; gap: 40px; color: white; }
+        .founder-photo { width: 200px; height: 200px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 80px; flex-shrink: 0; border: 4px solid #f4d03f; }
+        .founder-info h3 { font-size: 28px; margin-bottom: 10px; color: #f4d03f; }
+        .founder-info p { opacity: 0.95; margin-bottom: 15px; }
+        .join-section { background: white; border-radius: 15px; padding: 50px; margin: 40px 0; text-align: center; }
+        .join-section h2 { color: #2d5016; font-size: 28px; margin-bottom: 20px; }
+        .join-section p { color: #666; max-width: 600px; margin: 0 auto 30px; }
+        .join-btn { display: inline-block; background: linear-gradient(135deg, #4a7c23, #5a9129); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 16px; transition: transform 0.3s, box-shadow 0.3s; }
+        .join-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74,124,35,0.4); }
+        .back-link { display: inline-block; margin-top: 30px; color: #4a7c23; text-decoration: none; font-weight: 600; }
+        footer { background: #2d5016; color: white; padding: 30px; text-align: center; margin-top: 40px; }
+        footer a { color: #f4d03f; text-decoration: none; }
+        @media (max-width: 900px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .founder-section { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 600px) {
+            .team-grid { grid-template-columns: 1fr; }
+        }
+            /* Navigation */
+        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
+        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
+        header h1 { color: #2d5016; font-size: 42px; }
+        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
+        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
+        .nav-button:hover { background: rgba(255,255,255,0.2); }
+        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
+        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div>📦 Spedizione gratuita dai 49€</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
+            <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+        </div>
+    </div>
+
+    <header>
+        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
+            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
+        </a>
+    </header>
+
+        <nav>
+        <div class="nav-container">
+            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Chi Siamo</button>
+                <div class="dropdown">
+                    <a href="la-nostra-storia.html">La nostra storia</a>
+                    <a href="il-nostro-team.html">Il nostro team</a>
+                    <a href="i-nostri-negozi.html">I nostri negozi</a>
+                    <a href="contattaci.html">Contattaci</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Prodotti</button>
+                <div class="dropdown">
+                    <a href="categorie.html">Categorie</a>
+                    <a href="erbe-spezie.html">Erbe e spezie</a>
+                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <div class="has-submenu">
+                        <a href="integratori.html">Integratori ▸</a>
+                        <div class="submenu">
+                            <a href="integratori-cistite.html">Cistite</a>
+                            <a href="integratori-fermenti.html">Fermenti</a>
+                            <a href="integratori-prostata.html">Prostata</a>
+                        </div>
+                    </div>
+                    <a href="oli-essenziali.html">Oli essenziali</a>
+                    <a href="ayurveda.html">Ayurveda</a>
+                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
+                    <a href="alimentazione-naturale.html">Alimentazione</a>
+                    <a href="benessere.html">Benessere</a>
+                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
+                    <a href="oggettistica.html">Oggettistica</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Cristalloterapia</button>
+                <div class="dropdown">
+                    <a href="articoli-cristalli.html">Articoli</a>
+                    <a href="cristalli-pietre.html">Cristalli</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Novità</button>
+                <div class="dropdown">
+                    <a href="#">Nuovi arrivi</a>
+                    <a href="#">Ultimi prodotti</a>
+                    <a href="#">Tendenze</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Contattaci</button>
+                <div class="dropdown">
+                    <a href="contattaci.html">📧 Scrivici</a>
+                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <button class="nav-button">Account</button>
+                <div class="dropdown">
+                    <a href="#">I miei ordini</a>
+                    <a href="#">Lista desideri</a>
+                    <a href="#">Le mie info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <h1>👥 Il Nostro Team</h1>
+        <p>Persone appassionate e competenti, unite dalla missione di portare benessere naturale nella tua vita</p>
+    </div>
+
+    <div class="content-container">
+        <div class="intro-section">
+            <h2>💚 La Nostra Squadra</h2>
+            <p>Dietro ogni consiglio, ogni prodotto selezionato e ogni sorriso c'è un team di professionisti che condivide la stessa passione: il benessere naturale. Conoscici meglio!</p>
+        </div>
+
+        <div class="founder-section">
+            <div class="founder-photo">👨‍🦳</div>
+            <div class="founder-info">
+                <h3>[Nome Cognome] - Fondatore</h3>
+                <p>Con oltre 50 anni di esperienza nel mondo dell'erboristeria, [Nome] ha fondato l'azienda nel 1970 con un sogno: rendere accessibile a tutti il potere curativo della natura. Ancora oggi, alla guida dell'azienda, trasmette la sua passione e conoscenza alle nuove generazioni.</p>
+                <p><em>"Ogni pianta ha una storia da raccontare e un dono da offrire. Il nostro compito è ascoltare e condividere."</em></p>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>🌟 La Direzione</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">👨‍💼</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Amministratore Delegato</div>
+                        <p>Seconda generazione alla guida dell'azienda. Unisce tradizione e innovazione per portare l'erboristeria nel futuro.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Strategia</span>
+                            <span class="specialty-tag">Sviluppo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">👩‍💼</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Direttrice Commerciale</div>
+                        <p>Responsabile delle relazioni con fornitori e clienti. 15 anni di esperienza nel settore del benessere naturale.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Vendite</span>
+                            <span class="specialty-tag">Partnership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">👨‍💻</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Responsabile E-commerce</div>
+                        <p>Ha portato l'erboristeria online, curando ogni dettaglio dell'esperienza digitale dei nostri clienti.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Digital</span>
+                            <span class="specialty-tag">Marketing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>🌿 I Nostri Esperti</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">👩‍🔬</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Erborista Diplomata</div>
+                        <p>Specializzata in fitoterapia e aromaterapia. Diploma in Tecniche Erboristiche e Master in Naturopatia.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Fitoterapia</span>
+                            <span class="specialty-tag">Aromaterapia</span>
+                            <span class="specialty-tag">Tisane</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">👨‍⚕️</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Naturopata</div>
+                        <p>Esperto in integrazione alimentare e medicina naturale. Consulenze personalizzate per ogni esigenza di benessere.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Integratori</span>
+                            <span class="specialty-tag">Nutrizione</span>
+                            <span class="specialty-tag">Benessere</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">👩‍🎨</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Esperta Cosmesi Naturale</div>
+                        <p>Appassionata di bellezza green, seleziona i migliori cosmetici naturali e bio per la cura di viso e corpo.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Skincare</span>
+                            <span class="specialty-tag">Bio</span>
+                            <span class="specialty-tag">Eco-beauty</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">🧘‍♀️</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Esperta Cristalloterapia</div>
+                        <p>Certificata in cristalloterapia e discipline olistiche. Guida i clienti nella scelta dei cristalli più adatti.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Cristalli</span>
+                            <span class="specialty-tag">Energia</span>
+                            <span class="specialty-tag">Meditazione</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">👩‍🍳</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Esperta Alimentazione</div>
+                        <p>Specializzata in alimentazione naturale, prodotti biologici, senza glutine e per intolleranze alimentari.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Bio</span>
+                            <span class="specialty-tag">Gluten-free</span>
+                            <span class="specialty-tag">Superfood</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">👨‍🌾</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Esperto Ayurveda</div>
+                        <p>Formazione in medicina ayurvedica in India. Consulenze per riequilibrare i dosha e ritrovare l'armonia.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Ayurveda</span>
+                            <span class="specialty-tag">Dosha</span>
+                            <span class="specialty-tag">Oli</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>📦 Il Team Operativo</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">👩‍💻</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Customer Care</div>
+                        <p>Il primo sorriso che incontri! Gestisce richieste, ordini e si assicura che ogni cliente sia soddisfatto.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Assistenza</span>
+                            <span class="specialty-tag">Ordini</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">👨‍🔧</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Responsabile Magazzino</div>
+                        <p>Garantisce che ogni prodotto sia conservato alla perfezione e che le spedizioni partano puntuali.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Logistica</span>
+                            <span class="specialty-tag">Spedizioni</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">📱</div>
+                    <div class="team-info">
+                        <h3>[Nome Cognome]</h3>
+                        <div class="team-role">Social Media Manager</div>
+                        <p>Racconta la nostra storia sui social, condivide consigli di benessere e crea la community green.</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag">Social</span>
+                            <span class="specialty-tag">Content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="join-section">
+            <h2>🚀 Vuoi Unirti a Noi?</h2>
+            <p>Siamo sempre alla ricerca di persone appassionate che condividano i nostri valori. Se ami il mondo del benessere naturale e vuoi far parte della nostra famiglia, contattaci!</p>
+            <a href="/cdn-cgi/l/email-protection#80ece1f6eff2efc0e5f2e2eff2e9f3f4e5f2e9e1ade3e5e3e3e1f4efaee9f4" class="join-btn">📧 Invia la tua Candidatura</a>
+        </div>
+
+        <a href="Premiata Erboristeria Ceccato.html" class="back-link">← Torna alla Home</a>
+    </div>
+
+    <footer>
+        <p>© 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
+        <p style="margin-top: 10px;">
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="cookie-policy.html">Cookie Policy</a> |
+            <a href="contattaci.html">Conta

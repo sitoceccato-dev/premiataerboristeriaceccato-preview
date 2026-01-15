@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convenzioni - Premiata Erboristeria Ceccato</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f0; line-height: 1.8; }
+        h1 { color: #2d5016; font-size: 42px; }
+        .legal-container { max-width: 900px; margin: 40px auto; background: white; padding: 50px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .legal-container h1 { font-size: 32px; margin-bottom: 10px; color: #2d5016; }
+        .last-update { color: #666; font-size: 14px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #f4d03f; }
+        .legal-container h2 { color: #2d5016; font-size: 22px; margin: 35px 0 15px 0; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+        .legal-container h3 { color: #4a7c23; font-size: 18px; margin: 25px 0 10px 0; }
+        .legal-container p { color: #444; margin-bottom: 15px; text-align: justify; }
+        .legal-container ul { margin: 15px 0 15px 30px; color: #444; }
+        .legal-container li { margin-bottom: 10px; }
+        .highlight-box { background: rgba(244,208,63,0.2); border-left: 4px solid #f4d03f; padding: 20px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .info-box { background: rgba(74,124,35,0.1); border: 2px solid #4a7c23; padding: 20px; margin: 20px 0; border-radius: 10px; }
+        .contact-box { background: #f9f9f9; border: 2px solid #ddd; padding: 25px; margin: 30px 0; border-radius: 10px; }
+        .back-link { display: inline-block; margin-top: 30px; color: #4a7c23; text-decoration: none; font-weight: 600; }
+        footer { background: #2d5016; color: white; padding: 30px; text-align: center; margin-top: 40px; }
+        footer a { color: #f4d03f; text-decoration: none; }
+        .convention-card { background: white; border: 2px solid #f4d03f; border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .convention-card h3 { color: #2d5016; margin-top: 0; margin-bottom: 15px; }
+        .discount-badge { display: inline-block; background: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; }
+            /* Navigation */
+        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
+        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
+        header h1 { color: #2d5016; font-size: 42px; }
+        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
+        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
+        .nav-button:hover { background: rgba(255,255,255,0.2); }
+        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
+        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div>📦 Spedizione gratuita dai 49€</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
+            <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+        </div>
+    </div>
+
+    <header>
+        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
+            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
+        </a>
+    </header>
+
+        <nav>
+        <div class="nav-container">
+            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Chi Siamo</button>
+                <div class="dropdown">
+                    <a href="la-nostra-storia.html">La nostra storia</a>
+                    <a href="il-nostro-team.html">Il nostro team</a>
+                    <a href="i-nostri-negozi.html">I nostri negozi</a>
+                    <a href="contattaci.html">Contattaci</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Prodotti</button>
+                <div class="dropdown">
+                    <a href="categorie.html">Categorie</a>
+                    <a href="erbe-spezie.html">Erbe e spezie</a>
+                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <div class="has-submenu">
+                        <a href="integratori.html">Integratori ▸</a>
+                        <div class="submenu">
+                            <a href="integratori-cistite.html">Cistite</a>
+                            <a href="integratori-fermenti.html">Fermenti</a>
+                            <a href="integratori-prostata.html">Prostata</a>
+                        </div>
+                    </div>
+                    <a href="oli-essenziali.html">Oli essenziali</a>
+                    <a href="ayurveda.html">Ayurveda</a>
+                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
+                    <a href="alimentazione-naturale.html">Alimentazione</a>
+                    <a href="benessere.html">Benessere</a>
+                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
+                    <a href="oggettistica.html">Oggettistica</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Cristalloterapia</button>
+                <div class="dropdown">
+                    <a href="articoli-cristalli.html">Articoli</a>
+                    <a href="cristalli-pietre.html">Cristalli</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Novità</button>
+                <div class="dropdown">
+                    <a href="#">Nuovi arrivi</a>
+                    <a href="#">Ultimi prodotti</a>
+                    <a href="#">Tendenze</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Contattaci</button>
+                <div class="dropdown">
+                    <a href="contattaci.html">📧 Scrivici</a>
+                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <button class="nav-button">Account</button>
+                <div class="dropdown">
+                    <a href="#">I miei ordini</a>
+                    <a href="#">Lista desideri</a>
+                    <a href="#">Le mie info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="legal-container">
+        <h1>🤝 Convenzioni</h1>
+        <p class="last-update">Ultimo aggiornamento: 13 gennaio 2026</p>
+
+        <div class="info-box">
+            <p><strong>💚 Il benessere per tutti:</strong> La Premiata Erboristeria Ceccato crede nel benessere accessibile. Per questo abbiamo attivato convenzioni speciali con enti, aziende e associazioni per offrire condizioni vantaggiose ai loro membri.</p>
+        </div>
+
+        <h2>1. Convenzioni Attive</h2>
+
+        <div class="convention-card">
+            <h3>🏢 Dipendenti Aziende Convenzionate</h3>
+            <span class="discount-badge">SCONTO 10%</span>
+            <p>Sconto del 10% su tutti i prodotti (escluse promozioni già in corso) per i dipendenti delle aziende convenzionate.</p>
+            <p><strong>Come usufruire:</strong> Inserire il codice convenzione aziendale in fase di checkout o presentare il badge aziendale in negozio.</p>
+        </div>
+
+        <div class="convention-card">
+            <h3>👨‍⚕️ Operatori Sanitari</h3>
+            <span class="discount-badge">SCONTO 15%</span>
+            <p>Sconto del 15% riservato a medici, infermieri, farmacisti, OSS e altri operatori sanitari.</p>
+            <p><strong>Come usufruire:</strong> Registrarsi con l'email professionale o inviare copia del tesserino/iscrizione all'albo.</p>
+        </div>
+
+        <div class="convention-card">
+            <h3>🎓 Studenti Universitari</h3>
+            <span class="discount-badge">SCONTO 10%</span>
+            <p>Sconto del 10% per tutti gli studenti universitari con libretto o tessera universitaria valida.</p>
+            <p><strong>Come usufruire:</strong> Inviare copia del documento universitario per ricevere il codice sconto personale.</p>
+        </div>
+
+        <div class="convention-card">
+            <h3>👵 Over 65</h3>
+            <span class="discount-badge">SCONTO 10%</span>
+            <p>Sconto del 10% per i clienti con più di 65 anni di età.</p>
+            <p><strong>Come usufruire:</strong> Presentare un documento d'identità in negozio o registrarsi con data di nascita sul sito.</p>
+        </div>
+
+        <div class="convention-card">
+            <h3>🏃 Associazioni Sportive</h3>
+            <span class="discount-badge">SCONTO 12%</span>
+            <p>Sconto del 12% per i tesserati di associazioni sportive affiliate.</p>
+            <p><strong>Come usufruire:</strong> Contattarci per verificare se la propria associazione è convenzionata.</p>
+        </div>
+
+        <h2>2. Come Attivare una Nuova Convenzione</h2>
+        <p>Sei un'azienda, un ente, un'associazione o un professionista interessato ad attivare una convenzione per i tuoi dipendenti/membri/clienti?</p>
+        
+        <p>Contattaci per valutare insieme le condizioni più adatte:</p>
+
+        <div class="contact-box">
+            <h3>📞 Ufficio Convenzioni</h3>
+            <p>📧 Email: <a href="/cdn-cgi/l/email-protection#771418190112190d1e18191e3712051518051e040312051e165a14121414160318591e03"><span class="__cf_email__" data-cfemail="cdaea2a3bba8a3b7a4a2a3a48da8bfafa2bfa4beb9a8bfa4ace0aea8aeaeacb9a2e3a4b9">[email&#160;protected]</span></a></p>
+            <p>📞 Telefono: +39 0461 123456</p>
+            <p>🕐 Orari: Lunedì - Venerdì, 9:00 - 18:00</p>
+        </div>
+
+        <h2>3. Termini e Condizioni delle Convenzioni</h2>
+        <ul>
+            <li>Gli sconti convenzione non sono cumulabili con altre promozioni o codici sconto;</li>
+            <li>Gli sconti si applicano al prezzo di listino dei prodotti;</li>
+            <li>Il Venditore si riserva di verificare il diritto alla convenzione;</li>
+            <li>Le convenzioni possono essere modificate o revocate con preavviso di 30 giorni;</li>
+            <li>Per usufruire della convenzione online, è necessario essere registrati sul sito;</li>
+            <li>Alcune categorie di prodotti potrebbero essere escluse dalle convenzioni.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>📌 Nota:</strong> L'utilizzo fraudolento delle convenzioni (es. utilizzo di codici sconto non spettanti) comporta l'annullamento dell'ordine e l'esclusione da future convenzioni.</p>
+        </div>
+
+        <a href="Premiata Erboristeria Ceccato.html" class="back-link">← Torna alla Home</a>
+    </div>
+
+    <footer>
+        <p>© 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
+        <p style="margin-top: 10px;">
+            <a href="termini-condizioni.html">Termini e Condizioni</a> 

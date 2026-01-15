@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condizioni Generali di Vendita - Premiata Erboristeria Ceccato</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f0;
+            line-height: 1.8;
+        }
+
+        h1 {
+            color: #2d5016;
+            font-size: 42px;
+        }
+
+        .legal-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .legal-container h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #2d5016;
+        }
+
+        .last-update {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f4d03f;
+        }
+
+        .legal-container h2 {
+            color: #2d5016;
+            font-size: 22px;
+            margin: 35px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .legal-container h3 {
+            color: #4a7c23;
+            font-size: 18px;
+            margin: 25px 0 10px 0;
+        }
+
+        .legal-container p {
+            color: #444;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .legal-container ul, .legal-container ol {
+            margin: 15px 0 15px 30px;
+            color: #444;
+        }
+
+        .legal-container li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: rgba(244,208,63,0.2);
+            border-left: 4px solid #f4d03f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .info-box {
+            background: rgba(74,124,35,0.1);
+            border: 2px solid #4a7c23;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .warning-box {
+            background: rgba(231,76,60,0.1);
+            border: 2px solid #e74c3c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .contact-box {
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #4a7c23;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #2d5016;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #f4d03f;
+            text-decoration: none;
+        }
+
+        .legal-index {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .legal-index h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .legal-index ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            columns: 2;
+        }
+
+        .legal-index li {
+            margin-bottom: 8px;
+        }
+
+        .legal-index a {
+            color: #4a7c23;
+            text-decoration: none;
+        }
+
+        .legal-index a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background: #4a7c23;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+            /* Navigation */
+        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
+        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
+        header h1 { color: #2d5016; font-size: 42px; }
+        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
+        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
+        .nav-button:hover { background: rgba(255,255,255,0.2); }
+        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
+        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div>📦 Spedizione gratuita dai 49€</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
+            <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+        </div>
+    </div>
+
+    <header>
+        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
+            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
+        </a>
+    </header>
+
+        <nav>
+        <div class="nav-container">
+            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Chi Siamo</button>
+                <div class="dropdown">
+                    <a href="la-nostra-storia.html">La nostra storia</a>
+                    <a href="il-nostro-team.html">Il nostro team</a>
+                    <a href="i-nostri-negozi.html">I nostri negozi</a>
+                    <a href="contattaci.html">Contattaci</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Prodotti</button>
+                <div class="dropdown">
+                    <a href="categorie.html">Categorie</a>
+                    <a href="erbe-spezie.html">Erbe e spezie</a>
+                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <div class="has-submenu">
+                        <a href="integratori.html">Integratori ▸</a>
+                        <div class="submenu">
+                            <a href="integratori-cistite.html">Cistite</a>
+                            <a href="integratori-fermenti.html">Fermenti</a>
+                            <a href="integratori-prostata.html">Prostata</a>
+                        </div>
+                    </div>
+                    <a href="oli-essenziali.html">Oli essenziali</a>
+                    <a href="ayurveda.html">Ayurveda</a>
+                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
+                    <a href="alimentazione-naturale.html">Alimentazione</a>
+                    <a href="benessere.html">Benessere</a>
+                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
+                    <a href="oggettistica.html">Oggettistica</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Cristalloterapia</button>
+                <div class="dropdown">
+                    <a href="articoli-cristalli.html">Articoli</a>
+                    <a href="cristalli-pietre.html">Cristalli</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Novità</button>
+                <div class="dropdown">
+                    <a href="#">Nuovi arrivi</a>
+                    <a href="#">Ultimi prodotti</a>
+                    <a href="#">Tendenze</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Contattaci</button>
+                <div class="dropdown">
+                    <a href="contattaci.html">📧 Scrivici</a>
+                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <button class="nav-button">Account</button>
+                <div class="dropdown">
+                    <a href="#">I miei ordini</a>
+                    <a href="#">Lista desideri</a>
+                    <a href="#">Le mie info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="legal-container">
+        <h1>🛒 Condizioni Generali di Vendita</h1>
+        <p class="last-update">Ultimo aggiornamento: 13 gennaio 2026</p>
+
+        <div class="highlight-box">
+            <p><strong>📌 Riferimenti normativi:</strong> Le presenti Condizioni Generali di Vendita sono redatte in conformità al D.Lgs. 206/2005 (Codice del Consumo), al D.Lgs. 70/2003 (Commercio Elettronico), al D.Lgs. 26/2023 (Direttiva Omnibus) e al Regolamento UE 2023/988 (GPSR - Sicurezza Prodotti).</p>
+        </div>
+
+        <div class="legal-index">
+            <h3>📑 Indice</h3>
+            <ul>
+                <li><a href="#venditore">1. Identificazione del Venditore</a></li>
+                <li><a href="#ambito">2. Ambito di Applicazione</a></li>
+                <li><a href="#prodotti">3. Prodotti</a></li>
+                <li><a href="#prezzi">4. Prezzi e Sconti</a></li>
+                <li><a href="#ordine">5. Procedura d'Ordine</a></li>
+                <li><a href="#pagamento">6. Modalità di Pagamento</a></li>
+                <li><a href="#spedizione">7. Spedizione e Consegna</a></li>
+                <li><a href="#recesso">8. Diritto di Recesso</a></li>
+                <li><a href="#garanzia">9. Garanzia Legale</a></li>
+                <li><a href="#responsabilita">10. Responsabilità</a></li>
+                <li><a href="#reclami">11. Reclami e Controversie</a></li>
+                <li><a href="#privacy">12. Privacy</a></li>
+                <li><a href="#finale">13. Disposizioni Finali</a></li>
+            </ul>
+        </div>
+
+        <h2 id="venditore">1. Identificazione del Venditore</h2>
+        <div class="info-box">
+            <p><strong>Ragione Sociale:</strong> Premiata Erboristeria Ceccato</p>
+            <p><strong>Titolare/Legale Rappresentante:</strong> [Nome e Cognome]</p>
+            <p><strong>Sede Legale:</strong> Via Example 123, 38050 Levico Terme (TN), Italia</p>
+            <p><strong>Partita IVA:</strong> IT01234567890</p>
+            <p><strong>Codice Fiscale:</strong> 01234567890</p>
+            <p><strong>REA:</strong> TN-123456</p>
+            <p><strong>Numero Iscrizione Registro Imprese:</strong> TN-123456</p>
+            <p><strong>Telefono:</strong> +39 0461 123456</p>
+            <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ec85828a83ac899e8e839e859f98899e858dc18f898f8f8d9883c28598">[email&#160;protected]</a></p>
+            <p><strong>PEC:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89ecfbebe6fbe0fafdecfbe0e8eaeceaeae8fde6c9f9eceaa7e0fd">[email&#160;protected]</a></p>
+            <p><strong>Assistenza Clienti:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="41203232283235242f3b20012433232e33283235243328206c2224222220352e6f2835">[email&#160;protected]</a></p>
+        </div>
+
+        <h2 id="ambito">2. Ambito di Applicazione</h2>
+        <p>Le presenti Condizioni Generali di Vendita disciplinano l'offerta e la vendita di prodotti sul sito www.erboristeria-ceccato.it (di seguito "Sito").</p>
+
+        <h3>2.1 Applicabilità</h3>
+        <p>Le presenti condizioni si applicano a tutte le vendite effettuate attraverso il Sito a:</p>
+        <ul>
+            <li><strong>Consumatori:</strong> persone fisiche che acquistano per scopi estranei all'attività imprenditoriale, commerciale, artigianale o professionale (B2C);</li>
+            <li><strong>Professionisti:</strong> persone fisiche o giuridiche che acquistano nell'esercizio della propria attività (B2B), ai quali non si applicano le tutele del Codice del Consumo.</li>
+        </ul>
+
+        <h3>2.2 Accettazione</h3>
+        <p>L'invio di un ordine comporta l'accettazione integrale delle presenti Condizioni Generali di Vendita. Prima di procedere all'acquisto, il Cliente è tenuto a leggere attentamente le presenti condizioni, disponibili sul Sito in formato stampabile e scaricabile.</p>
+
+        <h3>2.3 Territorio</h3>
+        <p>Le vendite sono effettuate in Italia e nei Paesi dell'Unione Europea. Per spedizioni extra-UE, contattare il servizio clienti.</p>
+
+        <h2 id="prodotti">3. Prodotti</h2>
+        
+        <h3>3.1 Descrizione dei Prodotti</h3>
+        <p>I prodotti in vendita sul Sito sono descritti e presentati nel modo più accurato possibile. Le immagini e le descrizioni riproducono il più fedelmente possibile le caratteristiche dei prodotti, tuttavia potrebbero presentare lievi differenze rispetto al prodotto reale per ragioni tecniche di visualizzazione.</p>
+
+        <h3>3.2 Disponibilità</h3>
+        <p>La disponibilità dei prodotti si riferisce al momento della visualizzazione della scheda prodotto. In caso di indisponibilità del prodotto dopo l'invio dell'ordine, il Cliente sarà tempestivamente informato e potrà scegliere tra:</p>
+        <ul>
+            <li>Attendere il riassortimento;</li>
+            <li>Sostituire il prodotto con uno equivalente;</li>
+            <li>Annullare l'ordine con rimborso integrale.</li>
+        </ul>
+
+        <h3>3.3 Sicurezza dei Prodotti (GPSR)</h3>
+        <div class="info-box">
+            <p>In conformità al Regolamento UE 2023/988 (General Product Safety Regulation - GPSR), tutti i prodotti venduti sul Sito sono conformi ai requisiti di sicurezza applicabili. Per ogni prodotto sono disponibili:</p>
+            <ul>
+                <li>Nome e indirizzo del fabbricante/importatore;</li>
+                <li>Identificazione del prodotto (nome, codice, immagine);</li>
+                <li>Informazioni sulla sicurezza e avvertenze d'uso;</li>
+                <li>Tracciabilità del prodotto.</li>
+            </ul>
+            <p>Per segnalazioni relative alla sicurezza dei prodotti: <a href="/cdn-cgi/l/email-protection#66150f051314031c1c072603140409140f151203140f074b05030505071209480f12"><span class="__cf_email__" data-cfemail="5f2c363c2a2d3a25253e1f3a2d3d302d362c2b3a2d363e723c3a3c3c3e2b3071362b">[email&#160;protected]</span></a></p>
+        </div>
+
+        <h2 id="prezzi">4. Prezzi e Sconti</h2>
+
+        <h3>4.1 Prezzi</h3>
+        <p>Tutti i prezzi indicati sul Sito sono espressi in Euro (€) e si intendono:</p>
+        <ul>
+            <li>Comprensivi di IVA secondo l'aliquota vigente;</li>
+            <li>Escluse le spese di spedizione, indicate separatamente prima della conferma dell'ordine.</li>
+        </ul>
+
+        <h3>4.2 Trasparenza degli Sconti (Direttiva Omnibus)</h3>
+        <div class="highlight-box">
+            <p><strong>⚠️ Obbligo informativo (D.Lgs. 26/2023):</strong> In caso di riduzione di prezzo, è indicato il <strong>prezzo più basso applicato nei 30 giorni precedenti</strong> l'applicazione della riduzione, in conformità all'art. 17-bis del Codice del Consumo.</p>
+        </div>
+        <p>Fanno eccezione:</p>
+        <ul>
+            <li>Prodotti immessi in vendita da meno di 30 giorni;</li>
+            <li>Prodotti soggetti a rapido deterioramento;</li>
+            <li>Riduzioni progressive durante una campagna di vendita.</li>
+        </ul>
+
+        <h3>4.3 Codici Sconto</h3>
+        <p>I codici sconto sono soggetti a condizioni specifiche indicate al momento dell'emissione e non sono cumulabili salvo diversa indicazione.</p>
+
+        <h2 id="ordine">5. Procedura d'Ordine</h2>
+
+        <h3>5.1 Fasi dell'Ordine</h3>
+        <p>La procedura di acquisto si articola nelle seguenti fasi (art. 12 D.Lgs. 70/2003):</p>
+        <ol>
+            <li><strong>Selezione prodotti:</strong> aggiunta dei prodotti al carrello;</li>
+            <li><strong>Verifica carrello:</strong> possibilità di modificare quantità o rimuovere prodotti;</li>
+            <li><strong>Inserimento dati:</strong> compilazione dati di fatturazione e spedizione;</li>
+            <li><strong>Scelta spedizione:</strong> selezione del metodo di spedizione;</li>
+            <li><strong>Scelta pagamento:</strong> selezione del metodo di pagamento;</li>
+            <li><strong>Riepilogo ordine:</strong> verifica di tutti i dati inseriti;</li>
+            <li><strong>Conferma ordine:</strong> cliccando sul pulsante "CONFERMA ORDINE CON OBBLIGO DI PAGAMENTO" il Cliente invia l'ordine con obbligo di pagamento.</li>
+        </ol>
+
+        <h3>5.2 Correzione degli Errori</h3>
+        <p>Prima di confermare l'ordine, il Cliente può identificare e correggere eventuali errori di inserimento dei dati attraverso le funzionalità del Sito (modifica carrello, modifica dati).</p>
+
+        <h3>5.3 Conclusione del Contratto</h3>
+        <p>Il contratto di vendita si considera concluso nel momento in cui il Cliente riceve la conferma d'ordine via email all'indirizzo indicato in fase di acquisto.</p>
+
+        <h3>5.4 Archiviazione dell'Ordine</h3>
+        <p>Gli ordini sono archiviati in modo sicuro. Il Cliente registrato può accedere allo storico ordini dalla propria area personale.</p>
+
+        <h3>5.5 Lingua del Contratto</h3>
+        <p>I contratti sono stipulati in lingua italiana.</p>
+
+        <h2 id="pagamento">6. Modalità di Pagamento</h2>
+        <p>Il Cliente può scegliere tra le seguenti modalità di pagamento:</p>
+
+        <table>
+            <tr>
+                <th>Metodo</th>
+                <th>Descrizione</th>
+                <th>Costi aggiuntivi</th>
+            </tr>
+            <tr>
+                <td>💳 Carta di Credito/Debito</td>
+                <td>Visa, Mastercard, Maestro - pagamento sicuro tramite gateway certificato PCI-DSS</td>
+                <td>Nessuno</td>
+            </tr>
+            <tr>
+                <td>📱 PayPal</td>
+                <td>Pagamento tramite conto PayPal o carta collegata</td>
+                <td>Nessuno</td>
+            </tr>
+            <tr>
+                <td>🏦 Bonifico Bancario</td>
+                <td>Bonifico anticipato - la spedizione avviene dopo l'accredito</td>
+                <td>Nessuno</td>
+            </tr>
+            <tr>
+                <td>💶 Contrassegno</td>
+                <td>Pagamento in contanti alla consegna</td>
+                <td>€3,90</td>
+            </tr>
+            <tr>
+                <td>📲 Satispay</td>
+                <td>Pagamento tramite app Satispay</td>
+                <td>Nessuno</td>
+            </tr>
+        </table>
+
+        <h3>6.1 Sicurezza dei Pagamenti</h3>
+        <p>I pagamenti online sono gestiti attraverso gateway certificati che garantiscono la massima sicurezza delle transazioni. I dati della carta di credito non vengono memorizzati sui nostri server.</p>
+
+        <h3>6.2 Fatturazione</h3>
+        <p>Per ogni ordine viene emessa fattura elettronica, inviata all'indirizzo email indicato e/o al Sistema di Interscambio (SDI) se richiesto codice destinatario.</p>
+
+        <h2 id="spedizione">7. Spedizione e Consegna</h2>
+        <p>Per informazioni dettagliate su spedizioni e consegne, consultare la pagina dedicata: <a href="spedizioni-consegne.html">Spedizioni e Consegne</a>.</p>
+
+        <h3>7.1 Sintesi</h3>
+        <ul>
+            <li><strong>Spedizione gratuita:</strong> per ordini superiori a €49,00</li>
+            <li><strong>Tempi di consegna:</strong> 2-5 giorni lavorativi in Italia</li>
+            <li><strong>Corriere:</strong> BRT, GLS, Poste Italiane</li>
+            <li><strong>Tracciamento:</strong> disponibile via email e area personale</li>
+        </ul>
+
+        <h3>7.2 Passaggio del Rischio</h3>
+        <p>Il rischio di perdita o danneggiamento dei beni passa al Consumatore solo nel momento in cui quest'ultimo, o un terzo da lui designato, entra materialmente in possesso dei beni (art. 63 Codice del Consumo).</p>
+
+        <h2 id="recesso">8. Diritto di Recesso</h2>
+        <p>Per informazioni complete sul diritto di recesso, consultare la pagina dedicata: <a href="diritto-recesso.html">Diritto di Recesso</a>.</p>
+
+        <div class="highlight-box">
+            <p><strong>✅ Diritto di ripensamento:</strong> Il Consumatore ha diritto di recedere dal contratto entro <strong>14 giorni</strong> dalla consegna dei beni, senza fornire alcuna motivazione e senza penalità, ai sensi degli artt. 52-59 del Codice del Consumo.</p>
+        </div>
+
+        <h3>8.1 Esclusioni</h3>
+        <p>Il diritto di recesso è escluso per (art. 59 Codice del Consumo):</p>
+        <ul>
+            <li>Prodotti confezionati su misura o personalizzati;</li>
+            <li>Prodotti che rischiano di deteriorarsi o scadere rapidamente;</li>
+            <li>Prodotti sigillati non restituibili per motivi igienici (se aperti dopo la consegna);</li>
+            <li>Prodotti che, dopo la consegna, risultano inscindibilmente mescolati con altri beni.</li>
+        </ul>
+
+        <h2 id="garanzia">9. Garanzia Legale di Conformità</h2>
+        <p>Per informazioni complete sulla garanzia, consultare la pagina dedicata: <a href="garanzie-legali.html">Garanzie Legali</a>.</p>
+
+        <div class="info-box">
+            <p><strong>🛡️ Garanzia Legale:</strong> Tutti i prodotti venduti sono coperti dalla garanzia legale di conformità prevista dagli artt. 128-135 del Codice del Consumo. Il Consumatore ha diritto alla riparazione o sostituzione del bene, oppure alla riduzione del prezzo o risoluzione del contratto, in caso di difetto di conformità.</p>
+        </div>
+
+        <h3>9.1 Durata</h3>
+        <ul>
+            <li><strong>Consumatori:</strong> 24 mesi dalla consegna del bene</li>
+            <li><strong>Professionisti:</strong> 12 mesi dalla consegna (garanzia ex art. 1490 c.c.)</li>
+        </ul>
+
+        <h3>9.2 Denuncia del Difetto</h3>
+        <p>Il Consumatore deve denunciare il difetto di conformità entro 2 mesi dalla scoperta, pena la decadenza dalla garanzia.</p>
+
+        <h2 id="responsabilita">10. Responsabilità</h2>
+
+        <h3>10.1 Responsabilità del Venditore</h3>
+        <p>Il Venditore è responsabile nei confronti del Consumatore per qualsiasi difetto di conformità esistente al momento della consegna del bene.</p>
+
+        <h3>10.2 Limitazioni</h3>
+        <p>Il Venditore non è responsabile per:</p>
+        <ul>
+            <li>Danni derivanti da uso improprio dei prodotti;</li>
+            <li>Danni derivanti da inosservanza delle istruzioni d'uso;</li>
+            <li>Ritardi o inadempimenti causati da forza maggiore;</li>
+            <li>Danni indiretti o consequenziali (per i Professionisti).</li>
+        </ul>
+
+        <h3>10.3 Avvertenze sui Prodotti</h3>
+        <div class="warning-box">
+            <p><strong>⚠️ Avvertenza importante:</strong> Gli integratori alimentari non vanno intesi come sostituti di una dieta variata ed equilibrata e di uno stile di vita sano. Non superare le dosi giornaliere consigliate. Tenere fuori dalla portata dei bambini. In caso di patologie, terapie farmacologiche, gravidanza o allattamento, consultare il medico prima dell'uso.</p>
+        </div>
+
+        <h2 id="reclami">11. Reclami e Risoluzione delle Controversie</h2>
+        <p>Per informazioni complete, consultare la pagina dedicata: <a href="reclami-controversie.html">Reclami e Controversie</a>.</p>
+
+        <h3>11.1 Reclami</h3>
+        <p>Per qualsiasi reclamo, contattare: <a href="/cdn-cgi/l/email-protection#dcaeb9bfb0bdb1b59cb9aebeb3aeb5afa8b9aeb5bdf1bfb9bfbfbda8b3f2b5a8"><span class="__cf_email__" data-cfemail="3e4c5b5d525f53577e5b4c5c514c574d4a5b4c575f135d5b5d5d5f4a5110574a">[email&#160;protected]</span></a></p>
+
+        <h3>11.2 Risoluzione Alternativa (ADR)</h3>
+        <p>In caso di controversia, il Consumatore può ricorrere alle procedure di risoluzione alternativa delle controversie (ADR) ai sensi del D.Lgs. 130/2015.</p>
+
+        <h3>11.3 Foro Competente</h3>
+        <ul>
+            <li><strong>Consumatori:</strong> Foro del luogo di residenza o domicilio del Consumatore;</li>
+            <li><strong>Professionisti:</strong> Foro di Trento in via esclusiva.</li>
+        </ul>
+
+        <h2 id="privacy">12. Privacy e Trattamento Dati</h2>
+        <p>I dati personali forniti dal Cliente sono trattati in conformità al Regolamento UE 2016/679 (GDPR) e al D.Lgs. 196/2003. Per informazioni complete, consultare la <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+        <h2 id="finale">13. Disposizioni Finali</h2>
+
+        <h3>13.1 Clausola di Salvaguardia</h3>
+        <p>L'eventuale nullità o inefficacia di una o più clausole delle presenti Condizioni non comporta la nullità delle restanti clausole.</p>
+
+        <h3>13.2 Modifiche</h3>
+        <p>Il Venditore si riserva il diritto di modificare le presenti Condizioni in qualsiasi momento. Le modifiche saranno efficaci dalla pubblicazione sul Sito. Agli ordini in corso si applicano le condizioni vigenti al momento dell'ordine.</p>
+
+        <h3>13.3 Legge Applicabile</h3>
+        <p>Le presenti Condizioni sono regolate dalla legge italiana. Per quanto non espressamente previsto, si applicano le disposizioni del Codice Civile, del Codice del Consumo e della normativa vigente.</p>
+
+        <div class="contact-box">
+            <h3>📞 Servizio Clienti</h3>
+            <p><strong>Premiata Erboristeria Ceccato</strong></p>
+            <p>📧 Email: <a 

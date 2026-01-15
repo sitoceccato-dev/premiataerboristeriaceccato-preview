@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorie Prodotti - Premiata Erboristeria Ceccato</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f0; line-height: 1.6; }
+        .hero-category { background: linear-gradient(135deg, rgba(45,80,22,0.9), rgba(74,124,35,0.8)); color: white; padding: 60px 40px; text-align: center; }
+        .hero-category h1 { color: white; font-size: 42px; margin-bottom: 15px; }
+        .hero-category p { font-size: 18px; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .category-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; text-decoration: none; }
+        .category-card:hover { transform: translateY(-5px); }
+        .category-image { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 60px; }
+        .category-info { padding: 20px; text-align: center; }
+        .category-info h3 { color: #2d5016; margin-bottom: 10px; }
+        .category-info p { color: #666; font-size: 14px; }
+        footer { background: #2d5016; color: white; padding: 30px; text-align: center; margin-top: 40px; }
+        footer a { color: #f4d03f; text-decoration: none; }
+        @media (max-width: 900px) { .categories-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .categories-grid { grid-template-columns: 1fr; } }
+            /* Navigation */
+        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
+        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
+        header h1 { color: #2d5016; font-size: 42px; }
+        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
+        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
+        .nav-button:hover { background: rgba(255,255,255,0.2); }
+        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
+        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div>📦 Spedizione gratuita dai 49€</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
+            <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+        </div>
+    </div>
+
+    <header>
+        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
+            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
+        </a>
+    </header>
+
+        <nav>
+        <div class="nav-container">
+            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Chi Siamo</button>
+                <div class="dropdown">
+                    <a href="la-nostra-storia.html">La nostra storia</a>
+                    <a href="il-nostro-team.html">Il nostro team</a>
+                    <a href="i-nostri-negozi.html">I nostri negozi</a>
+                    <a href="contattaci.html">Contattaci</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Prodotti</button>
+                <div class="dropdown">
+                    <a href="categorie.html">Categorie</a>
+                    <a href="erbe-spezie.html">Erbe e spezie</a>
+                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <div class="has-submenu">
+                        <a href="integratori.html">Integratori ▸</a>
+                        <div class="submenu">
+                            <a href="integratori-cistite.html">Cistite</a>
+                            <a href="integratori-fermenti.html">Fermenti</a>
+                            <a href="integratori-prostata.html">Prostata</a>
+                        </div>
+                    </div>
+                    <a href="oli-essenziali.html">Oli essenziali</a>
+                    <a href="ayurveda.html">Ayurveda</a>
+                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
+                    <a href="alimentazione-naturale.html">Alimentazione</a>
+                    <a href="benessere.html">Benessere</a>
+                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
+                    <a href="oggettistica.html">Oggettistica</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Cristalloterapia</button>
+                <div class="dropdown">
+                    <a href="articoli-cristalli.html">Articoli</a>
+                    <a href="cristalli-pietre.html">Cristalli</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Novità</button>
+                <div class="dropdown">
+                    <a href="#">Nuovi arrivi</a>
+                    <a href="#">Ultimi prodotti</a>
+                    <a href="#">Tendenze</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Contattaci</button>
+                <div class="dropdown">
+                    <a href="contattaci.html">📧 Scrivici</a>
+                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <button class="nav-button">Account</button>
+                <div class="dropdown">
+                    <a href="#">I miei ordini</a>
+                    <a href="#">Lista desideri</a>
+                    <a href="#">Le mie info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="hero-category">
+        <h1>📂 Tutte le Categorie</h1>
+        <p>Esplora il nostro catalogo completo di prodotti naturali per il tuo benessere</p>
+    </div>
+    <div class="container">
+        <div class="categories-grid">
+            <a href="erbe-spezie.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #a8e063, #56ab2f);">🌿</div>
+                <div class="category-info"><h3>Erbe e Spezie</h3><p>Erbe officinali, spezie e aromi naturali</p></div>
+            </a>
+            <a href="vitamine-minerali.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">💊</div>
+                <div class="category-info"><h3>Vitamine e Minerali</h3><p>Integratori di vitamine e sali minerali</p></div>
+            </a>
+            <a href="integratori.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">🧬</div>
+                <div class="category-info"><h3>Integratori</h3><p>Integratori alimentari naturali</p></div>
+            </a>
+            <a href="oli-essenziali.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">🌸</div>
+                <div class="category-info"><h3>Oli Essenziali</h3><p>Oli puri per aromaterapia</p></div>
+            </a>
+            <a href="ayurveda.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #f6d365, #fda085);">🕉️</div>
+                <div class="category-info"><h3>Ayurveda</h3><p>Prodotti della tradizione ayurvedica</p></div>
+            </a>
+            <a href="cosmesi-naturale.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">💄</div>
+                <div class="category-info"><h3>Cosmesi Naturale</h3><p>Bellezza naturale e biologica</p></div>
+            </a>
+            <a href="alimentazione-naturale.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #d4fc79, #96e6a1);">🥗</div>
+                <div class="category-info"><h3>Alimentazione</h3><p>Alimenti bio e superfood</p></div>
+            </a>
+            <a href="benessere.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb);">🧘</div>
+                <div class="category-info"><h3>Benessere</h3><p>Prodotti per il relax e il benessere</p></div>
+            </a>
+            <a href="ambiente-tessuti.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">🏠</div>
+                <div class="category-info"><h3>Ambiente e Tessuti</h3><p>Profumatori e tessuti naturali</p></div>
+            </a>
+            <a href="oggettistica.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #f8b500, #fceabb);">🎁</div>
+                <div class="category-info"><h3>Oggettistica</h3><p>Idee regalo e accessori</p></div>
+            </a>
+            <a href="cristalli-pietre.html" class="category-card">
+                <div class="category-image" style="background: linear-gradient(135deg, #8e2de2, #4a00e0);">💎</div>
+                <div class="category-info"><h3>Cristalli</h3><p>Cristalli e pietre energetiche</p></div>
+            </a>
+        </div>
+        <p style="margin-top: 40px;"><a href="Premiata Erboristeria Ceccato.html" style="color: #4a7c23; font-weight: 600; text-decoration: none;">← Torna alla Home</a></p>
+    </div>
+    <footer><p>© 2026 Premiata Erboristeria Ceccato - P.IVA 01234567890</p></footer>
+</body>
+</html>

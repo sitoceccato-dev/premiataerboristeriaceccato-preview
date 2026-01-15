@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spedizioni e Consegne - Premiata Erboristeria Ceccato</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f0; line-height: 1.8; }
+        h1 { color: #2d5016; font-size: 42px; }
+        .legal-container { max-width: 900px; margin: 40px auto; background: white; padding: 50px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .legal-container h1 { font-size: 32px; margin-bottom: 10px; color: #2d5016; }
+        .last-update { color: #666; font-size: 14px; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #f4d03f; }
+        .legal-container h2 { color: #2d5016; font-size: 22px; margin: 35px 0 15px 0; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+        .legal-container h3 { color: #4a7c23; font-size: 18px; margin: 25px 0 10px 0; }
+        .legal-container p { color: #444; margin-bottom: 15px; text-align: justify; }
+        .legal-container ul { margin: 15px 0 15px 30px; color: #444; }
+        .legal-container li { margin-bottom: 10px; }
+        .highlight-box { background: rgba(244,208,63,0.2); border-left: 4px solid #f4d03f; padding: 20px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+        .info-box { background: rgba(74,124,35,0.1); border: 2px solid #4a7c23; padding: 20px; margin: 20px 0; border-radius: 10px; }
+        .contact-box { background: #f9f9f9; border: 2px solid #ddd; padding: 25px; margin: 30px 0; border-radius: 10px; }
+        .back-link { display: inline-block; margin-top: 30px; color: #4a7c23; text-decoration: none; font-weight: 600; }
+        footer { background: #2d5016; color: white; padding: 30px; text-align: center; margin-top: 40px; }
+        footer a { color: #f4d03f; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table th, table td { border: 1px solid #ddd; padding: 15px; text-align: left; }
+        table th { background: #4a7c23; color: white; }
+        table tr:nth-child(even) { background: #f9f9f9; }
+        .free-shipping-banner { background: linear-gradient(135deg, #27ae60, #2ecc71); color: white; padding: 25px; border-radius: 15px; text-align: center; margin: 30px 0; }
+        .free-shipping-banner h2 { color: white; border: none; margin: 0 0 10px 0; padding: 0; font-size: 28px; }
+        .courier-logos { display: flex; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap; }
+        .courier-logo { background: white; border: 2px solid #ddd; border-radius: 10px; padding: 20px 30px; font-weight: bold; color: #333; }
+            /* Navigation */
+        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
+        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
+        header h1 { color: #2d5016; font-size: 42px; }
+        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
+        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
+        .nav-button:hover { background: rgba(255,255,255,0.2); }
+        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
+        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div>📦 Spedizione gratuita dai 49€</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
+            <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+        </div>
+    </div>
+
+    <header>
+        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
+            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
+        </a>
+    </header>
+
+        <nav>
+        <div class="nav-container">
+            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Chi Siamo</button>
+                <div class="dropdown">
+                    <a href="la-nostra-storia.html">La nostra storia</a>
+                    <a href="il-nostro-team.html">Il nostro team</a>
+                    <a href="i-nostri-negozi.html">I nostri negozi</a>
+                    <a href="contattaci.html">Contattaci</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Prodotti</button>
+                <div class="dropdown">
+                    <a href="categorie.html">Categorie</a>
+                    <a href="erbe-spezie.html">Erbe e spezie</a>
+                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <div class="has-submenu">
+                        <a href="integratori.html">Integratori ▸</a>
+                        <div class="submenu">
+                            <a href="integratori-cistite.html">Cistite</a>
+                            <a href="integratori-fermenti.html">Fermenti</a>
+                            <a href="integratori-prostata.html">Prostata</a>
+                        </div>
+                    </div>
+                    <a href="oli-essenziali.html">Oli essenziali</a>
+                    <a href="ayurveda.html">Ayurveda</a>
+                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
+                    <a href="alimentazione-naturale.html">Alimentazione</a>
+                    <a href="benessere.html">Benessere</a>
+                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
+                    <a href="oggettistica.html">Oggettistica</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Cristalloterapia</button>
+                <div class="dropdown">
+                    <a href="articoli-cristalli.html">Articoli</a>
+                    <a href="cristalli-pietre.html">Cristalli</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Novità</button>
+                <div class="dropdown">
+                    <a href="#">Nuovi arrivi</a>
+                    <a href="#">Ultimi prodotti</a>
+                    <a href="#">Tendenze</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Contattaci</button>
+                <div class="dropdown">
+                    <a href="contattaci.html">📧 Scrivici</a>
+                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                </div>
+            </div>
+            
+            <div class="nav-item">
+                <button class="nav-button">Account</button>
+                <div class="dropdown">
+                    <a href="#">I miei ordini</a>
+                    <a href="#">Lista desideri</a>
+                    <a href="#">Le mie info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="legal-container">
+        <h1>📦 Spedizioni e Consegne</h1>
+        <p class="last-update">Ultimo aggiornamento: 13 gennaio 2026</p>
+
+        <div class="free-shipping-banner">
+            <h2>🎉 SPEDIZIONE GRATUITA</h2>
+            <p style="font-size: 18px; margin: 0;">Per tutti gli ordini superiori a <strong>€49,00</strong></p>
+        </div>
+
+        <h2>1. Costi di Spedizione</h2>
+        <table>
+            <tr>
+                <th>Destinazione</th>
+                <th>Importo ordine</th>
+                <th>Costo spedizione</th>
+                <th>Tempi di consegna</th>
+            </tr>
+            <tr>
+                <td>🇮🇹 Italia</td>
+                <td>Da €0 a €48,99</td>
+                <td>€5,90</td>
+                <td>2-4 giorni lavorativi</td>
+            </tr>
+            <tr>
+                <td>🇮🇹 Italia</td>
+                <td>Da €49,00</td>
+                <td><strong>GRATIS</strong></td>
+                <td>2-4 giorni lavorativi</td>
+            </tr>
+            <tr>
+                <td>🇮🇹 Isole (Sicilia, Sardegna)</td>
+                <td>Da €0 a €48,99</td>
+                <td>€7,90</td>
+                <td>3-5 giorni lavorativi</td>
+            </tr>
+            <tr>
+                <td>🇮🇹 Isole (Sicilia, Sardegna)</td>
+                <td>Da €49,00</td>
+                <td><strong>GRATIS</strong></td>
+                <td>3-5 giorni lavorativi</td>
+            </tr>
+            <tr>
+                <td>🇪🇺 Unione Europea</td>
+                <td>Qualsiasi importo</td>
+                <td>€12,90</td>
+                <td>5-10 giorni lavorativi</td>
+            </tr>
+        </table>
+
+        <div class="highlight-box">
+            <p><strong>📌 Nota:</strong> I costi di spedizione sono calcolati automaticamente nel carrello prima della conferma dell'ordine. Per spedizioni in zone disagiate, isole minori o CAP particolari, potrebbero essere applicati supplementi.</p>
+        </div>
+
+        <h2>2. Corrieri Partner</h2>
+        <p>Collaboriamo con i migliori corrieri nazionali per garantire consegne rapide e sicure:</p>
+        <div class="courier-logos">
+            <div class="courier-logo">📦 BRT</div>
+            <div class="courier-logo">📦 GLS</div>
+            <div class="courier-logo">📦 Poste Italiane</div>
+            <div class="courier-logo">📦 DHL</div>
+        </div>
+
+        <h2>3. Tempi di Elaborazione e Spedizione</h2>
+        <h3>3.1 Elaborazione dell'ordine</h3>
+        <ul>
+            <li><strong>Ordini effettuati entro le 14:00</strong> (giorni lavorativi): spediti lo stesso giorno;</li>
+            <li><strong>Ordini effettuati dopo le 14:00</strong>: spediti il giorno lavorativo successivo;</li>
+            <li><strong>Ordini del weekend o festivi</strong>: elaborati il primo giorno lavorativo utile.</li>
+        </ul>
+
+        <h3>3.2 Tempi di consegna</h3>
+        <p>I tempi indicati sono espressi in giorni lavorativi (esclusi sabato, domenica e festivi) e decorrono dalla spedizione dell'ordine. I tempi possono variare in periodi di alto traffico (es. festività natalizie, Black Friday).</p>
+
+        <div class="info-box">
+            <p><strong>⚠️ Importante (art. 61 Codice del Consumo):</strong> Salvo diversa pattuizione, il Venditore è obbligato a consegnare i beni al Consumatore senza ritardo ingiustificato e al più tardi entro <strong>30 giorni</strong> dalla data di conclusione del contratto.</p>
+        </div>
+
+        <h2>4. Tracciamento della Spedizione</h2>
+        <p>Una volta spedito l'ordine, riceverai:</p>
+        <ul>
+            <li>Email di conferma spedizione con numero di tracking;</li>
+            <li>Link diretto per tracciare il pacco sul sito del corriere;</li>
+            <li>Aggiornamenti sullo stato della consegna.</li>
+        </ul>
+        <p>Puoi inoltre verificare lo stato dell'ordine dalla tua area personale sul nostro sito.</p>
+
+        <h2>5. Consegna</h2>
+        <h3>5.1 Modalità di consegna</h3>
+        <p>La consegna avviene all'indirizzo indicato dal Cliente in fase di ordine. È possibile indicare:</p>
+        <ul>
+            <li>Indirizzo di residenza/domicilio;</li>
+            <li>Indirizzo di lavoro;</li>
+            <li>Punto di ritiro o locker (ove disponibile).</li>
+        </ul>
+
+        <h3>5.2 Tentativi di consegna</h3>
+        <p>In caso di assenza del destinatario:</p>
+        <ul>
+            <li>Il corriere lascia un avviso di passaggio;</li>
+            <li>Viene effettuato un secondo tentativo il giorno lavorativo successivo;</li>
+            <li>Dopo due tentativi falliti, il pacco viene depositato presso il punto di ritiro più vicino o rispedito al mittente.</li>
+        </ul>
+
+        <h3>5.3 Passaggio del rischio</h3>
+        <div class="highlight-box">
+            <p><strong>📌 Art. 63 Codice del Consumo:</strong> Il rischio di perdita o danneggiamento dei beni passa al Consumatore solo nel momento in cui quest'ultimo, o un terzo da lui designato (diverso dal vettore), entra materialmente in possesso dei beni.</p>
+        </div>
+
+        <h2>6. Verifica della Merce alla Consegna</h2>
+        <p>Al momento della consegna, il Cliente è invitato a:</p>
+        <ol>
+            <li><strong>Verificare l'integrità dell'imballaggio</strong> prima di firmare;</li>
+            <li><strong>Controllare che il numero di colli</strong> corrisponda a quanto indicato;</li>
+            <li><strong>Segnalare eventuali anomalie</strong> (danneggiamenti, aperture, manomissioni) al corriere, apponendo <strong>RISERVA SPECIFICA</strong> sulla bolla di consegna;</li>
+            <li><strong>Documentare eventuali danni</strong> con fotografie;</li>
+            <li><strong>Comunicare tempestivamente</strong> eventuali problemi al nostro servizio clienti.</li>
+        </ol>
+
+        <div class="info-box">
+            <p><strong>⚠️ Importante:</strong> Accettando il pacco senza riserva, il Cliente attesta l'integrità esteriore dello stesso. Eventuali danni non segnalati al momento della consegna potrebbero non essere risarcibili.</p>
+        </div>
+
+        <h2>7. Ritardo nella Consegna</h2>
+        <p>In caso di ritardo nella consegna, il Consumatore può (art. 61 Codice del Consumo):</p>
+        <ul>
+            <li>Fissare un termine supplementare appropriato per la consegna;</li>
+            <li>Risolvere il contratto se la consegna non avviene entro tale termine;</li>
+            <li>Risolvere immediatamente il contratto se il termine di consegna era essenziale.</li>
+        </ul>
+        <p>In caso di risoluzione, il Venditore rimborserà tutte le somme versate senza indebito ritardo.</p>
+
+        <h2>8. Mancata Consegna per Causa del Cliente</h2>
+        <p>In caso di mancata consegna per causa imputabile al Cliente (indirizzo errato, assenza prolungata, rifiuto della consegna), il pacco sarà rispedito al mittente. Il Cliente potrà richiedere una nuova spedizione sostenendo i relativi costi.</p>
+
+        <h2>9. Spedizioni Speciali</h2>
+        <h3>9.1 Prodotti fragili</h3>
+        <p>I prodotti fragili (es. flaconi di vetro, cristalli) sono imballati con cura utilizzando materiali protettivi adeguati.</p>
+
+        <h3>9.2 Spedizioni multiple</h3>
+        <p>In caso di ordini con prodotti non immediatamente disponibili, potremmo effettuare spedizioni parziali senza costi aggiuntivi per il Cliente.</p>
+
+        <h2>10. Contatti</h2>
+        <div class="contact-box">
+            <h3>📞 Per informazioni sulle spedizioni</h3>
+            <p>📧 Email: <a href="/cdn-cgi/l/email-protection#fe8d8e9b9a978497919097be9b8c9c918c978d8a9b8c979fd39d9b9d9d9f8a91d0978a"><span class="__cf_email__" data-cfemail="afdcdfcacbc6d5c6c0c1c6efcaddcdc0ddc6dcdbcaddc6ce82cccacccccedbc081c6db">[email&#160;protected]</span></a></p>
+            <p>📞 Telefono: +39 0461 123456</p>
+            <p>🕐 Orari: Lunedì - Venerdì, 9:00 - 18:00</p>
+        </div>
+
+        <a href="Premiata Erboristeria Ceccato.html" class="back-link">← Torna alla Home</a>
+    </div>
+
+    <footer>
+        <p>© 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
+        <p style="margin-top: 10px;">
+            <a href="termini-condizioni.html">Termini e Condizioni</a> |

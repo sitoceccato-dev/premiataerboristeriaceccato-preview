@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accedi / Registrati - Premiata Erboristeria Ceccato</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f0; line-height: 1.6; }
+        h1 { color: #2d5016; font-size: 42px; }
+
+        /* Navigation */
+        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .top-banner a { color: white; text-decoration: none; }
+        .top-banner a:hover { color: #f4d03f; }
+        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
+        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
+        header h1 { color: #2d5016; font-size: 42px; }
+        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
+        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
+        .nav-item { position: relative; display: flex; align-items: center; }
+        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
+        .nav-button:hover { background: rgba(255,255,255,0.2); }
+        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
+        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+        .nav-item:hover .dropdown { display: block; }
+        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .dropdown a:hover { background: #f4d03f; }
+
+        .has-submenu { position: relative; }
+        .has-submenu > a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .has-submenu > a:hover { background: #f4d03f; }
+        .submenu { display: none; position: absolute; left: 100%; top: 0; background: white; min-width: 150px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 1002; }
+        .has-submenu:hover .submenu { display: block; }
+        .submenu a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .submenu a:hover { background: #f4d03f; }
+
+        /* Page Content */
+        .hero-banner { 
+            background: linear-gradient(135deg, rgba(45,80,22,0.9), rgba(74,124,35,0.9)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400') center/cover; 
+            color: white; 
+            padding: 60px 40px; 
+            text-align: center; 
+        }
+        .hero-banner h1 { color: white; font-size: 42px; margin-bottom: 15px; }
+        .hero-banner p { font-size: 18px; max-width: 600px; margin: 0 auto; }
+
+        .auth-container {
+            max-width: 900px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+        }
+
+        .auth-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .auth-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .auth-box h2 {
+            color: #2d5016;
+            font-size: 26px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .auth-box > p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2d5016;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #4a7c23;
+            outline: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-top: 3px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .checkbox-group a {
+            color: #4a7c23;
+        }
+
+        .auth-btn {
+            background: linear-gradient(135deg, #4a7c23, #5a9129);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74,124,35,0.4);
+        }
+
+        .auth-btn.secondary {
+            background: linear-gradient(135deg, #f4d03f, #c5b358);
+            color: #2d5016;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password a {
+            color: #4a7c23;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .divider span {
+            padding: 0 15px;
+        }
+
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            border-color: #4a7c23;
+            background: #f9f9f5;
+        }
+
+        .social-btn span:first-child {
+            font-size: 20px;
+        }
+
+        .benefits-section {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .benefits-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .benefits-box h2 {
+            color: #2d5016;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .benefit-item .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item h4 {
+            color: #2d5016;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .benefit-item p {
+            color: #666;
+            font-size: 13px;
+        }
+
+        footer { 
+            background: #2d5016; 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+            margin-top: 40px; 
+        }
+        footer a { color: #f4d03f; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .auth-grid {
+                grid-template-columns: 1fr;
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <div>📦 Spedizione gratuita dai 49€</div>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="accedi.html">Registrati / Accedi</a>
+            <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+        </div>
+    </div>
+
+    <header>
+        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
+            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
+        </a>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Chi Siamo</button>
+                <div class="dropdown">
+                    <a href="la-nostra-storia.html">La nostra storia</a>
+                    <a href="il-nostro-team.html">Il nostro team</a>
+                    <a href="i-nostri-negozi.html">I nostri negozi</a>
+                    <a href="contattaci.html">Contattaci</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Prodotti</button>
+                <div class="dropdown">
+                    <a href="categorie.html">Categorie</a>
+                    <a href="erbe-spezie.html">Erbe e spezie</a>
+                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <div class="has-submenu">
+                        <a href="integratori.html">Integratori ▸</a>
+                        <div class="submenu">
+                            <a href="integratori-cistite.html">Cistite</a>
+                            <a href="integratori-fermenti.html">Fermenti</a>
+                            <a href="integratori-prostata.html">Prostata</a>
+                        </div>
+                    </div>
+                    <a href="oli-essenziali.html">Oli essenziali</a>
+                    <a href="ayurveda.html">Ayurveda</a>
+                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
+                    <a href="alimentazione-naturale.html">Alimentazione</a>
+                    <a href="benessere.html">Benessere</a>
+                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
+                    <a href="oggettistica.html">Oggettistica</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Cristalloterapia</button>
+                <div class="dropdown">
+                    <a href="articoli-cristalli.html">Articoli</a>
+                    <a href="cristalli-pietre.html">Cristalli</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Novità</button>
+                <div class="dropdown">
+                    <a href="#">Nuovi arrivi</a>
+                    <a href="#">Ultimi prodotti</a>
+                    <a href="#">Tendenze</a>
+                </div>
+            </div>
+            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
+            <div class="nav-item">
+                <button class="nav-button">Contattaci</button>
+                <div class="dropdown">
+                    <a href="contattaci.html">📧 Scrivici</a>
+                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <button class="nav-button">Account</button>
+                <div class="dropdown">
+                    <a href="#">I miei ordini</a>
+                    <a href="#">Lista desideri</a>
+                    <a href="#">Le mie info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <h1>👤 Area Clienti</h1>
+        <p>Accedi al tuo account o registrati per usufruire di tutti i vantaggi riservati ai nostri clienti</p>
+    </div>
+
+    <div class="auth-container">
+        <div class="auth-grid">
+            <!-- Login Box -->
+            <div class="auth-box">
+                <h2>🔐 Accedi</h2>
+                <p>Sei già cliente? Inserisci le tue credenziali per accedere.</p>
+
+                <form onsubmit="event.preventDefault(); alert('Login effettuato con successo! Benvenuto/a!'); window.location.href='Premiata Erboristeria Ceccato.html';">
+                    <div class="form-group">
+                        <label for="login-email">Email *</label>
+                        <input type="email" id="login-email" placeholder="La tua email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Password *</label>
+                        <input type="password" id="login-password" placeholder="La tua password" required>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#">Hai dimenticato la password?</a>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Ricordami su questo dispositivo</label>
+                    </div>
+
+                    <button type="submit" class="auth-btn">Accedi</button>
+                </form>
+
+                <div class="divider"><span>oppure accedi con</span></div>
+
+                <div class="social-login">
+                    <button class="social-btn" onclick="alert('Login con Google in arrivo!')">
+                        <span>🔵</span>
+                        <span>Continua con Google</span>
+                    </button>
+                    <button class="social-btn" onclick="alert('Login con Facebook in arrivo!')">
+                        <span>📘</span>
+                        <span>Continua con Facebook</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Register Box -->
+            <div class="auth-box">
+                <h2>📝 Registrati</h2>
+                <p>Non hai ancora un account? Creane uno in pochi secondi!</p>
+
+                <form onsubmit="event.preventDefault(); alert('Registrazione completata! Ti abbiamo inviato una email di conferma.'); this.reset();">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reg-nome">Nome *</label>
+                            <input type="text" id="reg-nome" placeholder="Il tuo nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-cognome">Cognome *</label>
+                            <input type="text" id="reg-cognome" placeholder="Il tuo cognome" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-email">Email *</label>
+                        <input type="email" id="reg-email" placeholder="La tua email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-telefono">Telefono</label>
+                        <input type="tel" id="reg-telefono" placeholder="+39 xxx xxx xxxx">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reg-password">Password *</label>
+                            <input type="password" id="reg-password" placeholder="Minimo 8 caratteri" required minlength="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password2">Conferma Password *</label>
+                            <input type="password" id="reg-password2" placeholder="Ripeti password" required>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="privacy" required>
+                        <label for="privacy">Ho letto e accetto la <a href="privacy-policy.html">Privacy Policy</a> e i <a href="termini-condizioni.html">Termini e Condizioni</a> *</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter">
+                        <label for="newsletter">Desidero ricevere newsletter con offerte esclusive e novità</label>
+                    </div>
+
+                    <button type="submit" class="auth-btn secondary">Crea Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="benefits-section">
+        <div class="benefits-box">
+            <h2>✨ Vantaggi dell'Account</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="icon">🚚</div>
+                    <h4>Traccia Ordini</h4>
+                    <p>Segui in tempo reale lo stato delle tue spedizioni</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">💰</div>
+                    <h4>Offerte Esclusive</h4>
+                    <p>Accedi a promozioni riservate solo ai clienti registrati</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">❤️</div>
+                    <h4>Lista Desideri</h4>
+                    <p>Salva i tuoi prodotti preferiti per acquistarli dopo</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon">⚡</div>
+                    <h4>Checkout Veloce</h4>
+                    <p>Completa gli acquisti più rapidamente con i dati salvati</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
+        <p style="margin-top: 10px;">
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="termini-condizioni.html">Termini e Condizioni</a> | 
+            <a href="contattaci.html">Contattaci</a>
+        </p>
+    </footer>
+</body>
+</html>
