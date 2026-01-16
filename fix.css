@@ -1,0 +1,54 @@
+/* =========================================
+   FIX VISIBILITÀ TESTI – pagine info
+   Usato per: contattaci / scrivici / negozi
+   NON cambia palette del sito
+   ========================================= */
+
+/* colore testo base */
+body {
+  color: #333;
+}
+
+/* testi problematici */
+.contact-form-section,
+.contact-form-section p,
+.contact-form-section span,
+.contact-form-section label,
+.contact-form-section small,
+.info-content,
+.info-content p,
+.info-content span,
+.store-info,
+.store-info p,
+.store-info span {
+  color: #333 !important;
+}
+
+/* link (email / telefono) */
+.contact-form-section a,
+.info-content a,
+.store-info a {
+  color: #2d5016 !important; /* verde del sito */
+  font-weight: 600;
+}
+
+/* titoli */
+.contact-form-section h1,
+.contact-form-section h2,
+.contact-form-section h3,
+.store-info h1,
+.store-info h2,
+.store-info h3 {
+  color: #2d5016 !important;
+}
+
+/* placeholder input */
+input::placeholder,
+textarea::placeholder {
+  color: #666;
+}
+
+/* footer link */
+footer a {
+  color: #f4d03f !important; /* giallo/oro */
+}
