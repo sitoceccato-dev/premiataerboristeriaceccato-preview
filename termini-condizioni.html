@@ -114,13 +114,7 @@
             text-decoration: underline;
         }
 
-        footer {
-            background: #2d5016;
-            color: white;
-            padding: 30px;
-            text-align: center;
-            margin-top: 40px;
-        }
+        
 
         footer a {
             color: #f4d03f;
@@ -208,166 +202,245 @@
         }
 
         /* Footer completo */
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+    
+        /* Footer Styles */
         footer {
-            background: linear-gradient(135deg, #2d5016 0%, #1a3009 100%);
+            background: #2d5016;
             color: white;
-            padding: 0;
-            margin-top: 40px;
+            padding: 50px 40px 30px;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 40px 30px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+            align-items: start;
         }
 
         .footer-column {
-            min-width: 0;
-        }
-
-        .footer-logo {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #f4d03f;
+            display: flex;
+            flex-direction: column;
         }
 
         .footer-column h4 {
-            color: #f4d03f;
+            font-size: 16px;
             margin-bottom: 15px;
-            font-size: 15px;
+            color: #f4d03f;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(244,208,63,0.3);
         }
 
         .footer-column h2 {
-            color: #f4d03f;
-            margin-bottom: 12px;
             font-size: 16px;
+            margin-bottom: 15px;
+            color: #f4d03f;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(244,208,63,0.3);
         }
 
+        .footer-column p,
         .footer-column a {
-            display: block;
-            color: rgba(255,255,255,0.8);
-            padding: 5px 0;
+            color: white;
             font-size: 13px;
+            line-height: 1.6;
             text-decoration: none;
-            transition: color 0.3s;
+            display: block;
+            margin-bottom: 6px;
         }
 
         .footer-column a:hover {
             color: #f4d03f;
         }
 
-        .footer-column p {
+        .footer-logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f4d03f;
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 13px;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 8px;
+        }
+
+        .newsletter-section {
+            background: rgba(244,208,63,0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .newsletter-section h2 {
+            border-bottom: none;
+            padding-bottom: 5px;
+        }
+
+        .newsletter-section p {
+            font-size: 12px;
+            margin-bottom: 12px;
         }
 
         .newsletter-form {
             display: flex;
+            flex-direction: column;
             gap: 8px;
-            margin-top: 10px;
         }
 
         .newsletter-input {
-            flex: 1;
-            padding: 10px 12px;
+            padding: 10px;
             border: none;
-            border-radius: 20px;
+            border-radius: 6px;
             font-size: 13px;
         }
 
         .newsletter-btn {
-            padding: 10px 18px;
             background: #f4d03f;
             color: #2d5016;
             border: none;
-            border-radius: 20px;
+            padding: 10px;
+            border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
             font-size: 13px;
         }
 
+        .newsletter-btn:hover {
+            background: #fff;
+        }
+
+        .chat-column {
+            background: rgba(244,208,63,0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .chat-column h2 {
+            border-bottom: none;
+            padding-bottom: 5px;
+        }
+
         .footer-chat {
-            background: rgba(255,255,255,0.1);
+            background: white;
             border-radius: 8px;
             overflow: hidden;
-            height: 180px;
+            height: 200px;
             display: flex;
             flex-direction: column;
-            margin-top: 10px;
         }
 
         .chat-messages {
             flex: 1;
-            padding: 10px;
+            padding: 12px;
             overflow-y: auto;
-            background: rgba(255,255,255,0.05);
+            background: #f9f9f9;
         }
 
         .chat-message {
             padding: 8px 12px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-bottom: 8px;
             font-size: 12px;
         }
 
         .chat-message.bot {
-            background: rgba(255,255,255,0.2);
-            color: white;
+            background: #e8f5e9;
+            color: #2d5016;
         }
 
         .chat-message.user {
-            background: #f4d03f;
-            color: #2d5016;
+            background: #4a7c23;
+            color: white;
             margin-left: 20%;
         }
 
         .chat-input-area {
             display: flex;
             padding: 8px;
-            background: rgba(0,0,0,0.2);
+            background: white;
+            border-top: 1px solid #eee;
             gap: 6px;
         }
 
         .chat-input {
             flex: 1;
-            padding: 8px 12px;
-            border: none;
+            padding: 8px;
+            border: 1px solid #ddd;
             border-radius: 15px;
             font-size: 12px;
         }
 
         .chat-send {
-            background: #f4d03f;
-            color: #2d5016;
+            background: #4a7c23;
+            color: white;
             border: none;
-            padding: 8px 14px;
+            padding: 8px 12px;
             border-radius: 15px;
             cursor: pointer;
             font-weight: 600;
             font-size: 12px;
         }
 
-        .footer-bottom {
-            background: rgba(0,0,0,0.3);
-            text-align: center;
-            padding: 20px;
-            font-size: 13px;
+        @media (max-width: 1000px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
-        .footer-bottom p {
-            margin-bottom: 5px;
-            color: rgba(255,255,255,0.7);
-        }
-
-        .footer-bottom a {
-            color: #f4d03f;
-            text-decoration: none;
+        @media (max-width: 600px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
 
     </style>
@@ -648,39 +721,62 @@
             <p>📞 Telefono: +39 0461 123456</p>
             <p>🕐 Orari
 
+    
     <footer>
         <div class="footer-content">
+            <!-- Colonna 1: Info Azienda -->
             <div class="footer-column">
                 <div class="footer-logo">🌿 Premiata Erboristeria Ceccato</div>
                 <p><strong>Titolare:</strong> [Nome Cognome]</p>
-                <p><strong>Sede:</strong><br>Via Example 123<br>38050 Levico Terme (TN)</p>
-                <p><strong>Tel:</strong> +39 0461 123456</p>
+                <p><strong>Sede:</strong><br>Via Example 123<br>38050 Levico Terme (TN) - Italia</p>
+                <p><strong>Tel:</strong> +39 0461 123456<br><strong>Email:</strong> info@erboristeria-ceccato.it</p>
                 <p><strong>P.IVA:</strong> 01234567890</p>
+                <p><strong>Assistenza Clienti:</strong><br>assistenza@erboristeria-ceccato.it<br>Lun-Ven 9:00-18:00</p>
             </div>
+
+            <!-- Colonna 2: Info Legali -->
             <div class="footer-column">
                 <h4>Informazioni Legali</h4>
                 <a href="termini-condizioni.html">Termini e Condizioni</a>
-                <a href="condizioni-vendita.html">Condizioni di Vendita</a>
-                <a href="diritto-recesso.html">Diritto di Recesso</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="condizioni-vendita.html">Condizioni Generali di Vendita</a>
+                <a href="diritto-recesso.html">Diritto di Recesso (14 giorni)</a>
+                <a href="spedizioni-consegne.html">Spedizioni e Consegne</a>
+                <a href="metodi-pagamento.html">Metodi di Pagamento</a>
+                <a href="convenzioni.html">Convenzioni</a>
+                <a href="privacy-policy.html">Privacy Policy (GDPR)</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="#" onclick="alert('Qui si aprirà il pannello gestione cookie')">⚙️ Gestisci Preferenze Cookie</a>
+                <a href="reclami-controversie.html">Reclami e Controversie</a>
+                <a href="garanzie-legali.html">Garanzie Legali</a>
             </div>
+
+            <!-- Colonna 3: Social -->
             <div class="footer-column">
-                <h4>Seguici</h4>
+                <h4>Seguici sui Social</h4>
                 <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+                <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
                 <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+                <a href="https://ebay.it" target="_blank">🛒 eBay</a>
             </div>
-            <div class="footer-column">
-                <h2>📧 Newsletter</h2>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Iscritto!');">
-                    <input type="email" class="newsletter-input" placeholder="Email" required>
-                    <button type="submit" class="newsletter-btn">OK</button>
+
+            <!-- Colonna 4: Newsletter -->
+            <div class="footer-column newsletter-section">
+                <h2>📧 Iscriviti alla Newsletter</h2>
+                <p>Ricevi offerte esclusive e novità</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie per esserti iscritto!');">
+                    <input type="email" class="newsletter-input" placeholder="La tua email" required>
+                    <button type="submit" class="newsletter-btn">Iscriviti</button>
                 </form>
             </div>
-            <div class="footer-column">
-                <h2>💬 Chat</h2>
-                <div class="footer-chat">
+
+            <!-- Colonna 5: Chat -->
+            <div class="footer-column chat-column">
+                <h2>💬 Chat con noi</h2>
+                <div class="footer-chat" id="chatWidget">
                     <div class="chat-messages" id="chatMessages">
-                        <div class="chat-message bot">Ciao! 👋</div>
+                        <div class="chat-message bot">
+                            Ciao! 👋 Come posso aiutarti?
+                        </div>
                     </div>
                     <div class="chat-input-area">
                         <input type="text" class="chat-input" id="chatInput" placeholder="Scrivi..." onkeypress="if(event.key==='Enter') sendMessage()">
@@ -689,9 +785,14 @@
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>© 2026 Premiata Erboristeria Ceccato | P.IVA 01234567890</p>
+            <p>&copy; 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
             <p>🌿 Benessere naturale dal 1970 🌿</p>
+            <p style="font-size: 11px; margin-top: 10px;">
+                <a href="#" style="color: #f4d03f; text-decoration: none;">ODR - Risoluzione Online Controversie</a> | 
+                <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color: #f4d03f;"> Piattaforma ODR UE</a>
+            </p>
         </div>
     </footer>
 
@@ -709,9 +810,11 @@
             setTimeout(() => {
                 const botMsg = document.createElement('div');
                 botMsg.className = 'chat-message bot';
-                botMsg.textContent = 'Grazie! 😊';
+                botMsg.textContent = 'Grazie per il messaggio! Ti risponderemo presto 😊';
                 container.appendChild(botMsg);
+                container.scrollTop = container.scrollHeight;
             }, 800);
+            container.scrollTop = container.scrollHeight;
         }
     }
     </script>

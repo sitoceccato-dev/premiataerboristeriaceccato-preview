@@ -420,131 +420,39 @@
             cursor: pointer;
         }
 
-        footer {
-            background: #2d5016;
-            color: white;
-            padding: 50px 40px 30px;
-            margin-top: 50px;
-        }
+        
 
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
+        
 
-        .footer-column h4 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #f4d03f;
-        }
+        
 
-        .footer-column p,
-        .footer-column a {
-            color: white;
-            font-size: 14px;
-            line-height: 1.8;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-        }
+        
 
-        .footer-column a:hover {
-            color: #f4d03f;
-        }
+        
 
-        .footer-logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f4d03f;
-            margin-bottom: 15px;
-        }
+        
 
-        .newsletter-section {
-            background: rgba(244,208,63,0.2);
-            border: 2px solid #f4d03f;
-            border-radius: 12px;
-            padding: 20px;
-        }
+        
 
-        .newsletter-section h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #f4d03f;
-        }
+        
 
-        .newsletter-section p {
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
+        
 
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+        
 
-        .newsletter-input {
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            font-size: 13px;
-        }
+        
 
-        .newsletter-btn {
-            background: #f4d03f;
-            color: #2d5016;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 13px;
-        }
+        
 
-        .chat-section {
-            background: rgba(74,124,35,0.2);
-            border: 2px solid #4a7c23;
-            border-radius: 12px;
-            padding: 20px;
-        }
+        
 
-        .chat-section h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #f4d03f;
-        }
+        
 
-        .chat-section p {
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
+        
 
-        .chat-btn {
-            background: #4a7c23;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 14px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
+        
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
-        }
+        
 
         .discount-applied {
             color: #27ae60;
@@ -576,9 +484,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+            
         }
 
         @media (max-width: 600px) {
@@ -586,9 +492,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            
         }
             /* Navigation */
         .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
@@ -605,6 +509,201 @@
         .nav-item:hover .dropdown { display: block; }
         .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
         .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    
+        /* Footer Styles */
+        footer {
+            background: #2d5016;
+            color: white;
+            padding: 50px 40px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+            align-items: start;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #f4d03f;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(244,208,63,0.3);
+        }
+
+        .footer-column h2 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #f4d03f;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(244,208,63,0.3);
+        }
+
+        .footer-column p,
+        .footer-column a {
+            color: white;
+            font-size: 13px;
+            line-height: 1.6;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .footer-column a:hover {
+            color: #f4d03f;
+        }
+
+        .footer-logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f4d03f;
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        .newsletter-section {
+            background: rgba(244,208,63,0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .newsletter-section h2 {
+            border-bottom: none;
+            padding-bottom: 5px;
+        }
+
+        .newsletter-section p {
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .newsletter-input {
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .newsletter-btn {
+            background: #f4d03f;
+            color: #2d5016;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .newsletter-btn:hover {
+            background: #fff;
+        }
+
+        .chat-column {
+            background: rgba(244,208,63,0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .chat-column h2 {
+            border-bottom: none;
+            padding-bottom: 5px;
+        }
+
+        .footer-chat {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 12px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .chat-message {
+            padding: 8px 12px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .chat-message.bot {
+            background: #e8f5e9;
+            color: #2d5016;
+        }
+
+        .chat-message.user {
+            background: #4a7c23;
+            color: white;
+            margin-left: 20%;
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 8px;
+            background: white;
+            border-top: 1px solid #eee;
+            gap: 6px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .chat-send {
+            background: #4a7c23;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        @media (max-width: 1000px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -805,27 +904,36 @@
         </div>
     </main>
 
+    
     <footer>
         <div class="footer-content">
+            <!-- Colonna 1: Info Azienda -->
             <div class="footer-column">
                 <div class="footer-logo">🌿 Premiata Erboristeria Ceccato</div>
                 <p><strong>Titolare:</strong> [Nome Cognome]</p>
                 <p><strong>Sede:</strong><br>Via Example 123<br>38050 Levico Terme (TN) - Italia</p>
-                <p><strong>Tel:</strong> +39 0461 123456<br><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7beb9b1b897b2a5b5b8a5bea4a3b2a5beb6fab4b2b4b4b6a3b8f9bea3">[email&#160;protected]</a></p>
+                <p><strong>Tel:</strong> +39 0461 123456<br><strong>Email:</strong> info@erboristeria-ceccato.it</p>
                 <p><strong>P.IVA:</strong> 01234567890</p>
+                <p><strong>Assistenza Clienti:</strong><br>assistenza@erboristeria-ceccato.it<br>Lun-Ven 9:00-18:00</p>
             </div>
 
+            <!-- Colonna 2: Info Legali -->
             <div class="footer-column">
                 <h4>Informazioni Legali</h4>
-                <a href="#termini">Termini e Condizioni</a>
-                <a href="#condizioni">Condizioni Generali di Vendita</a>
-                <a href="#recesso">Diritto di Recesso (14 giorni)</a>
-                <a href="#spedizioni">Spedizioni e Consegne</a>
-                <a href="#pagamenti">Metodi di Pagamento</a>
-                <a href="#privacy">Privacy Policy (GDPR)</a>
-                <a href="#cookie">Cookie Policy</a>
+                <a href="termini-condizioni.html">Termini e Condizioni</a>
+                <a href="condizioni-vendita.html">Condizioni Generali di Vendita</a>
+                <a href="diritto-recesso.html">Diritto di Recesso (14 giorni)</a>
+                <a href="spedizioni-consegne.html">Spedizioni e Consegne</a>
+                <a href="metodi-pagamento.html">Metodi di Pagamento</a>
+                <a href="convenzioni.html">Convenzioni</a>
+                <a href="privacy-policy.html">Privacy Policy (GDPR)</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="#" onclick="alert('Qui si aprirà il pannello gestione cookie')">⚙️ Gestisci Preferenze Cookie</a>
+                <a href="reclami-controversie.html">Reclami e Controversie</a>
+                <a href="garanzie-legali.html">Garanzie Legali</a>
             </div>
 
+            <!-- Colonna 3: Social -->
             <div class="footer-column">
                 <h4>Seguici sui Social</h4>
                 <a href="https://facebook.com" target="_blank">📘 Facebook</a>
@@ -834,6 +942,7 @@
                 <a href="https://ebay.it" target="_blank">🛒 eBay</a>
             </div>
 
+            <!-- Colonna 4: Newsletter -->
             <div class="footer-column newsletter-section">
                 <h2>📧 Iscriviti alla Newsletter</h2>
                 <p>Ricevi offerte esclusive e novità</p>
@@ -843,187 +952,54 @@
                 </form>
             </div>
 
-            <div class="footer-column chat-section">
-                <h2>💬 Possiamo Aiutarti?</h2>
-                <p>Parla con il nostro team</p>
-                <button class="chat-btn" onclick="alert('Chat in arrivo!')">
-                    <span>💬</span>
-                    <span>Avvia Chat</span>
-                </button>
+            <!-- Colonna 5: Chat -->
+            <div class="footer-column chat-column">
+                <h2>💬 Chat con noi</h2>
+                <div class="footer-chat" id="chatWidget">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message bot">
+                            Ciao! 👋 Come posso aiutarti?
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Scrivi..." onkeypress="if(event.key==='Enter') sendMessage()">
+                        <button class="chat-send" onclick="sendMessage()">Invia</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
             <p>🌿 Benessere naturale dal 1970 🌿</p>
+            <p style="font-size: 11px; margin-top: 10px;">
+                <a href="#" style="color: #f4d03f; text-decoration: none;">ODR - Risoluzione Online Controversie</a> | 
+                <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color: #f4d03f;"> Piattaforma ODR UE</a>
+            </p>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Sample cart data (in a real app, this would come from localStorage or a server)
-        let cart = [
-            { id: 1, name: 'Camomilla Bio', description: 'Camomilla biologica italiana', price: 8.90, originalPrice: 12.50, quantity: 2, icon: '🌼' },
-            { id: 2, name: 'Olio Lavanda', description: 'Olio essenziale puro 100%', price: 15.90, quantity: 1, icon: '💜' },
-            { id: 3, name: 'Quarzo Rosa', description: 'Cristallo dell\'amore', price: 18.00, quantity: 1, icon: '💗' },
-            { id: 4, name: 'Vitamina C', description: 'Integratore alto dosaggio', price: 18.50, quantity: 1, icon: '💊' }
-        ];
-
-        let appliedDiscount = 0;
-        const FREE_SHIPPING_THRESHOLD = 49;
-        const SHIPPING_COST = 5.90;
-
-        // Valid coupon codes
-        const coupons = {
-            'BENVENUTO10': 10,
-            'NATURA15': 15,
-            'ESTATE20': 20
-        };
-
-        function renderCart() {
-            const cartItemsContainer = document.getElementById('cartItems');
-            const emptyCart = document.getElementById('emptyCart');
-            const cartContainer = document.getElementById('cartContainer');
-
-            if (cart.length === 0) {
-                cartContainer.style.display = 'none';
-                emptyCart.style.display = 'block';
-                return;
-            }
-
-            cartContainer.style.display = 'grid';
-            emptyCart.style.display = 'none';
-
-            cartItemsContainer.innerHTML = cart.map(item => `
-                <div class="cart-item" data-id="${item.id}">
-                    <div class="item-image">${item.icon}</div>
-                    <div class="item-details">
-                        <h3>${item.name}</h3>
-                        <p>${item.description}</p>
-                        ${item.originalPrice ? `<p style="color: #e74c3c; font-size: 12px;">🏷️ In offerta!</p>` : ''}
-                    </div>
-                    <div class="item-price">
-                        €${item.price.toFixed(2)}
-                        ${item.originalPrice ? `<span class="original-price">€${item.originalPrice.toFixed(2)}</span>` : ''}
-                    </div>
-                    <div class="quantity-control">
-                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
-                        <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="setQuantity(${item.id}, this.value)">
-                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-                    </div>
-                    <button class="remove-btn" onclick="removeItem(${item.id})" title="Rimuovi">🗑️</button>
-                </div>
-            `).join('');
-
-            updateSummary();
+    <script>
+    function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+        if (message) {
+            const container = document.getElementById('chatMessages');
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chat-message user';
+            userMsg.textContent = message;
+            container.appendChild(userMsg);
+            input.value = '';
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'chat-message bot';
+                botMsg.textContent = 'Grazie per il messaggio! Ti risponderemo presto 😊';
+                container.appendChild(botMsg);
+                container.scrollTop = container.scrollHeight;
+            }, 800);
+            container.scrollTop = container.scrollHeight;
         }
-
-        function updateQuantity(id, change) {
-            const item = cart.find(i => i.id === id);
-            if (item) {
-                item.quantity = Math.max(1, item.quantity + change);
-                renderCart();
-            }
-        }
-
-        function setQuantity(id, value) {
-            const item = cart.find(i => i.id === id);
-            if (item) {
-                item.quantity = Math.max(1, parseInt(value) || 1);
-                renderCart();
-            }
-        }
-
-        function removeItem(id) {
-            if (confirm('Vuoi rimuovere questo articolo dal carrello?')) {
-                cart = cart.filter(i => i.id !== id);
-                renderCart();
-            }
-        }
-
-        function updateSummary() {
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-            
-            const isFreeShipping = subtotal >= FREE_SHIPPING_THRESHOLD;
-            const shipping = isFreeShipping ? 0 : SHIPPING_COST;
-            
-            const discountAmount = (subtotal * appliedDiscount) / 100;
-            const total = subtotal - discountAmount + shipping;
-
-            document.getElementById('itemCount').textContent = itemCount;
-            document.getElementById('subtotal').textContent = `€${subtotal.toFixed(2)}`;
-            document.getElementById('shipping').textContent = isFreeShipping ? 'GRATIS! 🎉' : `€${shipping.toFixed(2)}`;
-            document.getElementById('total').textContent = `€${total.toFixed(2)}`;
-
-            // Shipping notice
-            const shippingNotice = document.getElementById('shippingNotice');
-            if (isFreeShipping) {
-                shippingNotice.innerHTML = `
-                    <div class="free-shipping-notice">
-                        ✅ Hai raggiunto la spedizione gratuita!
-                    </div>
-                `;
-            } else {
-                const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
-                const progress = (subtotal / FREE_SHIPPING_THRESHOLD) * 100;
-                shippingNotice.innerHTML = `
-                    <div class="shipping-needed">
-                        📦 Aggiungi ancora <strong>€${remaining.toFixed(2)}</strong> per la spedizione gratuita!
-                        <div class="shipping-progress">
-                            <div class="shipping-progress-bar" style="width: ${progress}%"></div>
-                        </div>
-                    </div>
-                `;
-            }
-
-            // Discount display
-            const discountRow = document.getElementById('discountRow');
-            if (appliedDiscount > 0) {
-                discountRow.style.display = 'flex';
-                document.getElementById('discountAmount').textContent = `-€${discountAmount.toFixed(2)}`;
-            } else {
-                discountRow.style.display = 'none';
-            }
-        }
-
-        function applyCoupon() {
-            const input = document.getElementById('couponInput');
-            const message = document.getElementById('couponMessage');
-            const code = input.value.trim().toUpperCase();
-
-            if (coupons[code]) {
-                appliedDiscount = coupons[code];
-                message.style.color = '#27ae60';
-                message.textContent = `✅ Codice applicato! Sconto del ${appliedDiscount}%`;
-                updateSummary();
-            } else if (code === '') {
-                message.style.color = '#e74c3c';
-                message.textContent = '⚠️ Inserisci un codice sconto';
-            } else {
-                message.style.color = '#e74c3c';
-                message.textContent = '❌ Codice non valido';
-            }
-        }
-
-        function addSuggestedToCart(name, price, icon) {
-            const existingItem = cart.find(i => i.name === name);
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                cart.push({
-                    id: Date.now(),
-                    name: name,
-                    description: 'Prodotto naturale di alta qualità',
-                    price: price,
-                    quantity: 1,
-                    icon: icon
-                });
-            }
-            renderCart();
-            alert(`${name} aggiunto al carrello! 🛒`);
-        }
-
-        function proceedToCheckout() {
-            if (cart.length === 0) {
-                alert('Il carrello è vuoto!');
-              
+    }
+    </script>
+</body>
+</html>
