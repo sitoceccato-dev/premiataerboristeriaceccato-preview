@@ -60,6 +60,204 @@
         .nav-item:hover .dropdown { display: block; }
         .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
         .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+    
+        .cart-icon {
+            position: fixed;
+            top: 80px;
+            right: 30px;
+            background: #f4d03f;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            text-decoration: none;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* Footer completo */
+        footer {
+            background: linear-gradient(135deg, #2d5016 0%, #1a3009 100%);
+            color: white;
+            padding: 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+
+        .footer-column {
+            min-width: 0;
+        }
+
+        .footer-logo {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #f4d03f;
+        }
+
+        .footer-column h4 {
+            color: #f4d03f;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .footer-column h2 {
+            color: #f4d03f;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            padding: 5px 0;
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #f4d03f;
+        }
+
+        .footer-column p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 8px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 10px 12px;
+            border: none;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .newsletter-btn {
+            padding: 10px 18px;
+            background: #f4d03f;
+            color: #2d5016;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .footer-chat {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .chat-message {
+            padding: 8px 12px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .chat-message.bot {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .chat-message.user {
+            background: #f4d03f;
+            color: #2d5016;
+            margin-left: 20%;
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 8px;
+            background: rgba(0,0,0,0.2);
+            gap: 6px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .chat-send {
+            background: #f4d03f;
+            color: #2d5016;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .footer-bottom {
+            background: rgba(0,0,0,0.3);
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 5px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-bottom a {
+            color: #f4d03f;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
@@ -68,7 +266,9 @@
         <div style="display: flex; gap: 20px; align-items: center;">
             <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
             <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
+            <a href="carrello.html" style="color: white; text-decoration: none; font-weight: bold;">🛒 Carrello</a>
         </div>
+    </div>
     </div>
 
     <header>
@@ -148,6 +348,13 @@
             </div>
         </div>
     </nav>
+
+    <!-- Carrello fisso -->
+    <a href="carrello.html" class="cart-icon">
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+    </a>
+
 
     <div class="hero-category">
         <h1>💊 Integratori Naturali</h1>
@@ -275,10 +482,78 @@
     </div>
 
     <footer>
-        <p>© 2026 Premiata Erboristeria Ceccato - P.IVA 01234567890</p>
-        <p style="margin-top: 10px;">
-            <a href="privacy-policy.html">Privacy</a> | <a href="contattaci.html">Contatti</a>
-        </p>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">🌿 Premiata Erboristeria Ceccato</div>
+                <p><strong>Titolare:</strong> [Nome Cognome]</p>
+                <p><strong>Sede:</strong><br>Via Example 123<br>38050 Levico Terme (TN)</p>
+                <p><strong>Tel:</strong> +39 0461 123456<br><strong>Email:</strong> info@erboristeria-ceccato.it</p>
+                <p><strong>P.IVA:</strong> 01234567890</p>
+            </div>
+            <div class="footer-column">
+                <h4>Informazioni Legali</h4>
+                <a href="termini-condizioni.html">Termini e Condizioni</a>
+                <a href="condizioni-vendita.html">Condizioni di Vendita</a>
+                <a href="diritto-recesso.html">Diritto di Recesso</a>
+                <a href="spedizioni-consegne.html">Spedizioni</a>
+                <a href="metodi-pagamento.html">Metodi di Pagamento</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+            <div class="footer-column">
+                <h4>Seguici sui Social</h4>
+                <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+                <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
+                <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+                <a href="https://ebay.it" target="_blank">🛒 eBay</a>
+            </div>
+            <div class="footer-column">
+                <h2>📧 Newsletter</h2>
+                <p>Ricevi offerte esclusive</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Iscritto!');">
+                    <input type="email" class="newsletter-input" placeholder="La tua email" required>
+                    <button type="submit" class="newsletter-btn">OK</button>
+                </form>
+            </div>
+            <div class="footer-column">
+                <h2>💬 Chat</h2>
+                <div class="footer-chat">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message bot">Ciao! 👋 Come posso aiutarti?</div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Scrivi..." onkeypress="if(event.key==='Enter') sendMessage()">
+                        <button class="chat-send" onclick="sendMessage()">Invia</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
+            <p>🌿 Benessere naturale dal 1970 🌿</p>
+        </div>
     </footer>
+
+    <script>
+    function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+        if (message) {
+            const container = document.getElementById('chatMessages');
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chat-message user';
+            userMsg.textContent = message;
+            container.appendChild(userMsg);
+            input.value = '';
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'chat-message bot';
+                botMsg.textContent = 'Grazie! Ti risponderemo presto 😊';
+                container.appendChild(botMsg);
+                container.scrollTop = container.scrollHeight;
+            }, 800);
+        }
+    }
+    </script>
 </body>
 </html>
