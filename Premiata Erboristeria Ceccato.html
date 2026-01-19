@@ -352,271 +352,6 @@
             font-size: 16px;
         }
 
-        .video-section {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-        }
-
-        .video-section h2 {
-            color: #2d5016;
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .video-layout {
-            display: flex;
-            gap: 30px;
-        }
-
-        .video-container {
-            width: 640px;
-            height: 480px;
-            background: #000;
-            border-radius: 15px;
-        }
-
-        .video-container video {
-            width: 100%;
-            height: 100%;
-        }
-
-        .video-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .video-btn {
-            background: #4a7c23;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px;
-        }
-
-        .video-playlist {
-            flex: 1;
-            background: rgba(244,208,63,0.1);
-            border-radius: 15px;
-            padding: 20px;
-            max-height: 480px;
-            overflow-y: auto;
-        }
-
-        .playlist-item {
-            background: white;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .playlist-item:hover {
-            background: #f4d03f;
-        }
-
-        .playlist-item.active {
-            background: #4a7c23;
-            color: white;
-        }
-
-        .suppliers-section {
-            background: #f5f5f0;
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-        }
-
-        .suppliers-section h3 {
-            text-align: center;
-            color: #2d5016;
-            font-size: 28px;
-            margin-bottom: 30px;
-        }
-
-        .suppliers-logos {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
-        }
-
-        .supplier-logo {
-            width: 150px;
-            height: 150px;
-            background: white;
-            border: 2px solid #f4d03f;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #5a7c3a;
-        }
-
-        .supplier-logo:hover {
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .supplier-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .supplier-logo span:first-child {
-            font-size: 20px;
-        }
-
-        @media (max-width: 900px) {
-            .suppliers-logos {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .suppliers-logos {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 12px;
-            }
-            .supplier-logo {
-                width: 100px;
-                height: 100px;
-                font-size: 11px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .suppliers-logos {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .newsletter-section {
-            background: rgba(244,208,63,0.1);
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .newsletter-section h2 {
-            border-bottom: none;
-            padding-bottom: 5px;
-        }
-
-        .newsletter-section p {
-            font-size: 12px;
-            margin-bottom: 12px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .newsletter-input {
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            font-size: 13px;
-        }
-
-        .newsletter-btn {
-            background: #f4d03f;
-            color: #2d5016;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 13px;
-        }
-
-        .newsletter-btn:hover {
-            background: #fff;
-        }
-
-        .chat-column {
-            background: rgba(244,208,63,0.1);
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .chat-column h2 {
-            border-bottom: none;
-            padding-bottom: 5px;
-        }
-
-        .footer-chat {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chat-messages {
-            flex: 1;
-            padding: 12px;
-            overflow-y: auto;
-            background: #f9f9f9;
-        }
-
-        .chat-message {
-            padding: 8px 12px;
-            border-radius: 12px;
-            margin-bottom: 8px;
-            font-size: 12px;
-        }
-
-        .chat-message.bot {
-            background: #e8f5e9;
-            color: #2d5016;
-        }
-
-        .chat-message.user {
-            background: #4a7c23;
-            color: white;
-            margin-left: 20%;
-        }
-
-        .chat-input-area {
-            display: flex;
-            padding: 8px;
-            background: white;
-            border-top: 1px solid #eee;
-            gap: 6px;
-        }
-
-        .chat-input {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 15px;
-            font-size: 12px;
-        }
-
-        .chat-send {
-            background: #4a7c23;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 15px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 12px;
-        }
-
         .cart-icon {
             position: fixed;
             top: 80px;
@@ -650,93 +385,57 @@
             font-weight: bold;
         }
 
+        .toast-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.7);
+            background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            z-index: 2000;
+            opacity: 0;
+            transition: all 0.4s ease;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .toast-notification.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .toast-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .toast-icon {
+            font-size: 28px;
+        }
+
+        .toast-body {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .toast-footer {
+            font-size: 12px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
         footer {
             background: #2d5016;
             color: white;
             padding: 50px 40px 30px;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 25px;
-            margin-bottom: 30px;
-            align-items: start;
-        }
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .footer-column h4 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: #f4d03f;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(244,208,63,0.3);
-        }
-
-        .footer-column h2 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: #f4d03f;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(244,208,63,0.3);
-        }
-
-        .footer-column p,
-        .footer-column a {
-            color: white;
-            font-size: 13px;
-            line-height: 1.6;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .footer-column a:hover {
-            color: #f4d03f;
-        }
-
-        .footer-logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: #f4d03f;
-            margin-bottom: 12px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .social-icon:hover {
-            background: #f4d03f;
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
         }
     </style>
 </head>
@@ -757,44 +456,44 @@
 
     <nav>
         <div class="nav-container">
-            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
+            <div class="nav-item"><a href="#" class="nav-button">Home</a></div>
             <div class="nav-item">
                 <button class="nav-button">Chi Siamo</button>
                 <div class="dropdown">
-                    <a href="la-nostra-storia.html">La nostra storia</a>
-                    <a href="il-nostro-team.html">Il nostro team</a>
-                    <a href="i-nostri-negozi.html">I nostri negozi</a>
-                    <a href="contattaci.html">Contattaci</a>
+                    <a href="#">La nostra storia</a>
+                    <a href="#">Il nostro team</a>
+                    <a href="#">I nostri negozi</a>
+                    <a href="#">Contattaci</a>
                 </div>
             </div>
             <div class="nav-item">
                 <button class="nav-button">Prodotti</button>
                 <div class="dropdown">
-                    <a href="categorie.html">Categorie</a>
-                    <a href="erbe-spezie.html">Erbe e spezie</a>
-                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
+                    <a href="#">Categorie</a>
+                    <a href="#">Erbe e spezie</a>
+                    <a href="#">Vitamine e minerali</a>
                     <div class="has-submenu">
-                        <a href="integratori.html">Integratori ▸</a>
+                        <a href="#">Integratori ▸</a>
                         <div class="submenu">
-                            <a href="integratori-cistite.html">Cistite</a>
-                            <a href="integratori-fermenti.html">Fermenti</a>
-                            <a href="integratori-prostata.html">Prostata</a>
+                            <a href="#">Cistite</a>
+                            <a href="#">Fermenti</a>
+                            <a href="#">Prostata</a>
                         </div>
                     </div>
-                    <a href="oli-essenziali.html">Oli essenziali</a>
-                    <a href="ayurveda.html">Ayurveda</a>
-                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
-                    <a href="alimentazione-naturale.html">Alimentazione</a>
-                    <a href="benessere.html">Benessere</a>
-                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
-                    <a href="oggettistica.html">Oggettistica</a>
+                    <a href="#">Oli essenziali</a>
+                    <a href="#">Ayurveda</a>
+                    <a href="#">Cosmesi naturale</a>
+                    <a href="#">Alimentazione</a>
+                    <a href="#">Benessere</a>
+                    <a href="#">Ambiente e tessuti</a>
+                    <a href="#">Oggettistica</a>
                 </div>
             </div>
             <div class="nav-item">
                 <button class="nav-button">Cristalloterapia</button>
                 <div class="dropdown">
-                    <a href="articoli-cristalli.html">Articoli</a>
-                    <a href="cristalli-pietre.html">Cristalli</a>
+                    <a href="#">Articoli</a>
+                    <a href="#">Cristalli</a>
                 </div>
             </div>
             <div class="nav-item">
@@ -811,11 +510,10 @@
             <div class="nav-item">
                 <button class="nav-button">Contattaci</button>
                 <div class="dropdown">
-                    <a href="contattaci.html">📧 Scrivici</a>
-                    <a href="i-nostri-negozi.html">📍 Negozi</a>
+                    <a href="#">📧 Scrivici</a>
+                    <a href="#">📍 Negozi</a>
                 </div>
             </div>
-            
             <div class="nav-item">
                 <button class="nav-button">Account</button>
                 <div class="dropdown">
@@ -937,4 +635,77 @@
                     <div class="product-image">🌿</div>
                     <div class="product-info">
                         <div class="product-name">Curcuma</div>
-                        <div class="product-description">Spezia biologica
+                        <div class="product-description">Spezia biologica</div>
+                        <div class="product-price">
+                            <span class="price-current">€9.90</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" onclick="addToCart('Curcuma', 9.90)">Aggiungi</button>
+                            <button class="btn-wishlist">❤️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="cart-icon" onclick="alert('Carrello: ' + cartCount + ' articoli')">
+        🛒
+        <div class="cart-count" id="cartCount">0</div>
+    </div>
+
+    <div class="toast-notification" id="toast">
+        <div class="toast-header">
+            <span class="toast-icon">✓</span>
+            <span>Prodotto Aggiunto!</span>
+        </div>
+        <div class="toast-body" id="toastBody"></div>
+        <div class="toast-footer">🌿 Spedizione gratuita da €49</div>
+    </div>
+
+    <script>
+        // Gestione carrello
+        let cartCount = 0;
+
+        function addToCart(productName, price) {
+            cartCount++;
+            document.getElementById('cartCount').textContent = cartCount;
+            
+            // Feedback visivo carrello
+            const cartIcon = document.querySelector('.cart-icon');
+            cartIcon.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cartIcon.style.transform = 'scale(1)';
+            }, 200);
+            
+            // Mostra notifica elegante
+            const toast = document.getElementById('toast');
+            const toastBody = document.getElementById('toastBody');
+            toastBody.textContent = `${productName} - €${price.toFixed(2)}`;
+            
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Gestione slider
+        let currentSlide = 0;
+        const slider = document.getElementById('slider');
+        const totalSlides = 3;
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Auto-slide
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>
