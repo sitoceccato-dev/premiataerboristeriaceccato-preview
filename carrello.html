@@ -1,1005 +1,343 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrello - Premiata Erboristeria Ceccato</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f0;
-        }
-
-        h1 {
-            color: #2d5016;
-            font-size: 42px;
-            white-space: nowrap;
-        }
-
-        .nav-item:hover main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px;
-        }
-
-        .page-title {
-            color: #2d5016;
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .cart-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-
-        .cart-items {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .cart-item {
-            display: grid;
-            grid-template-columns: 100px 1fr auto auto;
-            gap: 20px;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .cart-item:last-child {
-            border-bottom: none;
-        }
-
-        .item-image {
-            width: 100px;
-            height: 100px;
-            background: rgba(244,208,63,0.1);
-            border: 2px solid #f4d03f;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-        }
-
-        .item-details h3 {
-            color: #2d5016;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .item-details p {
-            color: #666;
-            font-size: 13px;
-        }
-
-        .item-price {
-            color: #2d5016;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            min-width: 80px;
-        }
-
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .quantity-btn {
-            width: 35px;
-            height: 35px;
-            border: 2px solid #4a7c23;
-            background: white;
-            color: #4a7c23;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .quantity-btn:hover {
-            background: #4a7c23;
-            color: white;
-        }
-
-        .quantity-input {
-            width: 50px;
-            height: 35px;
-            text-align: center;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .item-total {
-            color: #2d5016;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: right;
-            min-width: 100px;
-        }
-
-        .remove-btn {
-            background: none;
-            border: none;
-            color: #e74c3c;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .remove-btn:hover {
-            transform: scale(1.2);
-        }
-
-        .cart-summary {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            height: fit-content;
-            position: sticky;
-            top: 80px;
-        }
-
-        .summary-title {
-            color: #2d5016;
-            font-size: 24px;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f4d03f;
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .summary-row.total {
-            font-size: 22px;
-            font-weight: bold;
-            color: #2d5016;
-            padding-top: 15px;
-            border-top: 2px solid #eee;
-            margin-top: 20px;
-        }
-
-        .summary-row .label {
-            color: #666;
-        }
-
-        .summary-row .value {
-            font-weight: 600;
-        }
-
-        .free-shipping-notice {
-            background: rgba(39, 174, 96, 0.1);
-            border: 2px solid #27ae60;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-            color: #27ae60;
-            font-weight: 600;
-        }
-
-        .shipping-progress {
-            background: #eee;
-            border-radius: 10px;
-            height: 10px;
-            margin: 10px 0;
-            overflow: hidden;
-        }
-
-        .shipping-progress-bar {
-            background: linear-gradient(90deg, #4a7c23, #27ae60);
-            height: 100%;
-            border-radius: 10px;
-            transition: width 0.5s ease;
-        }
-
-        .shipping-needed {
-            background: rgba(244,208,63,0.2);
-            border: 2px solid #f4d03f;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-            color: #8B7355;
-            font-size: 14px;
-        }
-
-        .coupon-section {
-            margin: 25px 0;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        .coupon-section label {
-            display: block;
-            color: #2d5016;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .coupon-input-group {
-            display: flex;
-            gap: 10px;
-        }
-
-        .coupon-input {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-
-        .coupon-btn {
-            background: #f4d03f;
-            color: #2d5016;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .coupon-btn:hover {
-            background: #c5b358;
-        }
-
-        .checkout-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%);
-            color: white;
-            border: none;
-            padding: 18px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .checkout-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(74,124,35,0.4);
-        }
-
-        .continue-shopping {
-            display: block;
-            text-align: center;
-            color: #4a7c23;
-            text-decoration: none;
-            margin-top: 15px;
-            font-weight: 600;
-        }
-
-        .continue-shopping:hover {
-            text-decoration: underline;
-        }
-
-        .payment-methods {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        .payment-methods p {
-            color: #666;
-            font-size: 13px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .payment-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            font-size: 28px;
-        }
-
-        .empty-cart {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .empty-cart-icon {
-            font-size: 100px;
-            margin-bottom: 20px;
-        }
-
-        .empty-cart h2 {
-            color: #2d5016;
-            margin-bottom: 15px;
-        }
-
-        .empty-cart p {
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .empty-cart-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%);
-            color: white;
-            text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .suggested-products {
-            margin-top: 50px;
-        }
-
-        .suggested-products h2 {
-            color: #2d5016;
-            font-size: 28px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .suggested-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .product-card {
-            background: white;
-            border: 3px solid #f4d03f;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-
-        .product-image {
-            height: 140px;
-            background: rgba(244,208,63,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-        }
-
-        .product-info {
-            padding: 15px;
-        }
-
-        .product-name {
-            color: #2d5016;
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .product-price {
-            color: #2d5016;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-
-        .btn-add-cart {
-            width: 100%;
-            background: #4a7c23;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 12px;
-            cursor: pointer;
-        }
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        .discount-applied {
-            color: #27ae60;
-            font-weight: 600;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 14px;
-            margin-left: 10px;
-        }
-
-        @media (max-width: 1024px) {
-            .cart-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .cart-item {
-                grid-template-columns: 80px 1fr;
-                gap: 15px;
-            }
-            
-            .item-price, .quantity-control, .item-total {
-                grid-column: 2;
-            }
-            
-            .suggested-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            
-        }
-
-        @media (max-width: 600px) {
-            .suggested-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            
-        }
-            /* Navigation */
-        .top-banner { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); color: white; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
-        .search-bar input { padding: 6px 12px; border: none; border-radius: 20px; width: 200px; }
-        header { background: linear-gradient(135deg, #f4d03f 0%, #c5b358 100%); padding: 30px; text-align: center; }
-        header h1 { color: #2d5016; font-size: 42px; }
-        nav { background: linear-gradient(135deg, #4a7c23 0%, #5a9129 100%); position: sticky; top: 0; z-index: 999; }
-        .nav-container { display: flex; justify-content: center; align-items: center; padding: 10px; flex-wrap: wrap; }
-        .nav-item { position: relative; display: flex; align-items: center; }
-        .nav-button { background: transparent; color: white; border: none; padding: 14px 18px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px; margin: 0 3px; white-space: nowrap; text-decoration: none; display: inline-block; vertical-align: middle; line-height: 1; }
-        .nav-button:hover { background: rgba(255,255,255,0.2); }
-        .dropdown { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; min-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); padding-top: 10px; z-index: 1001; }
-        .dropdown::before { content: ''; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
-        .nav-item:hover .dropdown { display: block; }
-        .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
-        .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
-    
-        /* Footer Styles */
-        footer {
-            background: #2d5016;
-            color: white;
-            padding: 50px 40px 30px;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 25px;
-            margin-bottom: 30px;
-            align-items: start;
-        }
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .footer-column h4 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: #f4d03f;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(244,208,63,0.3);
-        }
-
-        .footer-column h2 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: #f4d03f;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(244,208,63,0.3);
-        }
-
-        .footer-column p,
-        .footer-column a {
-            color: white;
-            font-size: 13px;
-            line-height: 1.6;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .footer-column a:hover {
-            color: #f4d03f;
-        }
-
-        .footer-logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: #f4d03f;
-            margin-bottom: 12px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
-        }
-
-        .newsletter-section {
-            background: rgba(244,208,63,0.1);
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .newsletter-section h2 {
-            border-bottom: none;
-            padding-bottom: 5px;
-        }
-
-        .newsletter-section p {
-            font-size: 12px;
-            margin-bottom: 12px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .newsletter-input {
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            font-size: 13px;
-        }
-
-        .newsletter-btn {
-            background: #f4d03f;
-            color: #2d5016;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 13px;
-        }
-
-        .newsletter-btn:hover {
-            background: #fff;
-        }
-
-        .chat-column {
-            background: rgba(244,208,63,0.1);
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .chat-column h2 {
-            border-bottom: none;
-            padding-bottom: 5px;
-        }
-
-        .footer-chat {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chat-messages {
-            flex: 1;
-            padding: 12px;
-            overflow-y: auto;
-            background: #f9f9f9;
-        }
-
-        .chat-message {
-            padding: 8px 12px;
-            border-radius: 12px;
-            margin-bottom: 8px;
-            font-size: 12px;
-        }
-
-        .chat-message.bot {
-            background: #e8f5e9;
-            color: #2d5016;
-        }
-
-        .chat-message.user {
-            background: #4a7c23;
-            color: white;
-            margin-left: 20%;
-        }
-
-        .chat-input-area {
-            display: flex;
-            padding: 8px;
-            background: white;
-            border-top: 1px solid #eee;
-            gap: 6px;
-        }
-
-        .chat-input {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 15px;
-            font-size: 12px;
-        }
-
-        .chat-send {
-            background: #4a7c23;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 15px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 12px;
-        }
-
-        @media (max-width: 1000px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrello - Premiata Erboristeria Ceccato</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Arial,sans-serif;background:#f5f5f0;}
+
+    .top-banner{
+      display:flex;justify-content:space-between;align-items:center;
+      background:#8B7355;padding:8px 20px;font-size:14px;color:#fff;
+      flex-wrap:wrap;gap:10px;
+    }
+    .top-banner a{color:#f4d03f;text-decoration:none;font-weight:bold;}
+
+    header{
+      background:linear-gradient(135deg,#2d5016,#4a7c23);
+      color:#fff;text-align:center;padding:20px;
+    }
+    header h1{font-family:'Brush Script MT',cursive;font-size:36px;margin:0;}
+
+    .nav-container{
+      display:flex;justify-content:center;gap:15px;padding:15px;
+      background:#4a7c23;flex-wrap:wrap;
+    }
+    .nav-button{
+      background:#f4d03f;border:none;padding:12px 18px;border-radius:30px;
+      cursor:pointer;font-weight:bold;transition:.3s;
+    }
+    .nav-button:hover{background:#d4ac0d;transform:scale(1.05);}
+
+    .cart-icon{
+      position:fixed;top:20px;right:20px;background:#f4d03f;
+      width:60px;height:60px;border-radius:50%;
+      display:flex;justify-content:center;align-items:center;
+      font-size:28px;cursor:pointer;
+      box-shadow:0 4px 15px rgba(0,0,0,.2);
+      z-index:1000;
+    }
+    .cart-count{
+      position:absolute;top:-5px;right:-5px;width:24px;height:24px;
+      background:#e74c3c;color:#fff;border-radius:50%;
+      font-size:12px;display:flex;justify-content:center;align-items:center;
+      font-weight:bold;
+    }
+
+    .cart-page{max-width:1100px;margin:30px auto;padding:0 15px;}
+    .cart-header{
+      background:#fff;padding:20px;border-radius:15px;
+      box-shadow:0 6px 20px rgba(0,0,0,.1);
+      margin-bottom:20px;text-align:left;
+    }
+    .cart-header h2{color:#2d5016;margin-bottom:6px;}
+    #shippingNotice{margin-top:6px;}
+
+    .cart-container{
+      display:grid;
+      grid-template-columns:1.6fr 1fr;
+      gap:20px;
+    }
+
+    .cart-items,.cart-summary{
+      background:#fff;border-radius:15px;padding:20px;
+      box-shadow:0 6px 20px rgba(0,0,0,.1);
+    }
+
+    .cart-item{
+      display:grid;
+      grid-template-columns:70px 1fr 110px 150px;
+      gap:15px;align-items:center;
+      padding:15px 0;border-bottom:1px solid #eee;
+    }
+    .cart-item:last-child{border-bottom:none;}
+
+    .item-image{
+      width:70px;height:70px;border-radius:15px;background:#f5f5f0;
+      display:flex;align-items:center;justify-content:center;
+      font-size:34px;
+    }
+    .item-details h3{color:#2d5016;font-size:16px;margin-bottom:5px;}
+    .item-details p{color:#666;font-size:13px;}
+    .item-price{font-weight:900;color:#2d5016;text-align:right;}
+
+    .quantity-control{display:flex;align-items:center;gap:8px;justify-content:flex-end;}
+    .quantity-btn{
+      background:#4a7c23;border:none;color:#fff;width:32px;height:32px;
+      border-radius:10px;cursor:pointer;font-weight:900;font-size:18px;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .quantity-btn:active{transform:scale(.98);}
+    .quantity-input{
+      width:56px;padding:7px;text-align:center;
+      border:1px solid #ddd;border-radius:10px;font-weight:800;
+    }
+
+    .summary-title{color:#2d5016;font-weight:900;margin-bottom:12px;font-size:18px;}
+    .summary-row{display:flex;justify-content:space-between;margin:10px 0;color:#333;}
+    .summary-row.total{
+      font-weight:900;font-size:18px;color:#2d5016;
+      border-top:1px solid #eee;padding-top:12px;margin-top:14px;
+    }
+
+    .checkout-btn{
+      margin-top:15px;width:100%;
+      background:#2d5016;color:#fff;border:none;padding:14px;
+      border-radius:12px;cursor:pointer;font-weight:900;font-size:16px;
+    }
+    .checkout-btn:hover{background:#4a7c23;}
+
+    .empty-cart{
+      background:#fff;border-radius:15px;padding:40px 20px;text-align:center;
+      box-shadow:0 6px 20px rgba(0,0,0,.1);
+    }
+    .empty-cart h3{color:#2d5016;margin-bottom:10px;}
+    .empty-cart p{color:#666;margin-bottom:15px;}
+    .empty-cart a{
+      display:inline-block;background:#f4d03f;color:#2d5016;font-weight:900;
+      padding:12px 18px;border-radius:999px;text-decoration:none;
+    }
+
+    @media (max-width:900px){
+      .cart-container{grid-template-columns:1fr;}
+      .cart-item{grid-template-columns:60px 1fr;gap:12px;}
+      .item-price,.quantity-control{justify-content:flex-start;text-align:left;}
+    }
+    @media (max-width:700px){
+      .cart-icon{top:auto;bottom:18px;right:18px;width:54px;height:54px;font-size:24px;}
+    }
+  </style>
 </head>
 <body>
-    <div class="top-banner">
-        <div>📦 Spedizione gratuita dai 49€</div>
-        <div style="display: flex; gap: 20px; align-items: center;">
-            <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
-            <div class="search-bar">
-                <input type="text" placeholder="Cerca nel sito...">
-            </div>
-        </div>
+
+  <div class="top-banner">
+    <div>📦 Spedizione rapida | 💳 Pagamenti sicuri</div>
+    <div style="display:flex; gap:20px; align-items:center;">
+      <a href="accedi.html">Registrati / Accedi</a>
+    </div>
+  </div>
+
+  <header>
+    <h1>🌿 Premiata Erboristeria Ceccato</h1>
+  </header>
+
+  <div class="nav-container">
+    <button class="nav-button" onclick="location.href='Premiata Erboristeria Ceccato.html'">🏠 Home</button>
+    <button class="nav-button" onclick="location.href='catalogo.html'">🛍️ Catalogo</button>
+    <button class="nav-button" onclick="location.href='contattaci.html'">📞 Contattaci</button>
+  </div>
+
+  <div class="cart-icon" onclick="location.href='carrello.html'">
+    🛒
+    <div class="cart-count" id="cartCount">0</div>
+  </div>
+
+  <div class="cart-page">
+    <div class="cart-header">
+      <h2>🛒 Il tuo carrello</h2>
+      <p>Prodotti nel carrello: <strong id="itemCount">0</strong></p>
+      <div id="shippingNotice"></div>
     </div>
 
-    <header>
-        <a href="Premiata Erboristeria Ceccato.html" style="text-decoration: none;">
-            <h1>🌿 Premiata Erboristeria Ceccato 🌿</h1>
-        </a>
-    </header>
+    <div id="cartContainer" class="cart-container" style="display:none;">
+      <div class="cart-items">
+        <div id="cartItems"></div>
+      </div>
 
-        <nav>
-        <div class="nav-container">
-            <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
-            <div class="nav-item">
-                <button class="nav-button">Chi Siamo</button>
-                <div class="dropdown">
-                    <a href="la-nostra-storia.html">La nostra storia</a>
-                    <a href="il-nostro-team.html">Il nostro team</a>
-                    <a href="i-nostri-negozi.html">I nostri negozi</a>
-                    <a href="contattaci.html">Contattaci</a>
-                </div>
-            </div>
-            <div class="nav-item">
-                <button class="nav-button">Prodotti</button>
-                <div class="dropdown">
-                    <a href="categorie.html">Categorie</a>
-                    <a href="erbe-spezie.html">Erbe e spezie</a>
-                    <a href="vitamine-minerali.html">Vitamine e minerali</a>
-                    <div class="has-submenu">
-                        <a href="integratori.html">Integratori ▸</a>
-                        <div class="submenu">
-                            <a href="integratori-cistite.html">Cistite</a>
-                            <a href="integratori-fermenti.html">Fermenti</a>
-                            <a href="integratori-prostata.html">Prostata</a>
-                        </div>
-                    </div>
-                    <a href="oli-essenziali.html">Oli essenziali</a>
-                    <a href="ayurveda.html">Ayurveda</a>
-                    <a href="cosmesi-naturale.html">Cosmesi naturale</a>
-                    <a href="alimentazione-naturale.html">Alimentazione</a>
-                    <a href="benessere.html">Benessere</a>
-                    <a href="ambiente-tessuti.html">Ambiente e tessuti</a>
-                    <a href="oggettistica.html">Oggettistica</a>
-                </div>
-            </div>
-            <div class="nav-item">
-                <button class="nav-button">Cristalloterapia</button>
-                <div class="dropdown">
-                    <a href="articoli-cristalli.html">Articoli</a>
-                    <a href="cristalli-pietre.html">Cristalli</a>
-                </div>
-            </div>
-            <div class="nav-item">
-                <button class="nav-button">Novità</button>
-                <div class="dropdown">
-                    <a href="#">Nuovi arrivi</a>
-                    <a href="#">Ultimi prodotti</a>
-                    <a href="#">Tendenze</a>
-                </div>
-            </div>
-            <div class="nav-item"><a href="#" class="nav-button">Offerte</a></div>
-            <div class="nav-item"><a href="#" class="nav-button">Articoli</a></div>
-            <div class="nav-item"><a href="#" class="nav-button">Gift Card</a></div>
-            <div class="nav-item">
-                <button class="nav-button">Contattaci</button>
-                <div class="dropdown">
-                    <a href="contattaci.html">📧 Scrivici</a>
-                    <a href="i-nostri-negozi.html">📍 Negozi</a>
-                </div>
-            </div>
-            
-            <div class="nav-item">
-                <button class="nav-button">Account</button>
-                <div class="dropdown">
-                    <a href="#">I miei ordini</a>
-                    <a href="#">Lista desideri</a>
-                    <a href="#">Le mie info</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+      <div class="cart-summary">
+        <div class="summary-title">Riepilogo</div>
+        <div class="summary-row"><span>Subtotale</span><span id="subtotal">€0.00</span></div>
+        <div class="summary-row"><span>Spedizione</span><span id="shipping">€0.00</span></div>
 
-    <main>
-        <h2 class="page-title">🛒 Il Tuo Carrello</h2>
+        <div class="summary-row total"><span>Totale</span><span id="total">€0.00</span></div>
 
-        <div class="cart-container" id="cartContainer">
-            <!-- Cart Items -->
-            <div class="cart-items" id="cartItems">
-                <!-- Items will be loaded by JavaScript -->
-            </div>
+        <button class="checkout-btn" onclick="showToast('Checkout: versione demo ✅')">Procedi al checkout</button>
+      </div>
+    </div>
 
-            <!-- Cart Summary -->
-            <div class="cart-summary" id="cartSummary">
-                <h3 class="summary-title">Riepilogo Ordine</h3>
-                
-                <div class="summary-row">
-                    <span class="label">Subtotale (<span id="itemCount">0</span> articoli)</span>
-                    <span class="value" id="subtotal">€0.00</span>
-                </div>
-                
-                <div class="summary-row">
-                    <span class="label">Spedizione</span>
-                    <span class="value" id="shipping">€5.90</span>
-                </div>
+    <div id="emptyCart" class="empty-cart">
+      <h3>Il carrello è vuoto</h3>
+      <p>Aggiungi prodotti dalla home o dal catalogo.</p>
+      <a href="Premiata Erboristeria Ceccato.html">Torna ai prodotti</a>
+    </div>
+  </div>
 
-                <div id="shippingNotice"></div>
+  <!-- ✅ CARRELLO INTEGRATO (NO cart.js) -->
+  <script>
+    const CART_KEY = "ceccato_cart_v1";
 
-                <div class="summary-row" id="discountRow" style="display: none;">
-                    <span class="label">Sconto</span>
-                    <span class="value discount-applied" id="discountAmount">-€0.00</span>
-                </div>
+    function getCart(){ return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); }
+    function saveCart(cart){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartCount(); }
 
-                <div class="summary-row total">
-                    <span class="label">Totale</span>
-                    <span class="value" id="total">€0.00</span>
-                </div>
-
-                <div class="coupon-section">
-                    <label>Hai un codice sconto?</label>
-                    <div class="coupon-input-group">
-                        <input type="text" class="coupon-input" id="couponInput" placeholder="Inserisci codice">
-                        <button class="coupon-btn" onclick="applyCoupon()">Applica</button>
-                    </div>
-                    <p id="couponMessage" style="font-size: 12px; margin-top: 8px;"></p>
-                </div>
-
-                <button class="checkout-btn" onclick="proceedToCheckout()">
-                    Procedi al Checkout →
-                </button>
-
-                <a href="Premiata Erboristeria Ceccato.html" class="continue-shopping">
-                    ← Continua lo shopping
-                </a>
-
-                <div class="payment-methods">
-                    <p>Metodi di pagamento accettati:</p>
-                    <div class="payment-icons">
-                        💳 🏦 📱 💶
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Empty Cart Message (hidden by default) -->
-        <div class="empty-cart" id="emptyCart" style="display: none;">
-            <div class="empty-cart-icon">🛒</div>
-            <h2>Il tuo carrello è vuoto</h2>
-            <p>Scopri i nostri prodotti naturali e inizia il tuo percorso di benessere!</p>
-            <a href="Premiata Erboristeria Ceccato.html" class="empty-cart-btn">Vai allo Shop</a>
-        </div>
-
-        <!-- Suggested Products -->
-        <div class="suggested-products">
-            <h2>✨ Potrebbe interessarti anche</h2>
-            <div class="suggested-grid">
-                <div class="product-card">
-                    <div class="product-image">🌻</div>
-                    <div class="product-info">
-                        <div class="product-name">Crema Calendula</div>
-                        <div class="product-price">€24.90</div>
-                        <button class="btn-add-cart" onclick="addSuggestedToCart('Crema Calendula', 24.90, '🌻')">Aggiungi al carrello</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">🌿</div>
-                    <div class="product-info">
-                        <div class="product-name">Curcuma Bio</div>
-                        <div class="product-price">€6.50</div>
-                        <button class="btn-add-cart" onclick="addSuggestedToCart('Curcuma Bio', 6.50, '🌿')">Aggiungi al carrello</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">💎</div>
-                    <div class="product-info">
-                        <div class="product-name">Ametista</div>
-                        <div class="product-price">€22.00</div>
-                        <button class="btn-add-cart" onclick="addSuggestedToCart('Ametista', 22.00, '💎')">Aggiungi al carrello</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">⚡</div>
-                    <div class="product-info">
-                        <div class="product-name">Magnesio</div>
-                        <div class="product-price">€21.90</div>
-                        <button class="btn-add-cart" onclick="addSuggestedToCart('Magnesio', 21.90, '⚡')">Aggiungi al carrello</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    
-    <footer>
-        <div class="footer-content">
-            <!-- Colonna 1: Info Azienda -->
-            <div class="footer-column">
-                <div class="footer-logo">🌿 Premiata Erboristeria Ceccato</div>
-                <p><strong>Titolare:</strong> [Nome Cognome]</p>
-                <p><strong>Sede:</strong><br>Via Example 123<br>38050 Levico Terme (TN) - Italia</p>
-                <p><strong>Tel:</strong> +39 0461 123456<br><strong>Email:</strong> info@erboristeria-ceccato.it</p>
-                <p><strong>P.IVA:</strong> 01234567890</p>
-                <p><strong>Assistenza Clienti:</strong><br>assistenza@erboristeria-ceccato.it<br>Lun-Ven 9:00-18:00</p>
-            </div>
-
-            <!-- Colonna 2: Info Legali -->
-            <div class="footer-column">
-                <h4>Informazioni Legali</h4>
-                <a href="termini-condizioni.html">Termini e Condizioni</a>
-                <a href="condizioni-vendita.html">Condizioni Generali di Vendita</a>
-                <a href="diritto-recesso.html">Diritto di Recesso (14 giorni)</a>
-                <a href="spedizioni-consegne.html">Spedizioni e Consegne</a>
-                <a href="metodi-pagamento.html">Metodi di Pagamento</a>
-                <a href="convenzioni.html">Convenzioni</a>
-                <a href="privacy-policy.html">Privacy Policy (GDPR)</a>
-                <a href="cookie-policy.html">Cookie Policy</a>
-                <a href="#" onclick="alert('Qui si aprirà il pannello gestione cookie')">⚙️ Gestisci Preferenze Cookie</a>
-                <a href="reclami-controversie.html">Reclami e Controversie</a>
-                <a href="garanzie-legali.html">Garanzie Legali</a>
-            </div>
-
-            <!-- Colonna 3: Social -->
-            <div class="footer-column">
-                <h4>Seguici sui Social</h4>
-                <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-                <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
-                <a href="https://instagram.com" target="_blank">📷 Instagram</a>
-                <a href="https://ebay.it" target="_blank">🛒 eBay</a>
-            </div>
-
-            <!-- Colonna 4: Newsletter -->
-            <div class="footer-column newsletter-section">
-                <h2>📧 Iscriviti alla Newsletter</h2>
-                <p>Ricevi offerte esclusive e novità</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie per esserti iscritto!');">
-                    <input type="email" class="newsletter-input" placeholder="La tua email" required>
-                    <button type="submit" class="newsletter-btn">Iscriviti</button>
-                </form>
-            </div>
-
-            <!-- Colonna 5: Chat -->
-            <div class="footer-column chat-column">
-                <h2>💬 Chat con noi</h2>
-                <div class="footer-chat" id="chatWidget">
-                    <div class="chat-messages" id="chatMessages">
-                        <div class="chat-message bot">
-                            Ciao! 👋 Come posso aiutarti?
-                        </div>
-                    </div>
-                    <div class="chat-input-area">
-                        <input type="text" class="chat-input" id="chatInput" placeholder="Scrivi..." onkeypress="if(event.key==='Enter') sendMessage()">
-                        <button class="chat-send" onclick="sendMessage()">Invia</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
-            <p>🌿 Benessere naturale dal 1970 🌿</p>
-            <p style="font-size: 11px; margin-top: 10px;">
-                <a href="#" style="color: #f4d03f; text-decoration: none;">ODR - Risoluzione Online Controversie</a> | 
-                <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color: #f4d03f;"> Piattaforma ODR UE</a>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-    function sendMessage() {
-        const input = document.getElementById('chatInput');
-        const message = input.value.trim();
-        if (message) {
-            const container = document.getElementById('chatMessages');
-            const userMsg = document.createElement('div');
-            userMsg.className = 'chat-message user';
-            userMsg.textContent = message;
-            container.appendChild(userMsg);
-            input.value = '';
-            setTimeout(() => {
-                const botMsg = document.createElement('div');
-                botMsg.className = 'chat-message bot';
-                botMsg.textContent = 'Grazie per il messaggio! Ti risponderemo presto 😊';
-                container.appendChild(botMsg);
-                container.scrollTop = container.scrollHeight;
-            }, 800);
-            container.scrollTop = container.scrollHeight;
-        }
+    function updateCartCount(){
+      const cart = getCart();
+      const count = cart.reduce((s,p)=>s+(p.qty||0),0);
+      const badge = document.getElementById("cartCount");
+      if (badge) badge.textContent = count;
     }
-    </script>
+
+    function showToast(msg){
+      let t = document.getElementById("toast");
+      if(!t){
+        t = document.createElement("div");
+        t.id = "toast";
+        t.style.cssText =
+          "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);" +
+          "background:rgba(45,80,22,.95);color:#fff;padding:12px 18px;" +
+          "border-radius:999px;font-weight:900;font-size:14px;opacity:0;" +
+          "pointer-events:none;transition:all .25s ease;z-index:9999;";
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.style.opacity = "1";
+      t.style.transform = "translateX(-50%) translateY(-6px)";
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>{
+        t.style.opacity="0";
+        t.style.transform="translateX(-50%) translateY(0)";
+      }, 1400);
+    }
+
+    function eur(n){ return "€" + (Math.round(n*100)/100).toFixed(2); }
+
+    function renderCart(){
+      const cart = getCart();
+
+      const itemsEl = document.getElementById("cartItems");
+      const emptyEl = document.getElementById("emptyCart");
+      const contEl  = document.getElementById("cartContainer");
+
+      if (!itemsEl) return;
+
+      if (!cart.length){
+        if (contEl) contEl.style.display = "none";
+        if (emptyEl) emptyEl.style.display = "block";
+        document.getElementById("itemCount").textContent = "0";
+        document.getElementById("subtotal").textContent = eur(0);
+        document.getElementById("shipping").textContent = eur(0);
+        document.getElementById("total").textContent = eur(0);
+        updateCartCount();
+        return;
+      }
+
+      if (contEl) contEl.style.display = "grid";
+      if (emptyEl) emptyEl.style.display = "none";
+
+      itemsEl.innerHTML = cart.map((p,i)=>{
+        const qty = p.qty || 1;
+        const price = p.price || 0;
+        return `
+          <div class="cart-item">
+            <div class="item-image">${p.emoji || "🌿"}</div>
+            <div class="item-details">
+              <h3>${p.name || "Prodotto"}</h3>
+              <p style="margin-top:8px;">
+                <a href="javascript:void(0)" onclick="removeItem(${i})"
+                   style="color:#e74c3c;font-weight:900;text-decoration:none;">Rimuovi</a>
+              </p>
+            </div>
+
+            <div class="item-price">${eur(price)}</div>
+
+            <div class="quantity-control">
+              <button class="quantity-btn" onclick="decQty(${i})">−</button>
+              <input class="quantity-input" type="number" min="1" value="${qty}"
+                     oninput="setQty(${i}, this.value)">
+              <button class="quantity-btn" onclick="incQty(${i})">+</button>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      const itemCount = cart.reduce((s,p)=>s+(p.qty||0),0);
+      const subtotal  = cart.reduce((s,p)=>s+((p.price||0)*(p.qty||0)),0);
+
+      // Spedizione: 5.90, gratis da 49€
+      const freeThreshold = 49;
+      const shippingRate = 5.90;
+      const shipping = subtotal >= freeThreshold ? 0 : shippingRate;
+      const total = subtotal + shipping;
+
+      document.getElementById("itemCount").textContent = String(itemCount);
+      document.getElementById("subtotal").textContent  = eur(subtotal);
+      document.getElementById("shipping").textContent  = eur(shipping);
+      document.getElementById("total").textContent     = eur(total);
+
+      const notice = document.getElementById("shippingNotice");
+      if (notice){
+        if (shipping === 0){
+          notice.innerHTML = `<p style="color:#2d5016;font-weight:900;font-size:13px;">✅ Spedizione gratuita (da 49€)</p>`;
+        } else {
+          const missing = Math.max(0, freeThreshold - subtotal);
+          notice.innerHTML = `<p style="color:#666;font-size:13px;">Aggiungi ${eur(missing)} per ottenere la spedizione gratuita.</p>`;
+        }
+      }
+
+      updateCartCount();
+    }
+
+    function setQty(i, q){
+      let cart = getCart();
+      q = parseInt(q,10);
+      if (!q || q < 1) q = 1;
+      if (!cart[i]) return;
+      cart[i].qty = q;
+      saveCart(cart);
+      renderCart();
+    }
+
+    function incQty(i){
+      const cart = getCart();
+      if (!cart[i]) return;
+      cart[i].qty = (cart[i].qty || 1) + 1;
+      saveCart(cart);
+      renderCart();
+    }
+
+    function decQty(i){
+      const cart = getCart();
+      if (!cart[i]) return;
+      cart[i].qty = Math.max(1, (cart[i].qty || 1) - 1);
+      saveCart(cart);
+      renderCart();
+    }
+
+    function removeItem(i){
+      const cart = getCart();
+      if (!cart[i]) return;
+      cart.splice(i, 1);
+      saveCart(cart);
+      showToast("Rimosso dal carrello");
+      renderCart();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateCartCount();
+      renderCart();
+    });
+  </script>
+
 </body>
 </html>
