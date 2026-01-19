@@ -833,8 +833,8 @@
             <div class="slide"><img src="https://images.unsplash.com/photo-1527576539890-dfa815648363?w=1400&h=400&fit=crop" alt="Slide 2"></div>
             <div class="slide"><img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1400&h=400&fit=crop" alt="Slide 3"></div>
         </div>
-        <button class="slider-arrow prev" onclick="moveSlide(-1)">❮</button>
-        <button class="slider-arrow next" onclick="moveSlide(1)">❯</button>
+        <button class="slider-arrow prev" onclick="moveSlide(-1)">◀</button>
+        <button class="slider-arrow next" onclick="moveSlide(1)">▶</button>
     </div>
 
     <main>
@@ -866,7 +866,7 @@
                             <span class="price-old">€12.50</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn-add-cart" onclick="addToCart()">Aggiungi</button>
+                            <button class="btn-add-cart" onclick="addToCart('Camomilla Bio', 8.90)">Aggiungi</button>
                             <button class="btn-wishlist">❤️</button>
                         </div>
                     </div>
@@ -881,7 +881,7 @@
                             <span class="price-current">€15.90</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn-add-cart" onclick="addToCart()">Aggiungi</button>
+                            <button class="btn-add-cart" onclick="addToCart('Olio Lavanda', 15.90)">Aggiungi</button>
                             <button class="btn-wishlist">❤️</button>
                         </div>
                     </div>
@@ -896,7 +896,7 @@
                             <span class="price-current">€22.00</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn-add-cart" onclick="addToCart()">Aggiungi</button>
+                            <button class="btn-add-cart" onclick="addToCart('Ametista', 22.00)">Aggiungi</button>
                             <button class="btn-wishlist">❤️</button>
                         </div>
                     </div>
@@ -911,7 +911,7 @@
                             <span class="price-current">€18.50</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn-add-cart" onclick="addToCart()">Aggiungi</button>
+                            <button class="btn-add-cart" onclick="addToCart('Vitamina C', 18.50)">Aggiungi</button>
                             <button class="btn-wishlist">❤️</button>
                         </div>
                     </div>
@@ -927,7 +927,7 @@
                             <span class="price-old">€29.90</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn-add-cart" onclick="addToCart()">Aggiungi</button>
+                            <button class="btn-add-cart" onclick="addToCart('Crema Calendula', 24.90)">Aggiungi</button>
                             <button class="btn-wishlist">❤️</button>
                         </div>
                     </div>
@@ -937,272 +937,4 @@
                     <div class="product-image">🌿</div>
                     <div class="product-info">
                         <div class="product-name">Curcuma</div>
-                        <div class="product-description">Spezia biologica pura</div>
-                        <div class="product-price">
-                            <span class="price-current">€6.50</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn-add-cart" onclick="addToCart()">Aggiungi</button>
-                            <button class="btn-wishlist">❤️</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">💗<div class="product-badge new">NUOVO</div></div>
-                    <div class="product-info">
-                        <div class="product-name">Quarzo Rosa</div>
-                        <div class="product-description">Cristallo dell'amore</div>
-                        <div class="product-price">
-                            <span class="price-current">€18.00</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn-add-cart" onclick="addToCart()">Aggiungi</button>
-                            <button class="btn-wishlist">❤️</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">⚡</div>
-                    <div class="product-info">
-                        <div class="product-name">Magnesio</div>
-                        <div class="product-description">Integratore magnesio</div>
-                        <div class="product-price">
-                            <span class="price-current">€21.90</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn-add-cart" onclick="addToCart()">Aggiungi</button>
-                            <button class="btn-wishlist">❤️</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="video-section">
-            <h2>🎥 I Nostri Video</h2>
-            <div class="video-layout">
-                <div>
-                    <div class="video-container">
-                        <video id="videoPlayer" controls>
-                            <source id="videoSource" src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="video-controls">
-                        <button class="video-btn" onclick="previousVideo()">⏮️ Precedente</button>
-                        <button class="video-btn" onclick="playPauseVideo()">▶️ Play/Pausa</button>
-                        <button class="video-btn" onclick="nextVideo()">Prossimo ⏭️</button>
-                    </div>
-                </div>
-                <div class="video-playlist" id="playlistContainer">
-                    <div class="playlist-item active" onclick="loadVideo(0)">1. Introduzione Erbe Officinali</div>
-                    <div class="playlist-item" onclick="loadVideo(1)">2. Guida Oli Essenziali</div>
-                    <div class="playlist-item" onclick="loadVideo(2)">3. Cristalloterapia</div>
-                    <div class="playlist-item" onclick="loadVideo(3)">4. Integratori Naturali</div>
-                    <div class="playlist-item" onclick="loadVideo(4)">5. Cosmesi Naturale</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="suppliers-section">
-            <h3>I Nostri Fornitori</h3>
-            <div class="suppliers-logos">
-                <div class="supplier-logo"><img src="https://i.postimg.cc/7CZFy78c/derbe.png" alt="TAGES"></div>
-                <div class="supplier-logo"><img src="https://i.postimg.cc/9rPKR1cS/giorgini.jpg" alt="DR. GIORGINI"></div>
-                <div class="supplier-logo"><img src="https://i.postimg.cc/bdpBXk0h/bioearth.png" alt="BIOEARTH"></div>
-                <div class="supplier-logo"><img src="https://i.postimg.cc/Lh506RWY/viropa.png" alt="VIROPA"></div>
-                <div class="supplier-logo"><img src="https://i.postimg.cc/phTkTYsd/midefa-finale.png" alt="MIDEFA"></div>
-                <div class="supplier-logo"><img src="https://i.postimg.cc/QKgRgqZ4/zuccari.jpg" alt="ZUCCARI"></div>
-                <div class="supplier-logo"><img src="https://i.postimg.cc/R3H96Khk/fermaderbe.png" alt="FARMADERBE"></div>
-                <div class="supplier-logo"><img src="https://i.postimg.cc/svdWv4XD/brisighello.jpg" alt="BRISIGHELLO"></div>
-                <div class="supplier-logo"><img src="https://i.postimg.cc/hX4fdyqB/biosline.webp" alt="BIOS LINE"></div>
-                <div class="supplier-logo"><span>🌺</span><span>LACOTE</span></div>
-                <div class="supplier-logo"><span>🌱</span><span>L'ERBOLARIO</span></div>
-                <div class="supplier-logo"><span>💚</span><span>LAB. AMERIGO</span></div>
-                <div class="supplier-logo"><span>🌿</span><span>DI.VA</span></div>
-                <div class="supplier-logo"><span>🌾</span><span>LADYBIO</span></div>
-                <div class="supplier-logo"><span>🍃</span><span>BIOMED</span></div>
-                <div class="supplier-logo"><span>🏔️</span><span>HIMALAYA</span></div>
-                <div class="supplier-logo"><span>🌺</span><span>RAIHUEN</span></div>
-                <div class="supplier-logo"><span>🌱</span><span>PROBIOS</span></div>
-                <div class="supplier-logo"><span>💚</span><span>PRODECO PHARMA</span></div>
-                <div class="supplier-logo"><span>🌿</span><span>BIOARTIS</span></div>
-                <div class="supplier-logo"><span>🌸</span><span>VERAME</span></div>
-                <div class="supplier-logo"><span>🌿</span><span>MAROMA</span></div>
-                <div class="supplier-logo"><span>🌺</span><span>MIA ARMONIA</span></div>
-                <div class="supplier-logo"><span>🌱</span><span>HERBAL PRODUCT</span></div>
-                <div class="supplier-logo"><span>🧼</span><span>ALEPPO</span></div>
-                <div class="supplier-logo"><span>🍵</span><span>YOGI TEA</span></div>
-            </div>
-        </div>
-    </main>
-
-    <a href="carrello.html" class="cart-icon">
-        🛒
-        <span class="cart-count" id="cartCount">0</span>
-    </a>
-
-    <footer>
-        <div class="footer-content">
-            <!-- Colonna 1: Info Azienda -->
-            <div class="footer-column">
-                <div class="footer-logo">🌿 Premiata Erboristeria Ceccato</div>
-                <p><strong>Titolare:</strong> [Nome Cognome]</p>
-                <p><strong>Sede:</strong><br>Via Example 123<br>38050 Levico Terme (TN) - Italia</p>
-                <p><strong>Tel:</strong> +39 0461 123456<br><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb82858d84ab8e9989849982989f8e99828ac6888e88888a9f84c5829f">[email&#160;protected]</a></p>
-                <p><strong>P.IVA:</strong> 01234567890</p>
-                <p><strong>Assistenza Clienti:</strong><br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ffeececf6ecebfaf1e5fedffaedfdf0edf6ecebfaedf6feb2fcfafcfcfeebf0b1f6eb">[email&#160;protected]</a><br>Lun-Ven 9:00-18:00</p>
-            </div>
-
-            <!-- Colonna 2: Info Legali -->
-            <div class="footer-column">
-                <h4>Informazioni Legali</h4>
-                <a href="termini-condizioni.html">Termini e Condizioni</a>
-                <a href="condizioni-vendita.html">Condizioni Generali di Vendita</a>
-                <a href="diritto-recesso.html">Diritto di Recesso (14 giorni)</a>
-                <a href="spedizioni-consegne.html">Spedizioni e Consegne</a>
-                <a href="metodi-pagamento.html">Metodi di Pagamento</a>
-                <a href="convenzioni.html">Convenzioni</a>
-                <a href="privacy-policy.html">Privacy Policy (GDPR)</a>
-                <a href="cookie-policy.html">Cookie Policy</a>
-                <a href="cookie-policy.html#" onclick="alert('Qui si aprirà il pannello gestione cookie')">⚙️ Gestisci Preferenze Cookie</a>
-                <a href="reclami-controversie.html">Reclami e Controversie</a>
-                <a href="garanzie-legali.html">Garanzie Legali</a>
-            </div>
-
-            <!-- Colonna 3: Social -->
-            <div class="footer-column">
-                <h4>Seguici sui Social</h4>
-                <a href="https://facebook.com" target="_blank">📘 Facebook</a>
-                <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
-                <a href="https://instagram.com" target="_blank">📷 Instagram</a>
-                <a href="https://ebay.it" target="_blank">🛒 eBay</a>
-            </div>
-
-            <!-- Colonna 4: Newsletter -->
-            <div class="footer-column newsletter-section">
-                <h2>📧 Iscriviti alla Newsletter</h2>
-                <p>Ricevi offerte esclusive e novità</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie per esserti iscritto!');">
-                    <input type="email" class="newsletter-input" placeholder="La tua email" required>
-                    <button type="submit" class="newsletter-btn">Iscriviti</button>
-                </form>
-            </div>
-
-            <!-- Colonna 5: Chat -->
-            <div class="footer-column chat-column">
-                <h2>💬 Chat con noi</h2>
-                <div class="footer-chat" id="chatWidget">
-                    <div class="chat-messages" id="chatMessages">
-                        <div class="chat-message bot">
-                            Ciao! 👋 Come posso aiutarti?
-                        </div>
-                    </div>
-                    <div class="chat-input-area">
-                        <input type="text" class="chat-input" id="chatInput" placeholder="Scrivi..." onkeypress="if(event.key==='Enter') sendMessage()">
-                        <button class="chat-send" onclick="sendMessage()">Invia</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
-            <p>🌿 Benessere naturale dal 1970 🌿</p>
-            <p style="font-size: 11px; margin-top: 10px;">
-                <a href="#" style="color: #f4d03f; text-decoration: none;">ODR - Risoluzione Online Controversie</a> | 
-                <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color: #f4d03f;"> Piattaforma ODR UE</a>
-            </p>
-        </div>
-    </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const slider = document.getElementById('slider');
-
-        function moveSlide(direction) {
-            currentSlide += direction;
-            if (currentSlide < 0) currentSlide = slides.length - 1;
-            if (currentSlide >= slides.length) currentSlide = 0;
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-
-        setInterval(() => moveSlide(1), 5000);
-
-        function addToCart() {
-            const count = document.getElementById('cartCount');
-            count.textContent = parseInt(count.textContent) + 1;
-            alert('Prodotto aggiunto!');
-        }
-
-        const videos = [
-            { src: 'https://www.w3schools.com/html/mov_bbb.mp4', title: 'Introduzione Erbe Officinali' },
-            { src: 'https://www.w3schools.com/html/movie.mp4', title: 'Guida Oli Essenziali' },
-            { src: 'https://www.w3schools.com/html/mov_bbb.mp4', title: 'Cristalloterapia' },
-            { src: 'https://www.w3schools.com/html/movie.mp4', title: 'Integratori Naturali' },
-            { src: 'https://www.w3schools.com/html/mov_bbb.mp4', title: 'Cosmesi Naturale' }
-        ];
-
-        let currentVideoIndex = 0;
-
-        function loadVideo(index) {
-            currentVideoIndex = index;
-            document.getElementById('videoSource').src = videos[index].src;
-            document.getElementById('videoPlayer').load();
-            var items = document.querySelectorAll('.playlist-item');
-            for (var i = 0; i < items.length; i++) {
-                if (i === index) {
-                    items[i].classList.add('active');
-                } else {
-                    items[i].classList.remove('active');
-                }
-            }
-        }
-
-        function playPauseVideo() {
-            const player = document.getElementById('videoPlayer');
-            if (player.paused) player.play();
-            else player.pause();
-        }
-
-        function nextVideo() {
-            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-            loadVideo(currentVideoIndex);
-        }
-
-        function previousVideo() {
-            currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
-            loadVideo(currentVideoIndex);
-        }
-
-        // Chat functions
-        function openChat() {
-            document.getElementById('chatWidget').classList.remove('hidden');
-        }
-
-        function closeChat() {
-            document.getElementById('chatWidget').classList.add('hidden');
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const message = input.value.trim();
-            
-            if (message) {
-                const messagesContainer = document.getElementById('chatMessages');
-                
-                // Aggiungi messaggio utente
-                const userMsg = document.createElement('div');
-                userMsg.className = 'chat-message user';
-                userMsg.textContent = message;
-                messagesContainer.appendChild(userMsg);
-                
-                input.value = '';
-                
-                // Risposta automatica bot dopo 1 secondo
-                setTimeout(() => {
-                    const botMsg = document.createElement('div');
-                    botMsg.className = 'chat-message bot';
-    
+                        <div class="product-description">Spezia biologica

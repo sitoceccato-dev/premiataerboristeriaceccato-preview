@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayurveda - Premiata Erboristeria Ceccato</title>
+    <title>Ambiente e Tessuti - Premiata Erboristeria Ceccato</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; background: #f5f5f0; line-height: 1.6; }
-        .hero-category { background: linear-gradient(135deg, rgba(246,211,101,0.9), rgba(253,160,133,0.8)); color: white; padding: 60px 40px; text-align: center; }
-        .hero-category h1 { color: white; font-size: 42px; margin-bottom: 15px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
+        .hero-category { background: linear-gradient(135deg, rgba(102,126,234,0.9), rgba(118,75,162,0.8)); color: white; padding: 60px 40px; text-align: center; }
+        .hero-category h1 { font-size: 42px; margin-bottom: 15px; }
         .hero-category p { font-size: 18px; max-width: 600px; margin: 0 auto; }
         .breadcrumb { max-width: 1200px; margin: 20px auto; padding: 0 20px; font-size: 14px; color: #666; }
         .breadcrumb a { color: #4a7c23; text-decoration: none; }
@@ -18,8 +18,8 @@
         .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-bottom: 40px; }
         .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
         .product-card:hover { transform: translateY(-5px); }
-        .product-image { height: 200px; background: linear-gradient(135deg, rgba(246,211,101,0.3), rgba(253,160,133,0.2)); display: flex; align-items: center; justify-content: center; font-size: 70px; position: relative; }
-        .product-badge { position: absolute; top: 10px; left: 10px; background: #e67e22; color: white; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; }
+        .product-image { height: 200px; background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.1)); display: flex; align-items: center; justify-content: center; font-size: 70px; position: relative; }
+        .product-badge { position: absolute; top: 10px; left: 10px; background: #9b59b6; color: white; padding: 5px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; }
         .product-info { padding: 20px; }
         .product-info h3 { color: #2d5016; font-size: 16px; margin-bottom: 8px; min-height: 40px; }
         .product-info .brand { color: #888; font-size: 12px; text-transform: uppercase; margin-bottom: 5px; }
@@ -45,6 +45,14 @@
         .nav-item:hover .dropdown { display: block; }
         .dropdown a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
         .dropdown a:hover { background: #f5f5f0; color: #4a7c23; }
+
+        .has-submenu { position: relative; }
+        .has-submenu > a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .has-submenu > a:hover { background: #f4d03f; }
+        .submenu { display: none; position: absolute; left: 100%; top: 0; background: white; min-width: 150px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 1002; }
+        .has-submenu:hover .submenu { display: block; }
+        .submenu a { display: block; padding: 10px 20px; color: #333; text-decoration: none; font-size: 13px; }
+        .submenu a:hover { background: #f4d03f; }
     
         .cart-icon {
             position: fixed;
@@ -291,7 +299,7 @@
         </a>
     </header>
 
-        <nav>
+    <nav>
         <div class="nav-container">
             <div class="nav-item"><a href="Premiata Erboristeria Ceccato.html" class="nav-button">Home</a></div>
             <div class="nav-item">
@@ -370,56 +378,56 @@
     </a>
 
     <div class="hero-category">
-        <h1>🕉️ Ayurveda</h1>
-        <p>La millenaria scienza della vita per l'equilibrio di corpo, mente e spirito</p>
+        <h1>🏠 Ambiente e Tessuti</h1>
+        <p>Profumatori naturali, candele, incensi e tessuti ecologici per la tua casa</p>
     </div>
     <div class="breadcrumb">
-        <a href="Premiata Erboristeria Ceccato.html">Home</a> / <a href="categorie.html">Prodotti</a> / <strong>Ayurveda</strong>
+        <a href="Premiata Erboristeria Ceccato.html">Home</a> / <a href="categorie.html">Prodotti</a> / <strong>Ambiente e Tessuti</strong>
     </div>
     <div class="container">
         <div class="category-intro">
-            <h2>🙏 L'Antica Saggezza Indiana</h2>
-            <p>L'Ayurveda è un sistema di medicina tradizionale indiana che promuove l'equilibrio dei tre dosha (Vata, Pitta, Kapha). Scopri i nostri prodotti ayurvedici: oli, erbe, integratori e cosmetici per ritrovare armonia e benessere.</p>
+            <h2>🕯️ Casa Naturale</h2>
+            <p>Trasforma la tua casa in un'oasi di benessere con i nostri profumatori naturali, candele in cera vegetale, incensi artigianali e tessuti in fibre naturali. Prodotti eco-friendly per un ambiente sano e accogliente.</p>
         </div>
         <div class="products-grid">
             <div class="product-card">
-                <div class="product-image"><span class="product-badge">Tradiz.</span>🌿</div>
+                <div class="product-image"><span class="product-badge">Artig.</span>🕯️</div>
                 <div class="product-info">
-                    <div class="brand">Himalaya</div>
-                    <h3>Ashwagandha Bio</h3>
-                    <div class="description">Withania somnifera, adattogeno antistress, 60 capsule</div>
+                    <div class="brand">Candele Naturali</div>
+                    <h3>Candela Soia Lavanda</h3>
+                    <div class="description">Candela in cera di soia con olio essenziale di lavanda, 180g</div>
                     <div class="price-current">€18,90</div>
-                    <button class="btn-cart" onclick="addToCart('Ashwagandha Bio', 18.90)">🛒 Aggiungi</button>
+                    <button class="btn-cart" onclick="addToCart('Candela Soia Lavanda', 18.90)">🛒 Aggiungi</button>
                 </div>
             </div>
             <div class="product-card">
-                <div class="product-image"><span class="product-badge">Best</span>🧴</div>
+                <div class="product-image"><span class="product-badge">Best</span>🌸</div>
                 <div class="product-info">
-                    <div class="brand">Khadi</div>
-                    <h3>Olio di Sesamo Ayurvedico</h3>
-                    <div class="description">Olio base per massaggio Abhyanga, 200ml</div>
-                    <div class="price-current">€14,50</div>
-                    <button class="btn-cart" onclick="addToCart('Olio di Sesamo Ayurvedico', 14.50)">🛒 Aggiungi</button>
+                    <div class="brand">Millefiori</div>
+                    <h3>Diffusore a Bastoncini</h3>
+                    <div class="description">Profumatore ambiente con bastoncini in rattan, 250ml</div>
+                    <div class="price-current">€24,50</div>
+                    <button class="btn-cart" onclick="addToCart('Diffusore a Bastoncini', 24.50)">🛒 Aggiungi</button>
                 </div>
             </div>
             <div class="product-card">
-                <div class="product-image"><span class="product-badge">Bio</span>🍵</div>
+                <div class="product-image"><span class="product-badge">India</span>🪔</div>
                 <div class="product-info">
-                    <div class="brand">Pukka</div>
-                    <h3>Tisana Tulsi Clarity</h3>
-                    <div class="description">Basilico sacro, menta e zinco per la mente, 20 filtri</div>
-                    <div class="price-current">€5,90</div>
-                    <button class="btn-cart" onclick="addToCart('Tisana Tulsi Clarity', 5.90)">🛒 Aggiungi</button>
+                    <div class="brand">Satya</div>
+                    <h3>Incenso Nag Champa</h3>
+                    <div class="description">Incenso tradizionale indiano, confezione 12 stick</div>
+                    <div class="price-current">€3,90</div>
+                    <button class="btn-cart" onclick="addToCart('Incenso Nag Champa', 3.90)">🛒 Aggiungi</button>
                 </div>
             </div>
             <div class="product-card">
-                <div class="product-image"><span class="product-badge">India</span>🌺</div>
+                <div class="product-image"><span class="product-badge">Eco</span>🧣</div>
                 <div class="product-info">
-                    <div class="brand">Himalaya</div>
-                    <h3>Triphala Churna</h3>
-                    <div class="description">Polvere digestiva tradizionale, detox naturale, 100g</div>
-                    <div class="price-current">€12,90</div>
-                    <button class="btn-cart" onclick="addToCart('Triphala Churna', 12.90)">🛒 Aggiungi</button>
+                    <div class="brand">Natural Home</div>
+                    <h3>Sacchetto Lavanda Armadio</h3>
+                    <div class="description">Sacchetto profumato in cotone bio con lavanda trentina</div>
+                    <div class="price-current">€6,90</div>
+                    <button class="btn-cart" onclick="addToCart('Sacchetto Lavanda Armadio', 6.90)">🛒 Aggiungi</button>
                 </div>
             </div>
         </div>
@@ -501,20 +509,26 @@
     </footer>
 
     <script>
-        // Funzione carrello
+        // Funzione per aggiungere prodotti al carrello
         function addToCart(productName, price) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ name: productName, price: price, quantity: 1 });
+            cart.push({
+                name: productName,
+                price: price,
+                quantity: 1
+            });
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
             alert('Prodotto aggiunto al carrello!');
         }
 
+        // Aggiorna il contatore del carrello
         function updateCartCount() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             document.getElementById('cartCount').textContent = cart.length;
         }
 
+        // Chiama la funzione all'apertura della pagina
         updateCartCount();
 
         // Funzione chat

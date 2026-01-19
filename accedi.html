@@ -315,54 +315,6 @@
             font-weight: bold;
         }
 
-        /* Footer completo */
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-    
         /* Footer Styles */
         footer {
             background: #2d5016;
@@ -565,9 +517,7 @@
         <div style="display: flex; gap: 20px; align-items: center;">
             <a href="accedi.html" style="color: white; text-decoration: none;">Registrati / Accedi</a>
             <div class="search-bar"><input type="text" placeholder="Cerca nel sito..."></div>
-            <a href="carrello.html" style="color: white; text-decoration: none; font-weight: bold;">🛒 Carrello</a>
         </div>
-    </div>
     </div>
 
     <header>
@@ -697,7 +647,7 @@
                         <span>Continua con Google</span>
                     </button>
                     <button class="social-btn" onclick="alert('Login con Facebook in arrivo!')">
-                        <span>📘</span>
+                        <span>🔘</span>
                         <span>Continua con Facebook</span>
                     </button>
                 </div>
@@ -817,7 +767,7 @@
             <!-- Colonna 3: Social -->
             <div class="footer-column">
                 <h4>Seguici sui Social</h4>
-                <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+                <a href="https://facebook.com" target="_blank">🔘 Facebook</a>
                 <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
                 <a href="https://instagram.com" target="_blank">📷 Instagram</a>
                 <a href="https://ebay.it" target="_blank">🛒 eBay</a>
@@ -861,26 +811,36 @@
     </footer>
 
     <script>
-    function sendMessage() {
-        const input = document.getElementById('chatInput');
-        const message = input.value.trim();
-        if (message) {
-            const container = document.getElementById('chatMessages');
-            const userMsg = document.createElement('div');
-            userMsg.className = 'chat-message user';
-            userMsg.textContent = message;
-            container.appendChild(userMsg);
-            input.value = '';
-            setTimeout(() => {
-                const botMsg = document.createElement('div');
-                botMsg.className = 'chat-message bot';
-                botMsg.textContent = 'Grazie per il messaggio! Ti risponderemo presto 😊';
-                container.appendChild(botMsg);
-                container.scrollTop = container.scrollHeight;
-            }, 800);
-            container.scrollTop = container.scrollHeight;
+        // Aggiorna il contatore del carrello all'apertura della pagina
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cartCount').textContent = cart.length;
         }
-    }
+
+        // Chiama la funzione all'apertura della pagina
+        updateCartCount();
+
+        // Funzione chat
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (message) {
+                const container = document.getElementById('chatMessages');
+                const userMsg = document.createElement('div');
+                userMsg.className = 'chat-message user';
+                userMsg.textContent = message;
+                container.appendChild(userMsg);
+                input.value = '';
+                setTimeout(() => {
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'chat-message bot';
+                    botMsg.textContent = 'Grazie per il messaggio! Ti risponderemo presto 😊';
+                    container.appendChild(botMsg);
+                    container.scrollTop = container.scrollHeight;
+                }, 800);
+                container.scrollTop = container.scrollHeight;
+            }
+        }
     </script>
 </body>
 </html>
