@@ -649,7 +649,7 @@
         </div>
     </main>
 
-    <div class="cart-icon" onclick="alert('Carrello: ' + cartCount + ' articoli')">
+    <div class="cart-icon" onclick="location.href='carrello.html'">
         🛒
         <div class="cart-count" id="cartCount">0</div>
     </div>
@@ -664,12 +664,46 @@
     </div>
 
     <script>
-        // Gestione carrello
-        let cartCount = 0;
+        // Gestione carrello con localStorage
+        const CART_KEY = "ceccato_cart_v1";
+
+        function getCart() { 
+            return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); 
+        }
+        
+        function saveCart(cart) { 
+            localStorage.setItem(CART_KEY, JSON.stringify(cart)); 
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cart = getCart();
+            const count = cart.reduce((s, p) => s + (p.qty || 0), 0);
+            document.getElementById('cartCount').textContent = count;
+        }
 
         function addToCart(productName, price) {
-            cartCount++;
-            document.getElementById('cartCount').textContent = cartCount;
+            const cart = getCart();
+            
+            // Cerca se il prodotto esiste già
+            const existing = cart.find(p => p.name === productName);
+            
+            if (existing) {
+                existing.qty = (existing.qty || 1) + 1;
+            } else {
+                // Determina l'emoji in base al nome del prodotto
+                let emoji = '🌿';
+                if (productName.includes('Camomilla')) emoji = '🌼';
+                if (productName.includes('Lavanda')) emoji = '💜';
+                if (productName.includes('Ametista')) emoji = '💎';
+                if (productName.includes('Vitamina')) emoji = '💊';
+                if (productName.includes('Calendula')) emoji = '🌻';
+                if (productName.includes('Curcuma')) emoji = '🌿';
+                
+                cart.push({ name: productName, price: price, qty: 1, emoji: emoji });
+            }
+            
+            saveCart(cart);
             
             // Feedback visivo carrello
             const cartIcon = document.querySelector('.cart-icon');
@@ -689,6 +723,9 @@
                 toast.classList.remove('show');
             }, 3000);
         }
+
+        // Aggiorna il contatore al caricamento della pagina
+        document.addEventListener('DOMContentLoaded', updateCartCount);
 
         // Gestione slider
         let currentSlide = 0;
