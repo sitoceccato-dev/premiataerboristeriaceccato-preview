@@ -320,6 +320,201 @@
                 position: static;
             }
         }
+
+        /* Footer Styles */
+        footer {
+            background: #2d5016;
+            color: white;
+            padding: 50px 40px 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+            align-items: start;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #f4d03f;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(244,208,63,0.3);
+        }
+
+        .footer-column h2 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #f4d03f;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(244,208,63,0.3);
+        }
+
+        .footer-column p,
+        .footer-column a {
+            color: white;
+            font-size: 13px;
+            line-height: 1.6;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .footer-column a:hover {
+            color: #f4d03f;
+        }
+
+        .footer-logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f4d03f;
+            margin-bottom: 12px;
+        }
+
+        .newsletter-section {
+            background: rgba(244,208,63,0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .newsletter-section h2 {
+            border-bottom: none;
+            padding-bottom: 5px;
+        }
+
+        .newsletter-section p {
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .newsletter-input {
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .newsletter-btn {
+            background: #f4d03f;
+            color: #2d5016;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .newsletter-btn:hover {
+            background: #fff;
+        }
+
+        .chat-column {
+            background: rgba(244,208,63,0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .chat-column h2 {
+            border-bottom: none;
+            padding-bottom: 5px;
+        }
+
+        .footer-chat {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 12px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .chat-message {
+            padding: 8px 12px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .chat-message.bot {
+            background: #e8f5e9;
+            color: #2d5016;
+        }
+
+        .chat-message.user {
+            background: #4a7c23;
+            color: white;
+            margin-left: 20%;
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 8px;
+            background: white;
+            border-top: 1px solid #eee;
+            gap: 6px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .chat-send {
+            background: #4a7c23;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        @media (max-width: 1000px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -495,6 +690,80 @@
         </div>
     </div>
 
+    <footer>
+        <div class="footer-content">
+            <!-- Colonna 1: Info Azienda -->
+            <div class="footer-column">
+                <div class="footer-logo">🌿 Premiata Erboristeria Ceccato</div>
+                <p><strong>Titolare:</strong> [Nome Cognome]</p>
+                <p><strong>Sede:</strong><br>Via Example 123<br>38050 Levico Terme (TN) - Italia</p>
+                <p><strong>Tel:</strong> +39 0461 123456<br><strong>Email:</strong> info@erboristeria-ceccato.it</p>
+                <p><strong>P.IVA:</strong> 01234567890</p>
+                <p><strong>Assistenza Clienti:</strong><br>assistenza@erboristeria-ceccato.it<br>Lun-Ven 9:00-18:00</p>
+            </div>
+
+            <!-- Colonna 2: Info Legali -->
+            <div class="footer-column">
+                <h4>Informazioni Legali</h4>
+                <a href="termini-condizioni.html">Termini e Condizioni</a>
+                <a href="condizioni-vendita.html">Condizioni Generali di Vendita</a>
+                <a href="diritto-recesso.html">Diritto di Recesso (14 giorni)</a>
+                <a href="spedizioni-consegne.html">Spedizioni e Consegne</a>
+                <a href="metodi-pagamento.html">Metodi di Pagamento</a>
+                <a href="convenzioni.html">Convenzioni</a>
+                <a href="privacy-policy.html">Privacy Policy (GDPR)</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="#" onclick="alert('Qui si aprirà il pannello gestione cookie')">⚙️ Gestisci Preferenze Cookie</a>
+                <a href="reclami-controversie.html">Reclami e Controversie</a>
+                <a href="garanzie-legali.html">Garanzie Legali</a>
+            </div>
+
+            <!-- Colonna 3: Social -->
+            <div class="footer-column">
+                <h4>Seguici sui Social</h4>
+                <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+                <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
+                <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+                <a href="https://ebay.it" target="_blank">🛒 eBay</a>
+            </div>
+
+            <!-- Colonna 4: Newsletter -->
+            <div class="footer-column newsletter-section">
+                <h2>📧 Iscriviti alla Newsletter</h2>
+                <p>Ricevi offerte esclusive e novità</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Grazie per esserti iscritto!');">
+                    <input type="email" class="newsletter-input" placeholder="La tua email" required>
+                    <button type="submit" class="newsletter-btn">Iscriviti</button>
+                </form>
+            </div>
+
+            <!-- Colonna 5: Chat -->
+            <div class="footer-column chat-column">
+                <h2>💬 Chat con noi</h2>
+                <div class="footer-chat" id="chatWidget">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message bot">
+                            Ciao! 👋 Come posso aiutarti?
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" class="chat-input" id="chatInputFooter" placeholder="Scrivi..." onkeypress="if(event.key==='Enter') sendMessageFooter()">
+                        <button class="chat-send" onclick="sendMessageFooter()">Invia</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Premiata Erboristeria Ceccato - Tutti i diritti riservati | P.IVA 01234567890</p>
+            <p>🌿 Benessere naturale dal 1970 🌿</p>
+            <p style="font-size: 11px; margin-top: 10px;">
+                <a href="#" style="color: #f4d03f; text-decoration: none;">ODR - Risoluzione Online Controversie</a> | 
+                <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color: #f4d03f;"> Piattaforma ODR UE</a>
+            </p>
+        </div>
+    </footer>
+
     <script>
         const CART_KEY = "ceccato_cart_v1";
 
@@ -570,6 +839,28 @@
         }
 
         document.addEventListener('DOMContentLoaded', renderCheckout);
+
+        // Funzione chat footer
+        function sendMessageFooter() {
+            const input = document.getElementById('chatInputFooter');
+            const message = input.value.trim();
+            if (message) {
+                const container = document.getElementById('chatMessages');
+                const userMsg = document.createElement('div');
+                userMsg.className = 'chat-message user';
+                userMsg.textContent = message;
+                container.appendChild(userMsg);
+                input.value = '';
+                setTimeout(() => {
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'chat-message bot';
+                    botMsg.textContent = 'Grazie per il messaggio! Ti risponderemo presto 😊';
+                    container.appendChild(botMsg);
+                    container.scrollTop = container.scrollHeight;
+                }, 800);
+                container.scrollTop = container.scrollHeight;
+            }
+        }
     </script>
 </body>
 </html>
